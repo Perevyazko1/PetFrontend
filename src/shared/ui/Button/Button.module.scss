@@ -1,17 +1,17 @@
 .Button {
   width: 120px;
   height: 50px;
-  background: green;
+  background: #13603f;
   border-radius: 6px;
 }
 
-.yellow {
-  background: yellow;
-  color: black;
+.btn-enable {
+  background: #13603f;
+  color: #eeedee;
 }
 
-.dark {
-  background: black;
-  color: yellow;
+.btn-disable {
+  background: #eeedee;
+  color: #13603f;
 }
 
