@@ -1,0 +1,1 @@
+export type {pet} from "./type/pet";
