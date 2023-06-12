@@ -7,7 +7,7 @@ interface UserPageProps {
 }
 
 
-export const UserPage = memo((props: UserPageProps) => {
+const UserPage = memo((props: UserPageProps) => {
     const {
         className,
         children,
@@ -22,8 +22,9 @@ export const UserPage = memo((props: UserPageProps) => {
         <div
             className={classNames('', mods, [className])}
             {...otherProps}
-        >
+        >Личный кабинет
             {children}
         </div>
     );
 });
+export default UserPage

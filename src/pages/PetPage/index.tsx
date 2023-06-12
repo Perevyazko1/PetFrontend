@@ -1,1 +1,1 @@
-export {PetPage} from "./ui/PetPage"
+export {PetPageAsync as PetPage} from "./ui/PetPage.async"

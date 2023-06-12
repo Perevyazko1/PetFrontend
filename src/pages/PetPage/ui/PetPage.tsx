@@ -7,7 +7,7 @@ interface PetPageProps {
 }
 
 
-export const PetPage = memo((props: PetPageProps) => {
+const PetPage = memo((props: PetPageProps) => {
     const {
         className,
         children,
@@ -22,8 +22,9 @@ export const PetPage = memo((props: PetPageProps) => {
         <div
             className={classNames('', mods, [className])}
             {...otherProps}
-        >
+        >Страница Животного
             {children}
         </div>
     );
 });
+export default PetPage

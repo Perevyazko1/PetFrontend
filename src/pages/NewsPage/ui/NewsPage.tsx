@@ -7,7 +7,7 @@ interface NewsPageProps {
 }
 
 
-export const NewsPage = memo((props: NewsPageProps) => {
+const NewsPage = memo((props: NewsPageProps) => {
     const {
         className,
         children,
@@ -22,8 +22,9 @@ export const NewsPage = memo((props: NewsPageProps) => {
         <div
             className={classNames('', mods, [className])}
             {...otherProps}
-        >
+        >Страница Новостей
             {children}
         </div>
     );
 });
+export default NewsPage
