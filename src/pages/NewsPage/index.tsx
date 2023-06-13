@@ -1,2 +1,2 @@
 // export {NewsPage} from "./ui/NewsPage"
-export {NewsPageAsync as NewsPage} from './ui/NewsPage.async';
+export {DetailsNewsComponent as NewsPage} from './ui/NewsPage.async';

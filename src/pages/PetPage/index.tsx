@@ -1,1 +1,1 @@
-export {PetPageAsync as PetPage} from "./ui/PetPage.async"
+export {DetailPetComponent as PetPage} from "./ui/PetPage.async"

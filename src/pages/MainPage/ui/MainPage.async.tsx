@@ -1,6 +1,13 @@
-import {FC, lazy} from "react";
-
+import {FC, lazy,Suspense} from "react";
+import AnimationLoader from "../../../features/animation_loader/AnimationLoader";
+// TODO удалить задержку загрузки в прод
 // export const MainPageAsync = lazy<FC>(() => import('./MainPage'));
-export const MainPageAsync = lazy<FC>(() => new Promise(resolve => {
+ const MainPageAsync = lazy<FC>(() => new Promise(resolve => {
     setTimeout(() => resolve(import("./MainPage")),1500)
+
 }));
+export const DetailsMainComponent = () => (
+  <Suspense fallback={<AnimationLoader/>}>
+    <MainPageAsync />
+  </Suspense>
+)
