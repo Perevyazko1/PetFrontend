@@ -1,8 +1,10 @@
 import React from 'react';
-import "./AnimationLoader.scss";
+import cls from "./AnimationLoader.scss";
+
 const AnimationLoader = () => {
+
     return (
-            <div className="loader-container">
+            <div className={cls.loaderContainer}>
                 <div className="spinner">
                 </div>
       </div>

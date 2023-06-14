@@ -9,6 +9,7 @@ import {MainPage} from "../pages/MainPage";
 import {NewsPage} from "../pages/NewsPage";
 import {PetPage} from "../pages/PetPage";
 import {UserPage} from "../pages/UserPage";
+import {NavBar} from "../widgets/NavBar";
 
 
 
@@ -17,6 +18,7 @@ function App() {
   return (
 
     <div>
+        <NavBar>
         <BrowserRouter>
             <nav>
                 <Link to="/">Главная</Link>
@@ -32,6 +34,7 @@ function App() {
                 <Route path="/user" element={<UserPage/>}/>
             </Routes>
         </BrowserRouter>
+        </NavBar>
     </div>
   );
 }
