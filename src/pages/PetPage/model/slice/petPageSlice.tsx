@@ -30,4 +30,3 @@ export const petPageSlice = createSlice({
 export const {actions: petPageActions} = petPageSlice;
 export const {reducer: petPageReducer} = petPageSlice;
 
-// export const selectCount = (state: RootState) => state.counter.value

@@ -1,5 +1,8 @@
-import {memo, ReactNode} from 'react';
+import {memo, ReactNode, useEffect} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
+import {useAppDispatch, useAppSelector} from "../../../shared/lib/hook/reduxHooks/reduxHooks";
+import {userPageActions} from "../../UserPage/model/slice/userPageSlice";
+import {newsPageActions} from "../model/slice/newsPageSlice";
 
 interface NewsPageProps {
     className?: string
@@ -14,15 +17,46 @@ const NewsPage = memo((props: NewsPageProps) => {
         ...otherProps
     } = props
 
-    const mods: Mods = {
+        const dispatch = useAppDispatch();
 
-    };
+        useEffect(() => {
+        setTimeout(() => {
+            dispatch(newsPageActions.setUsers([
+                {
+                    id: 1,
+                    header: "Новость",
+                    text: "",
+                    category: ""
+                }
+            ]))
+        }, 1000)
+    }, [])
+// TODO удалить задержку загрузки в прод
+
+    const newsList = useAppSelector(state => state.newsPage.news);
+    const isLoading = useAppSelector(state => state.newsPage.pageIsLoading);
+
 
     return (
         <div
-            className={classNames('', mods, [className])}
+            className={classNames('')}
             {...otherProps}
-        >Страница Новостей
+        >
+            <h1>Личный кабинет</h1>
+            {isLoading
+            ?
+                <>Skeleton</>
+                :
+                <>
+                    {
+                        newsList?.map((news)=>(
+                            <div key={news.id}>
+                                {news.header}
+                            </div>
+                        ))
+                    }
+                </>
+            }
             {children}
         </div>
     );
