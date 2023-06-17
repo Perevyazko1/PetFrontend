@@ -1,30 +1,18 @@
-import {memo, ReactNode, useState} from 'react';
-import {classNames, Mods} from "shared/lib/classNames/classNames";
-import cls from './NavBar.module.scss';
-
-interface NavBarProps {
-    className?: string
-    children?: ReactNode
-}
+import React, {memo} from 'react';
+import {ContentWrapper} from "../../../shared/ui/ContentWrapper/ContentWrapper";
+import {Link} from "react-router-dom";
 
 
-export const NavBar = memo((props: NavBarProps) => {
-    const {
-        className,
-        children,
-        ...otherProps
-    } = props
-
-    const [count, setCount] = useState(1)
-
-    const mods: Mods = {
-    };
+export const NavBar = memo(() => {
 
     return (
-        <div
-            className={classNames(cls.Navbar, mods, [className])}
-        >
-            {children}
-        </div>
+        <ContentWrapper >
+            <nav style={{display: "flex", flexDirection: "column"}}>
+                <Link to="/">Главная</Link>
+                <Link to="/news">Новости</Link>
+                <Link to="/pet">Страница Животного</Link>
+                <Link to="/user">Личный кабинет</Link>
+            </nav>
+        </ContentWrapper>
     );
 });
