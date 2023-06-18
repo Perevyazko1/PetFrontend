@@ -1,17 +1,18 @@
 .Button {
-  width: 120px;
-  height: 50px;
-  background: #13603f;
+  width: 128px;
+  height: 49px;
   border-radius: 6px;
+
 }
 
 .btn-enable {
-  background: #13603f;
-  color: #eeedee;
+  background: var(--app-primary-100);
+  color: var(--app-background);
+
 }
 
 .btn-disable {
-  background: #eeedee;
-  color: #13603f;
+  background: var(--app-accent);
+  color: var(--app-secondary-text);
 }
 

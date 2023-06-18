@@ -16,7 +16,7 @@ export const PetCardWidget = (props: PetCardWidgetProps) => {
             <div className={classNames(cls.cardPet)}>
                 {pet.name} + {pet.gender}
             </div>
-            <Button color={"dark"} className={"mt-4"}>
+            <Button color={"btn-enable"} className={"mt-4"}>
                 Take it
             </Button>
         </>
