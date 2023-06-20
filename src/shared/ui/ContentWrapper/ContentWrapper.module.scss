@@ -1,5 +1,11 @@
 .ContentWrapper{
-    background: var(--app-accent);
+    //background: transparent;
+    border: 3px solid var(--app-primary-100);
+    //border-color: var(--app-accent);
+    //background: var(--app-accent);
     border-radius: 8px;
-    margin: 23px;
+    margin-left: 25px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+
 }

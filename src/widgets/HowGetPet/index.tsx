@@ -1,0 +1,1 @@
+export {DetailsHowGetPet as HowGetPet} from "./ui/HowGetPet"

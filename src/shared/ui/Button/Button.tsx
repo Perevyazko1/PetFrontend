@@ -5,7 +5,7 @@ import {classNames, Mods} from "shared/lib/classNames/classNames";
 import cls from "./Button.module.scss";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    color?: "btn-enable" | "btn-disable"
+    outline?: boolean
     className?: string
     children?: ReactNode
 }
@@ -13,15 +13,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = memo((props: ButtonProps) => {
     const {
-        color = "btn-enable",
+        outline = false,
         className,
         children,
         ...otherProps
     } = props
 
     const mods: Mods = {
-        [cls.btnEnable]: color === "btn-enable",
-        [cls.btnDisable]: color === "btn-disable",
+        [cls.outline]: outline,
     };
 
     return (

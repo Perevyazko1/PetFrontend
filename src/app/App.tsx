@@ -1,34 +1,45 @@
 import React from 'react';
-import {
-    BrowserRouter,
-    Route, Routes, Link
-} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 
-import {MainPage} from "../pages/MainPage";
-import {NewsPage} from "../pages/NewsPage";
-import {PetPage} from "../pages/PetPage";
-import {UserPage} from "../pages/UserPage";
-import {NavBar} from "../widgets/NavBar";
-import {PageWrapper} from "../shared/ui/PageWrapper/PageWrapper";
-import {PetFilter} from "../shared/ui/PetFilter/PetFilter";
+import {MainPage} from "pages/MainPage";
+import {NewsPage} from "pages/NewsPage";
+import {PetPage} from "pages/PetPage";
+import {UserPage} from "pages/UserPage";
+import {NavBar} from "widgets/NavBar";
+import {PageWrapper} from "shared/ui/PageWrapper/PageWrapper";
+import {useWindowWidth} from "shared/lib/hook/useWindowWidth/useWindowWidth";
+import {MaketWrapper} from "../shared/ui/MaketWrapper/MaketWrapper";
 
 
 function App() {
-    return (
-        <>
-            <PageWrapper>
-                <NavBar/>
+    const pageWidth = useWindowWidth();
 
-                <Routes>
-                    <Route path="/" element={<MainPage/>}/>
-                    <Route path="/news" element={<NewsPage/>}/>
-                    <Route path="/pet" element={<PetPage/>}/>
-                    <Route path="/user" element={<UserPage/>}/>
-                </Routes>
-                <PetFilter/>
-            </PageWrapper>
+
+    const contentBlock = (
+        <Routes>
+            <Route path="/" element={<MainPage/>}/>
+            <Route path="/news" element={<NewsPage/>}/>
+            <Route path="/pet" element={<PetPage/>}/>
+            <Route path="/user" element={<UserPage/>}/>
+        </Routes>
+    )
+
+    const desktopView = (
+        <MaketWrapper>
+        <PageWrapper>
+            <NavBar/>
+            {contentBlock}
+        </PageWrapper></MaketWrapper>
+    )
+
+    const mobileView = (
+        <>
+            <div className={'nawWrapperMobile'}/>
+            {contentBlock}
         </>
-    );
+    )
+
+    return pageWidth <= 1200 ? mobileView : desktopView;
 }
 
 export default App;

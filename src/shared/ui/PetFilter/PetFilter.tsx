@@ -1,5 +1,7 @@
 import {memo, ReactNode} from 'react';
+
 import {classNames, Mods} from "shared/lib/classNames/classNames";
+
 import cls from "./PetFilter.module.scss"
 import {ContentWrapper} from "../ContentWrapper/ContentWrapper";
 
@@ -13,19 +15,16 @@ export const PetFilter = memo((props: PetFilterProps) => {
     const {
         className,
         children,
-        ...otherProps
     } = props
-    
-    const mods: Mods = {
-        
-    };
-    
+
+    const mods: Mods = {};
+
     return (
         <ContentWrapper>
             <div
                 className={classNames(cls.PetFilter, mods, [className])}
-                {...otherProps}
             >
+                <h1>Фильтра</h1>
                 {children}
             </div>
         </ContentWrapper>

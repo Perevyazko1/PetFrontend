@@ -55,6 +55,7 @@ const PetPage = memo((props: PetPageProps) => {
                     ))}
                 </>
             }
+
         </div>
     );
 });

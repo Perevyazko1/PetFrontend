@@ -1,18 +1,12 @@
 .Button {
-  width: 128px;
-  height: 49px;
-  border-radius: 6px;
-
+    width: 128px;
+    height: 49px;
+    border-radius: 6px;
+    background: var(--app-primary-100);
+    color: var(--app-background);
 }
 
-.btn-enable {
-  background: var(--app-primary-100);
-  color: var(--app-background);
-
+.outline {
+    background: var(--app-accent);
+    color: var(--app-secondary-text);
 }
-
-.btn-disable {
-  background: var(--app-accent);
-  color: var(--app-secondary-text);
-}
-

@@ -1,0 +1,1 @@
+export {DetailsRandomPhotoPet as RandomPhotoPet} from "./ui/RandomPhotoPet"

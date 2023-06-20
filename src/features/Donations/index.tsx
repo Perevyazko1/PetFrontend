@@ -1,0 +1,1 @@
+export {DetailsDonations as Donations} from "./ui/Donations"
