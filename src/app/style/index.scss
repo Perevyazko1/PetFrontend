@@ -1,17 +1,22 @@
 @import "reset";
 
-.mt-4 {
-    margin-top: 32px;
-}
 
 body {
     background-color: #f5f5f5;
 }
 
 :root {
-    //--font-family-main: consolas, "Times New Roman", serif;
+    --font-family-main: consolas, "Airfool", serif;
+    // font logo s
+    --font-family-small-logo: 'Airfool' ;
+    --font-style-small-logo: normal;
+    --font-weight-small-logo: 400;
+    --font-size-small-logo: 32px;
+    --font-line-small-logo: 37px;
+    --font-small-logo: var(--font-family-small-logo) / var(--font-style-small-logo) var(--font-weight-small-logo) var(--font-size-small-logo) var(--font-line-small-logo);
+
     //
-    //// s
+    // s
     //--font-size-s: 12px;
     //--font-line-s: 20px;
     //--font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
@@ -51,3 +56,6 @@ body {
     --app-primary-20: rgba(44, 95, 66, 0.2);
 }
 
+.custom-cursor {
+  cursor: url("../../shared/assets/icons/PawButton.svg"), auto;
+}

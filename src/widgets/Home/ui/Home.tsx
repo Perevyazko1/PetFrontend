@@ -1,7 +1,11 @@
 import {memo, ReactNode} from 'react';
-import {classNames, Mods} from "shared/lib/classNames/classNames";
+import {classNames} from "shared/lib/classNames/classNames";
 import cls from "./Home.module.scss"
 import {ContentWrapper} from "../../../shared/ui/ContentWrapper/ContentWrapper";
+import firstDog from "../../../shared/assets/images/FirstCorgi.png"
+import {Button} from "../../../shared/ui/Button/Button";
+import bigBone from "../../../shared/assets/icons/BigBone.svg"
+import logo from "../../../shared/assets/icons/PawLogo.svg"
 
 interface HomeProps {
     className?: string
@@ -16,18 +20,21 @@ export const Home = memo((props: HomeProps) => {
         ...otherProps
     } = props
 
-    const mods: Mods = {
-
-    };
 
     return (
         <ContentWrapper>
             <div
-                className={classNames(cls.Home, mods, [className])}
+                className={classNames(cls.Home)}
                 {...otherProps}
             >
-                {children}
-            </div>
+                <img className={cls.BigBone} src={bigBone}/>
+                <img className={cls.MiniBone} src={bigBone}/>
+                <img src={logo} className={cls.Logo}/>
+                <p className={cls.BigText}>Твой новый друг в приюте <span className={cls.LogoText}>ЛАПКИ</span></p>
+                <p className={cls.SmallText}>Подари новую жизнь питомцу, у нас найдешь себе лучшего друга</p>
+                <Button className={cls.LefButton}>Приютить</Button><Button className={cls.RightButton}>Пожертвовать</Button>
+                <img className={cls.Dog} src={firstDog}/>
+            </div >
         </ContentWrapper>
     );
 });

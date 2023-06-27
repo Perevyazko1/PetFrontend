@@ -1,4 +1,4 @@
-import {memo, ReactNode, ButtonHTMLAttributes} from 'react';
+import {ButtonHTMLAttributes, memo, ReactNode} from 'react';
 
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 

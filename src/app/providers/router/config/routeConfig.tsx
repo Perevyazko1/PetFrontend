@@ -14,29 +14,29 @@ import {
 import {AppRoutesProps} from "../../../../shared/types/router";
 import {NotFoundPage} from "../../../../pages/NotFoundPage";
 
-export const routeConfig:Record<AppRoutes, AppRoutesProps> = {
+export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: getRouteMain(),
-        element: <MainPage />,
+        element: <MainPage/>,
     },
-        [AppRoutes.NEWS]: {
+    [AppRoutes.NEWS]: {
         path: getRouteNews(),
-        element: <NewsPage />,
+        element: <NewsPage/>,
     },
-        [AppRoutes.PET]: {
+    [AppRoutes.PET]: {
         path: getRoutePet(),
-        element: <PetPage />,
+        element: <PetPage/>,
     },
-        [AppRoutes.USER]: {
+    [AppRoutes.USER]: {
         path: getRouteUser(),
-        element: <UserPage />,
+        element: <UserPage/>,
+        authOnly: true,
     },
-            [AppRoutes.NOT_FOUND]: {
+    [AppRoutes.NOT_FOUND]: {
         path: getRouteNotFound(),
-        element: <NotFoundPage />,
+        element: <NotFoundPage/>,
+        authOnly: true,
     },
-
-
 
 
 };

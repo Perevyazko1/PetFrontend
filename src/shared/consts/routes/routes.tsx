@@ -1,10 +1,3 @@
-export const routes = {
-    "/": "Главная",
-    "/news": "Новости",
-    "/pet": "Страница животного",
-    "/user": "Личный кабинет",
-}
-
 export enum AppRoutes {
     MAIN = 'main',
     NEWS = 'news',
@@ -12,6 +5,15 @@ export enum AppRoutes {
     USER = 'user',
     NOT_FOUND = 'not_found',
 }
+
+export const routeNames: { [key in AppRoutes]: string } = {
+    [AppRoutes.MAIN]: "Главная",
+    [AppRoutes.NEWS]: "Новости",
+    [AppRoutes.PET]: "Страница животного",
+    [AppRoutes.USER]: "Личный кабинет",
+    [AppRoutes.NOT_FOUND]: "Страница не найдена",
+}
+
 
 export const getRouteMain = () => '/';
 export const getRouteNews = () => '/news';

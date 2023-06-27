@@ -25,11 +25,10 @@ function App() {
     )
 
     const desktopView = (
-        <MaketWrapper>
         <PageWrapper>
             <NavBar/>
             {contentBlock}
-        </PageWrapper></MaketWrapper>
+        </PageWrapper>
     )
 
     const mobileView = (
