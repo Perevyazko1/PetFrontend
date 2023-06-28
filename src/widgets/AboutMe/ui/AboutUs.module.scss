@@ -1,0 +1,90 @@
+.AboutUs{
+    height: 350px;
+    position: relative;
+    padding-top: 80px;
+
+}
+.FirstPaw{
+    transform: rotate(-60deg);
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 45px ;
+    top: 15px;
+
+
+}
+.LogoAbout{
+    font-size: 2.5rem;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+
+}
+.DogCat{
+    width: calc(587px/1.5);
+    height: calc(356px/1.5);
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+
+}
+.Quotes{
+    color: var(--app-primary-100);
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+.FirstParagraph{
+
+    margin-left: 450px;
+    margin-right: 20px;
+    font-family: CeraPro-Regular,sans-serif;
+    font-size: 0.9rem;
+    color: var(--app-secondary-text);
+
+}
+.SecondParagraph{
+    margin-top: 30px;
+    margin-left: 450px;
+    margin-right: 20px;
+    font-family: CeraPro-Regular,sans-serif;
+    font-size: 0.9rem;
+    color: var(--app-secondary-text);
+
+}
+.ThirdParagraph{
+    margin-top: 30px;
+    margin-left: 450px;
+    margin-right: 20px;
+    font-family: CeraPro-Regular,sans-serif;
+    font-size: 0.9rem;
+    color: var(--app-secondary-text);
+
+}
+.BigBone{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+
+
+}
+.MiniBone{
+    width: 25px;
+    height: 25px;
+    transform: rotate(70deg);
+    position: absolute;
+    right: 15px;
+    top: 32px;
+
+
+}
+.SecondPaw{
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+    width: 80px;
+    height: 80px;
+
+}

@@ -5,7 +5,6 @@
 }
 
 .BigBone{
-    grid-area: bb;
     width: 147px;
     height: 147px;
     margin-left: 50px;
@@ -13,7 +12,6 @@
     margin-top: 40px;
 }
 .MiniBone{
-    grid-area: mb;
     width: 37px;
     height: 37px;
     transform: rotate(70deg);
@@ -23,26 +21,21 @@
 
 }
 .BigText{
-    grid-area: bt;
     font-size: 3.8rem;
     margin-left: 40px;
     color: var(--app-main-text);
 }
 .SmallText{
-    grid-area: st;
     margin-left: 40px;
     color: var(--app-secondary-text);
 }
 .LefButton{
-    grid-area: lb;
     margin-left: 40px;
 }
 .RightButton{
-    grid-area: rb;
     margin-left: 40px;
 }
 .Dog{
-    grid-area: do;
     width: 649px;
     height: 361px;
     position: absolute;

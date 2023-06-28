@@ -1,1 +1,1 @@
-import {AboutMe} from "./ui/AboutMe";
+import {AboutUs} from "./ui/AboutUs";

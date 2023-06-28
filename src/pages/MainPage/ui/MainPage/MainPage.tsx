@@ -1,7 +1,7 @@
 import {memo} from 'react';
 import {classNames} from "shared/lib/classNames/classNames";
 import {Home} from "widgets/Home";
-import {AboutMe} from "widgets/AboutMe/ui/AboutMe";
+import {AboutUs} from "widgets/AboutMe/ui/AboutUs";
 import cls from './MainPage.module.scss';
 
 
@@ -12,7 +12,7 @@ const MainPage = memo(() => {
             className={classNames(cls.MainPage, {}, [''])}
         >
             <Home/>
-            <AboutMe/>
+            <AboutUs/>
             {/*<RecordVisit/>*/}
             {/*<RandomPhotoPet/>*/}
             {/*<HowGetPet/>*/}

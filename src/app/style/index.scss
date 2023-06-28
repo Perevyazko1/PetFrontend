@@ -1,12 +1,28 @@
 @import "reset";
 
 
-body {
-    background-color: #f5f5f5;
-}
 
 :root {
-    --font-family-main: consolas, "Airfool", serif;
+
+    --font-family-main: CeraPro-Regular, sans-serif;
+    // font logo s
+    //--font-style-small-main: normal;
+    --font-weight-small-main: 400;
+    --font-size-small-main: 18px;
+    --font-line-height-small-main: 25,2px;
+    --font-small-main: var(--font-family-main) /
+    var(--font-style-small-main)
+    var(--font-weight-small-main)
+    var(--font-size-small-main)
+    var(--font-line-height-small-main);
+    // font logo m
+
+    // font logo l
+
+
+
+    --font-family-logo: consolas, "Airfool", serif;
+
     // font logo s
     --font-family-small-logo: 'Airfool' ;
     --font-style-small-logo: normal;
