@@ -8,7 +8,6 @@ import {UserPage} from "pages/UserPage";
 import {NavBar} from "widgets/NavBar";
 import {PageWrapper} from "shared/ui/PageWrapper/PageWrapper";
 import {useWindowWidth} from "shared/lib/hook/useWindowWidth/useWindowWidth";
-import {MaketWrapper} from "../shared/ui/MaketWrapper/MaketWrapper";
 
 
 function App() {
