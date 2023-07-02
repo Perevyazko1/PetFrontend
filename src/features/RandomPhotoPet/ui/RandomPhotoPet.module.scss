@@ -1,3 +1,47 @@
 .RandomPhotoPet{
-    height: 48vh;
+    height: 350px;
+    position: relative;
+}
+.LogoRandomPhoto {
+    font-size: 2.5rem;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+}
+
+.FirstPaw{
+    transform: rotate(-60deg);
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 45px ;
+    top: 15px;
+}
+.SecondPaw{
+    width: 147px;
+    height: 156px;
+    transform: rotate(-50deg);
+    position: absolute;
+    top: 200px;
+    left: 100px;
+
+}
+.MiniBone{
+    width: 59px;
+    height: 59px;
+    transform: rotate(70deg);
+    position: absolute;
+    top: 32px;
+    right: 100px;
+
+
+}
+.PhotoSlider{
+    border-radius: 8px;
+    border-width: 3px;
+    border-style: solid;
+    border: var(--app-primary-20);
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 220px;
 }

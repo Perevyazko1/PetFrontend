@@ -4,6 +4,7 @@ import {Home} from "widgets/Home";
 import {AboutUs} from "widgets/AboutMe/ui/AboutUs";
 import cls from './MainPage.module.scss';
 import {RecordVisit} from "../../../../features/RecordVisit";
+import {RandomPhotoPet} from "../../../../features/RandomPhotoPet";
 
 
 const MainPage = memo(() => {
@@ -15,7 +16,7 @@ const MainPage = memo(() => {
             <Home/>
             <AboutUs/>
             <RecordVisit/>
-            {/*<RandomPhotoPet/>*/}
+            <RandomPhotoPet/>
             {/*<HowGetPet/>*/}
             {/*<Donations/>*/}
         </div>
