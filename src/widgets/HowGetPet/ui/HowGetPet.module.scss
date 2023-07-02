@@ -1,3 +1,81 @@
 .HowGetPet{
-    height: 38vh;
+    height: 360px;
+    //padding-top: 200px;
+    position: relative;
+    padding-right: 30px;
 }
+.Paw{
+    transform: rotate(-60deg);
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 45px ;
+    top: 15px;
+
+
+}
+.LogoHowGet{
+    font-size: 2.5rem;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+
+}
+.MiniBone{
+    width: 35px;
+    height: 35px;
+    transform: rotate(70deg);
+    position: absolute;
+    right: 55px;
+    top: 52px;
+}
+.AverageBone{
+    width: 95px;
+    height: 95px;
+    transform: rotate(70deg);
+    position: absolute;
+    left: 145px;
+    bottom: 10px;
+}
+
+.BigBone{
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    right: 55px;
+    top: 32px;
+}
+.StepNumbers{
+    font-family: Airfool,sans-serif;
+    font-size: 4rem;
+    position: absolute;
+    top: 150px;
+    margin-left: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+
+}
+.StepText{
+    color: var(--app-secondary-text);
+    position: absolute;
+    top: 230px;
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: 260px 260px 260px 260px;
+    grid-template-rows: 50px ;
+    width: 100%;
+.Text{
+    margin-right: 50px;
+}
+
+}
+.Button{
+    position: absolute;
+    bottom:20px;
+    left: 43%;
+    //margin-top: 50%;
+    //margin: 50px;
+
+}
+
