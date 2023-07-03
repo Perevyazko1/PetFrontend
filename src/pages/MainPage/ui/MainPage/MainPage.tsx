@@ -6,6 +6,7 @@ import cls from './MainPage.module.scss';
 import {RecordVisit} from "../../../../features/RecordVisit";
 import {RandomPhotoPet} from "../../../../features/RandomPhotoPet";
 import {HowGetPet} from "../../../../widgets/HowGetPet";
+import {Donations} from "../../../../features/Donations";
 
 
 const MainPage = memo(() => {
@@ -19,7 +20,7 @@ const MainPage = memo(() => {
             <RecordVisit/>
             <RandomPhotoPet/>
             <HowGetPet/>
-            {/*<Donations/>*/}
+            <Donations/>
         </div>
     );
 });

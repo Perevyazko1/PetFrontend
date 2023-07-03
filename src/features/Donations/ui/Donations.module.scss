@@ -1,4 +1,116 @@
 .Donations{
-    height: 53vh;
+    height: 524px;
+    position: relative;
+}
+.Paw{
+    transform: rotate(-60deg);
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 45px ;
+    top: 15px;
+
+
+}
+.LogoDonations{
+    font-size: 2.5rem;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+
+}
+.MiniBone{
+    width: 55px;
+    height: 55px;
+    //transform: rotate(70deg);
+    position: absolute;
+    right: 455px;
+    top: 82px;
+}
+.SecondPaw{
+    position: absolute;
+    right: 420px;
+    bottom: 50px;
+    width: 100px;
+    height: 100px;
+
+}
+.Dog{
+    width: calc(554px/1.2);
+    height: calc(623px/1.2);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.Visa{
+    position: absolute;
+    left: 20px;
+    bottom:30px;
+    width: calc(405px/1.1);
+    height: calc(249px/1.1);
+
+}
+.BackVisa{
+    position: absolute;
+    left: 368px;
+    bottom:35px;
+    width: calc(198px/1.1);
+    height: calc(238px/1.1);
+}
+.FirstParagraph{
+    color: var(--app-secondary-text);
+    font-size: 0.9rem;
+    position: absolute;
+    left: 20px;
+    top: 110px;
+
+
+}
+.SecondParagraph{
+    position: absolute;
+    left: 20px;
+    top: 150px;
+}
+.SelectDonations{
+    position: absolute;
+    left: 20px;
+    top: 200px;
+
+}
+.ButtonDonat{
+    width: 100px;
+    height: 35px;
+    font-size: 0.7rem;
+}
+.NumberCard{
+    position: absolute;
+    bottom: 110px;
+    left: 37px;
+    width: 310px;
+    height: 40px;
+
+}
+.MonthCard{
+    position: absolute;
+    bottom: 40px;
+    left: 94px;
+    width: 65px;
+    height: 40px;
+
+}
+.YearCard{
+    position: absolute;
+    bottom: 40px;
+    left: 37px;
+    width: 53px;
+    height: 40px;
+
+}
+.CvcCard{
+    position: absolute;
+    bottom: 100px;
+    left: 400px;
+    width: 63px;
+    height: 40px;
 
 }
