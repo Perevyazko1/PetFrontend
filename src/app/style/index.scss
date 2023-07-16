@@ -6,20 +6,25 @@
     --posX:0;
     --posY:0;
 
-    --font-family-main: CeraPro-Regular, sans-serif;
+
+    --font-family-main: "CeraPro-Regular", serif;
     // font logo s
-    //--font-style-small-main: normal;
-    --font-weight-small-main: 400;
     --font-size-small-main: 18px;
-    --font-line-height-small-main: 25,2px;
-    --font-small-main: var(--font-family-main) /
-    var(--font-style-small-main)
-    var(--font-weight-small-main)
-    var(--font-size-small-main)
-    var(--font-line-height-small-main);
+    --font-line-height-small-main: 140%;
+    --font-small-main: var(--font-size-small-main) / var(--font-line-height-small-main) var(--font-family-main) ;
+
+
+    //var(--font-style-small-main)
+    //var(--font-weight-small-main)
+    //var(--font-size-small-main)
+    //var(--font-line-height-small-main);
     // font logo m
 
     // font logo l
+
+
+
+
 
 
 
@@ -33,17 +38,11 @@
 
     --font-small-logo: var(--font-size-small-logo) / var(--font-line-height-small-logo) var(--font-family-logo);
 
-    //
-    // s
-    //--font-size-s: 12px;
-    //--font-line-s: 20px;
-    //--font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
-    //
     //// m
     --font-size-medium-logo: 72px;
     --font-line-height-medium-logo: normal;
     --font-medium-logo: var(--font-size-medium-logo) / var(--font-line-height-medium-logo) var(--font-family-logo);
-    //
+
     //// l
     --font-size-large-logo: 96px;
     --font-line-height-large-logo: normal;
