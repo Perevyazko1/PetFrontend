@@ -100,11 +100,13 @@ p {
 }
 
 .EveryDay{
-    font-family: CeraPro-Regular, sans-serif;
+    font: var(--font-small-main);
+    font-weight: 900;
     font-size: 1.38rem;
     color: var(--app-primary-100);
 }
 .BottomContact{
+    font: var(--font-small-main);
     text-align: center;
     margin-top: 20px;
     display: flex;
