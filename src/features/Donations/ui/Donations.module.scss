@@ -13,7 +13,7 @@
 
 }
 .LogoDonations{
-    font-size: 2.5rem;
+    font: var(--font-large-main);
     position: absolute;
     left: 20px;
     top: 30px;
@@ -67,6 +67,7 @@
 
 }
 .SecondParagraph{
+    font: var(--font-medium-main);
     position: absolute;
     left: 20px;
     top: 150px;
