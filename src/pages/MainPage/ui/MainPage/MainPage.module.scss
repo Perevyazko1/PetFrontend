@@ -1,3 +1,7 @@
 .MainPage {
-
+    width: calc(100% - 320px);
+    max-width: calc(100% - 320px);
+    margin-left: 320px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

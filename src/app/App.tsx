@@ -6,13 +6,13 @@ import {NewsPage} from "pages/NewsPage";
 import {PetPage} from "pages/PetPage";
 import {UserPage} from "pages/UserPage";
 import {NavBar} from "widgets/NavBar";
-import {PageWrapper} from "shared/ui/PageWrapper/PageWrapper";
+import {WithWrapper} from "shared/ui/WithWrapper/WithWrapper";
 import {useWindowWidth} from "shared/lib/hook/useWindowWidth/useWindowWidth";
+import {PageWrapper} from "../shared/ui/PageWrapper/PageWrapper";
 
 
 function App() {
     const pageWidth = useWindowWidth();
-
 
     const contentBlock = (
         <Routes>
@@ -24,10 +24,12 @@ function App() {
     )
 
     const desktopView = (
-        <PageWrapper>
-            <NavBar/>
-            {contentBlock}
-        </PageWrapper>
+        <WithWrapper>
+            <PageWrapper>
+                <NavBar/>
+                {contentBlock}
+            </PageWrapper>
+        </WithWrapper>
     )
 
     const mobileView = (

@@ -15,29 +15,33 @@ import pawButton from "../../../shared/assets/icons/PawButton.svg"
 export const NavBar = memo(() => {
     const location = useLocation();
     const linkComponent =
-        <>
-            {Object.entries(routeConfig).map(([rout, props]) => (
+        <div className={cls.ContainerButton}>
+            {Object.entries(routeConfig)
+                .filter(([route, props]) => !props.authOnly)
+                .map(([rout, props]) => (
+
                 <div key={rout}>
-                    {!props.authOnly &&
                         <Link to={props.path || '/'}>
                             <Button className={cls.ButtonLink} outline={location.pathname === props.path}>
                                 {location.pathname === props.path&& <img className={cls.PawButton} src={pawButton}/>}
                                 {routeNames[rout as AppRoutes]}
                             </Button>
                         </Link>
-                    }
                 </div>
 
             ))
             }
 
-        </>
+        </div>
 
     return (
-        <ContentWrapper>
+        <div className={cls.NavbarWrapper}>
             <nav className={classNames(cls.Navbar)}>
-                <p className={cls.LogoText} >Лапки</p>
-                <img className={cls.PawLogo} src={paw}/>
+                <div className={cls.LogoText}>
+                    Лапки
+                    <img className={cls.PawLogo} src={paw}/>
+                </div>
+
                 <hr className={cls.FirstHr}/>
                 {linkComponent}
                 <hr className={cls.SecondHr}/>
@@ -47,8 +51,7 @@ export const NavBar = memo(() => {
                     <p>Пн - Вс 10:00 - 19:00 </p>
                     <p className={cls.EveryDay}>Ждем Вас каждый день!</p>
                 </div>
-
             </nav>
-        </ContentWrapper>
+        </div>
     );
 });

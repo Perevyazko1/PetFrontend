@@ -4,6 +4,7 @@ import cls from "./RandomPhotoPet.module.scss"
 import {ContentWrapper} from "../../../shared/ui/ContentWrapper/ContentWrapper";
 import paw from "../../../shared/assets/icons/PawLogo.svg"
 import bone from "../../../shared/assets/icons/BigBone.svg"
+import {Slider} from "../../../shared/ui/Slider/Slider";
 
 interface RandomPhotoPetProps {
     className?: string
@@ -31,7 +32,9 @@ export const DetailsRandomPhotoPet = memo((props: RandomPhotoPetProps) => {
                 <img src={paw} className={cls.FirstPaw}/>
                 <p className={cls.LogoRandomPhoto}>Фото</p>
                 <img src={paw} className={cls.SecondPaw}/>
-                <div className={cls.PhotoSlider}/>
+                <div className={cls.PhotoSlider}>
+                    {/*<Slider/>*/}
+                </div>
                 <img src={bone} className={cls.MiniBone}/>
                 {children}
             </div>

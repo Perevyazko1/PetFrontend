@@ -1,8 +1,9 @@
 .Button {
-    width: 128px;
-    height: 45px;
-    margin: 10px;
-    border-radius: 8px;
+    //width: 128px;
+    //height: 45px;
+    //margin: 10px;
+    padding: 0.66rem 1.33rem ;
+    border-radius: 0.44rem;
     background: var(--app-primary-100);
     color: var(--app-background);
 }
@@ -10,6 +11,8 @@
 .outline {
     background: var(--app-accent);
     color: var(--app-secondary-text);
+    border-color: var(--app-primary-100);
+    border: 2px solid;
 }
 
 

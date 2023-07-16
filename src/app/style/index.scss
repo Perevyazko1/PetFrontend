@@ -3,6 +3,8 @@
 
 
 :root {
+    --posX:0;
+    --posY:0;
 
     --font-family-main: CeraPro-Regular, sans-serif;
     // font logo s
@@ -21,15 +23,15 @@
 
 
 
-    --font-family-logo: consolas, "Airfool", serif;
+    --font-family-logo:  "Airfool", serif;
 
-    // font logo s
-    --font-family-small-logo: 'Airfool' ;
+    // s
+    --font-size-small-logo: 32px;
+    --font-line-height-small-logo: normal;
     --font-style-small-logo: normal;
     --font-weight-small-logo: 400;
-    --font-size-small-logo: 32px;
-    --font-line-small-logo: 37px;
-    --font-small-logo: var(--font-family-small-logo) / var(--font-style-small-logo) var(--font-weight-small-logo) var(--font-size-small-logo) var(--font-line-small-logo);
+
+    --font-small-logo: var(--font-size-small-logo) / var(--font-line-height-small-logo) var(--font-family-logo);
 
     //
     // s
@@ -38,14 +40,14 @@
     //--font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
     //
     //// m
-    //--font-size-m: 16px;
-    //--font-line-m: 24px;
-    //--font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+    --font-size-medium-logo: 72px;
+    --font-line-height-medium-logo: normal;
+    --font-medium-logo: var(--font-size-medium-logo) / var(--font-line-height-medium-logo) var(--font-family-logo);
     //
     //// l
-    //--font-size-l: 24px;
-    //--font-line-l: 32px;
-    //--font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-size-large-logo: 96px;
+    --font-line-height-large-logo: normal;
+    --font-large-logo: var(--font-size-large-logo) / var(--font-line-height-large-logo) var(--font-family-logo);
     //
     //// xl
     //--font-size-xl: 32px;

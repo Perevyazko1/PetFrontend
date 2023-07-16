@@ -29,12 +29,25 @@ export const Home = memo((props: HomeProps) => {
             >
                 <img className={cls.BigBone} src={bigBone}/>
                 <img className={cls.MiniBone} src={bigBone}/>
-                <img src={logo} className={cls.Logo}/>
-                <p className={cls.BigText}>Твой новый друг в приюте <span className={cls.LogoText}>ЛАПКИ</span></p>
+
+                <p className={cls.BigText}>Твой новый друг в приюте
+                    <span className={cls.LogoText}>
+                        ЛАПКИ
+                        <img src={logo} className={cls.Logo}/>
+                    </span>
+                </p>
                 <p className={cls.SmallText}>Подари новую жизнь питомцу, у нас найдешь себе лучшего друга</p>
-                <Button className={cls.LefButton}>Приютить</Button><Button className={cls.RightButton}>Пожертвовать</Button>
+                <div className={cls.buttonGroup}>
+                    <Button className={cls.LefButton}>
+                        Приютить
+                    </Button>
+                    <Button className={cls.RightButton}>
+                        Пожертвовать
+                    </Button>
+                </div>
+
                 <img className={cls.Dog} src={firstDog}/>
-            </div >
+            </div>
         </ContentWrapper>
     );
 });

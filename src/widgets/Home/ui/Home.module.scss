@@ -1,17 +1,29 @@
-.Home{
-    height: 650px;
+//:root{
+//        --posX:0;
+//    --posY:0;
+//
+//}
+
+
+.Home {
+    //height: 650px;
+    min-height: 650px;
+    max-height: 650px;
     border-radius: 8px;
     position: relative;
+    //display: flex;
 }
 
-.BigBone{
+.BigBone {
     width: 147px;
     height: 147px;
     margin-left: 50px;
     margin-bottom: 30px;
     margin-top: 40px;
+    transform: translate(calc(var(--posX) * 1px), calc(var(--posY) * 1px));
 }
-.MiniBone{
+
+.MiniBone {
     width: 37px;
     height: 37px;
     transform: rotate(70deg);
@@ -20,36 +32,140 @@
 
 
 }
-.BigText{
+
+.BigText {
     font-size: 3.8rem;
     margin-left: 40px;
     color: var(--app-main-text);
 }
-.SmallText{
+
+.SmallText {
     margin-left: 40px;
     color: var(--app-secondary-text);
 }
-.LefButton{
-    margin-left: 40px;
-}
-.RightButton{
-    margin-left: 40px;
-}
-.Dog{
+
+
+.Dog {
     width: 649px;
     height: 361px;
     position: absolute;
     bottom: 0px;
     right: -25px;
+    max-width: 100%;
+    object-fit: contain;
+
 }
-.LogoText{
-    font-family: Airfool,sans-serif;
-    font-size: 4rem;
+
+.LogoText {
+    font: var(--font-medium-logo);
+    //font-size: 4rem;
+    position: relative;
 }
-.Logo{
-    width: 250px ;
+
+.Logo {
+    width: 250px;
     height: 250px;
     position: absolute;
-    top: 140px;
-    left: 800px;
+    top: -80px;
+    right: -20px;
 }
+
+//@media screen and (min-width: 1200px) {
+//    .Home {
+//        //height: 650px;
+//        //min-height: 350px;
+//        //max-height: 350px;
+//        border-radius: 8px;
+//        position: relative;
+//        //display: flex;
+//    }
+//
+//    .BigBone {
+//        //width: 147px;
+//        //height: 147px;
+//        //margin-left: 50px;
+//        //margin-bottom: 30px;
+//        //margin-top: 40px;
+//        //transform: translate(calc(var(--posX) * 1px), calc(var(--posY) * 1px));
+//    }
+//    .MiniBone {
+//        width: 37px;
+//        height: 37px;
+//        transform: rotate(70deg);
+//        margin-bottom: 120px;
+//        margin-left: -50px;
+//
+//
+//    }
+//    .BigText {
+//        font-size: 3.8rem;
+//        margin-left: 40px;
+//        color: var(--app-main-text);
+//    }
+//    .SmallText {
+//        margin-left: 40px;
+//        color: var(--app-secondary-text);
+//    }
+//    .LefButton {
+//        display: flex;
+//        padding: 12px 24px;
+//        align-items: flex-start;
+//        gap: 10px;
+//    }
+//    .RightButton {
+//        margin-left: 40px;
+//    }
+//    .Dog {
+//        width: 649px;
+//        height: 361px;
+//        position: absolute;
+//        bottom: 0px;
+//        right: -25px;
+//        max-width: 100%;
+//        object-fit: contain;
+//
+//    }
+//    .LogoText {
+//        font-family: Airfool, sans-serif;
+//        font-size: 4rem;
+//        position: relative;
+//    }
+//    .Logo {
+//        width: 250px;
+//        height: 250px;
+//        position: absolute;
+//        top: -80px;
+//        right: -20px;
+//    }
+//}
+
+.buttonGroup {
+    margin-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    gap: 20px;
+}
+
+.LefButton {
+    //margin-left: 40px;
+    display: flex;
+    flex-grow: 1;
+    padding: 12px 24px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 8px;
+    background: var(--100, #2C5F42);
+}
+
+.RightButton {
+    //margin-left: 40px;
+    display: flex;
+    flex-grow: 1;
+    padding: 12px 24px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 8px;
+    background: var(--100, #2C5F42);
+}
+
