@@ -86,3 +86,106 @@
     height: 80px;
 
 }
+
+@media screen and (max-width: 768px) {
+    .AboutUs{
+    //height: 350px;
+    //position: relative;
+    //padding-top: 80px;
+    min-height: 810px;
+    max-height: 810px;
+    width: 100%;
+    //max-width: 320px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    padding: 29px 0 ;
+        align-items: center;
+
+
+}
+.FirstPaw{
+    transform: rotate(-60deg);
+    //width: 90px;
+    //height: 90px;
+    //position: absolute;
+    //left: 45px ;
+    top: 15px;
+    left: 128px;
+    width: 100px;
+    height: 100px;
+    //position: absolute;
+    align-items: center;
+
+
+}
+.LogoAbout{
+    font: var(--font-extra-large-main-mobile);
+    //position: absolute;
+    //left: 20px;
+    margin: 20px 127px 126px;
+    //top: 30px;
+
+}
+.DogCat{
+    width: 292px;
+    height: 192px;
+    margin: 0 auto;
+    //position: absolute;
+    //align-items: center;
+    //left: 20px;
+    //bottom: 0px;
+
+}
+.Quotes{
+    color: var(--app-primary-100);
+    font: var(--font-extra-large-main-mobile);
+}
+.FirstParagraph{
+
+    margin: 75px 16px 16px;
+    //margin-right: 10px;
+    font: var(--font-small-main);
+    color: var(--app-secondary-text);
+
+}
+.SecondParagraph{
+    margin: 30px 16px 16px;
+    font: var(--font-small-main);
+    color: var(--app-secondary-text);
+
+}
+.ThirdParagraph{
+    margin: 30px 16px 16px;
+    font: var(--font-small-main);
+    color: var(--app-secondary-text);
+
+}
+.BigBone{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 7px;
+    top: 162px;
+
+}
+.MiniBone{
+    width: 30px;
+    height: 30px;
+    transform: rotate(70deg);
+    position: absolute;
+    left: 82px;
+    top: 191px;
+
+
+}
+.SecondPaw{
+    position: absolute;
+    right: 20px;
+    bottom: 181px;
+    width: 120px;
+    height: 120px;
+
+}
+
+}
