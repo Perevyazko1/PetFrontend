@@ -44,5 +44,53 @@
     left: 20px;
     right: 20px;
     height: 220px;
-;
+}
+
+@media screen and (max-width: 768px) {
+    .RandomPhotoPet{
+    min-height: 493px;
+    max-height: 531px;
+    width: 320px;
+    max-width: 320px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    padding: 29px 0 ;
+}
+.LogoRandomPhoto {
+    font: var(--font-extra-large-main-mobile);
+    //position: absolute;
+    left: 130px;
+    top: 60px;
+    color: var(--app-main-text);
+
+}
+
+.FirstPaw{
+    transform: rotate(-60deg);
+    width: 115px;
+    height: 115px;
+    position: absolute;
+    left: 110px ;
+    top: 30px;
+}
+.SecondPaw{
+    display: none;
+
+}
+.MiniBone{
+    display: none;
+
+
+}
+.PhotoSlider{
+    border-style: solid;
+    border: var(--app-primary-20);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    height: 220px;
+}
+
 }
