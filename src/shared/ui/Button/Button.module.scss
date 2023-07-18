@@ -5,12 +5,16 @@
     padding: 0.66rem 1.33rem ;
     border-radius: 0.44rem;
     background: var(--app-primary-100);
+    font: var(--font-button) ;
+    text-align: center;
     color: var(--app-background);
 }
 
 .outline {
     background: var(--app-accent);
     color: var(--app-secondary-text);
+    font: var(--font-button) ;
+    text-align: center;
     border-color: var(--app-primary-100);
     border: 2px solid;
 }

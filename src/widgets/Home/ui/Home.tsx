@@ -38,9 +38,7 @@ export const Home = memo((props: HomeProps) => {
                 </p>
                 <p className={cls.SmallText}>Подари новую жизнь питомцу, у нас найдешь себе лучшего друга</p>
                 <div className={cls.buttonGroup}>
-                    <Button className={cls.LefButton}>
-                        Приютить
-                    </Button>
+                    <Button className={cls.LefButton}>Приютить</Button>
                     <Button className={cls.RightButton}>
                         Пожертвовать
                     </Button>

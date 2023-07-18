@@ -9,6 +9,8 @@ import {NavBar} from "widgets/NavBar";
 import {WithWrapper} from "shared/ui/WithWrapper/WithWrapper";
 import {useWindowWidth} from "shared/lib/hook/useWindowWidth/useWindowWidth";
 import {PageWrapper} from "../shared/ui/PageWrapper/PageWrapper";
+import {PageWrapperMobile} from "../shared/ui/PageWrapperMobile/PageWrapperMobile";
+
 
 
 function App() {
@@ -33,10 +35,11 @@ function App() {
     )
 
     const mobileView = (
-        <>
-            <div className={'nawWrapperMobile'}/>
-            {contentBlock}
-        </>
+        <WithWrapper>
+            <PageWrapper>
+                {contentBlock}
+            </PageWrapper>
+        </WithWrapper>
     )
 
     return pageWidth <= 1200 ? mobileView : desktopView;

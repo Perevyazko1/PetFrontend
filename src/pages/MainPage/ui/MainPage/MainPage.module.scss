@@ -1,7 +1,19 @@
 .MainPage {
-    width: calc(100% - 320px);
-    max-width: calc(100% - 320px);
-    margin-left: 320px;
+    width: calc(100% - 25vh);
+    max-width: calc(100% - 25vh);
+    margin-left: 300px;
     overflow-y: auto;
     overflow-x: hidden;
+    //@media screen and (min-width: 1200px) {
+    //       margin-left:20px;
+    //
+    //}
 }
+@media screen and (max-width: 768px) {
+.MainPage {
+    width: 100%;
+    max-width: 100%;
+    margin-left:auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}}
