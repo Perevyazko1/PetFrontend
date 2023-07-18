@@ -37,9 +37,12 @@ export const DetailsRecordVisit = memo((props: RecordVisitProps) => {
                 <img className={cls.BigBone} src={bone}/>
                 <img className={cls.MiniBone} src={bone}/>
                 <img className={cls.Dog} src={dog}/>
-                <Input type={"text"} placeholder={"Ваше имя"}/>
-                <Input type={"tel"} placeholder={"Ваш телефон"}/>
-                <Input type={"email"} placeholder={"Ваш e-mail"}/><Button>Отправить</Button>
+                <div className={cls.buttonInputGroup}>
+                    <Input className={cls.InputRecord} type={"text"} placeholder={"Ваше имя"}/>
+                    <Input className={cls.InputRecord} type={"tel"} placeholder={"Ваш телефон"}/>
+                    <Input className={cls.InputRecord} type={"email"} placeholder={"Ваш e-mail"}/>
+                    <Button className={cls.ButtonRecord} >Отправить</Button>
+                </div>
             </div>
         </ContentWrapper>
     );
