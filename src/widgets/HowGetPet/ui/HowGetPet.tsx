@@ -34,19 +34,28 @@ export const DetailsHowGetPet = memo((props: HowGetPetProps) => {
                 <p className={cls.LogoHowGet}>Как забрать нового друга?</p>
                 <img src={bone} className={cls.BigBone}/>
                 <img src={bone} className={cls.MiniBone}/>
-                <span className={cls.StepNumbers}>
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                </span>
-                <span className={cls.StepText}>
-                    <span className={cls.Text}>Выберите животное на сайте, которое Вам понравилось</span>
-                    <span className={cls.Text}>Заполните специальную форму</span>
-                    <span className={cls.Text}>Ожидайте звонка от нашего волонтера</span>
-                    <span className={cls.Text}>Получайте своего нового друга</span>
-                </span>
-                <Button className={cls.Button}>Приютить</Button>
+                <div className={cls.AllSteps}>
+                    <div className={cls.UnitStep} >
+                        <div className={cls.StepNumbers} >1</div>
+                        <div className={cls.StepText}>Выберите животное на сайте, которое Вам понравилось</div>
+                    </div>
+                    <div className={cls.UnitStep} >
+                        <div className={cls.StepNumbers} >2</div>
+                        <div className={cls.StepText}>Заполните специальную форму</div>
+                    </div>
+                    <div className={cls.UnitStep} >
+                        <div className={cls.StepNumbers} >3</div>
+                        <div className={cls.StepText}>Ожидайте звонка от нашего волонтера</div>
+                    </div>
+                    <div className={cls.UnitStep} >
+                        <div className={cls.StepNumbers} >4</div>
+                        <div className={cls.StepText}>Получайте своего нового друга</div>
+                    </div>
+                </div>
+                <div className={cls.buttonGroup}>
+                    <Button className={cls.Button}>Приютить</Button>
+                </div>
+
                 <img src={bone} className={cls.AverageBone}/>
             </div>
         </ContentWrapper>

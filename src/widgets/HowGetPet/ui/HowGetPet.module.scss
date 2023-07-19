@@ -2,7 +2,7 @@
     height: 360px;
     //padding-top: 200px;
     position: relative;
-    padding-right: 30px;
+    //padding:0 30px;
 }
 .Paw{
     transform: rotate(-60deg);
@@ -47,35 +47,177 @@
 }
 .StepNumbers{
     font: var(--font-large-logo);
-    position: absolute;
-    top: 150px;
-    margin-left: 120px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
+    //position: absolute;
+    //top: 150px;
+    //margin-left: 120px;
+    //display: grid;
+    //grid-template-columns: 1fr 1fr 1fr 1fr;
+    //width: 100%;
 
 }
-.StepText{
+.StepText {
     color: var(--app-secondary-text);
     font: var(--font-small-main);
-    position: absolute;
-    top: 230px;
-    margin-left: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 50px ;
-    width: 100%;
-.Text{
-    margin-right: 50px;
+    //position: absolute;
+    //top: 230px;
+    //margin-left: 50px;
+    //display: grid;
+    //grid-template-columns: 1fr 1fr 1fr 1fr;
+    //grid-template-rows: 50px ;
+    //width: 100%;
 }
+.AllSteps{
+    position: absolute;
+    display: flex;
+    width: 1418px;
+    align-items: flex-start;
+    gap: 108px;
+    margin: 100px 50px;
+    //top: 80px;
 
+
+.UnitStep{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 275px;
+    text-align: center;
+    //flex-shrink: 0;
+}
+}
+.buttonGroup {
+    //margin-top: 40px ;
+    //margin-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    //max-width: 300px;
+    width: 100%;
+    //gap: 20px;
+    padding: 0;
 }
 .Button{
-    position: absolute;
-    bottom:20px;
-    left: 43%;
+    //position: absolute;
+    //bottom:20px;
+    //left: 43%;
     //margin-top: 50%;
     //margin: 50px;
+    //flex-grow: 1;
+    padding: 12px 24px;
+    gap: 10px;
+    margin: 280px auto;
 
 }
 
+@media screen and (max-width: 768px) {
+    .HowGetPet{
+        min-height: 922px;
+        max-height: 922px;
+        width: 100%;
+        border-radius: 8px;
+        position: relative;
+        text-align: center;
+        padding: 29px 0 ;
+        //margin: 0 auto;
+}
+.Paw{
+    transform: rotate(-60deg);
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 125px ;
+    top: 5px;
+    //margin: 15px auto;
+
+
+}
+.LogoHowGet{
+    font: var(--font-extra-large-main-mobile);
+    margin: 10px 20px;
+
+}
+.MiniBone{
+    width: 50px;
+    height: 50px;
+    transform: rotate(70deg);
+    position: absolute;
+    right: 210px;
+    top: 500px;}
+.AverageBone{
+    //width: 95px;
+    //height: 95px;
+    //transform: rotate(70deg);
+    //position: absolute;
+    //left: 145px;
+    //bottom: 10px;
+    display: none;
+}
+
+.BigBone{
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    right: 195px;
+    top: 450px;
+}
+.StepNumbers{
+    font: var(--font-large-logo);
+    //position: absolute;
+    //top: 150px;
+    //margin-left: 120px;
+    //display: grid;
+    //grid-template-columns: 1fr 1fr 1fr 1fr;
+    //width: 100%;
+
+}
+.StepText {
+    color: var(--app-secondary-text);
+    font: var(--font-small-main);
+    //position: absolute;
+    //top: 230px;
+    //margin-left: 50px;
+    //display: grid;
+    //grid-template-columns: 1fr 1fr 1fr 1fr;
+    //grid-template-rows: 50px ;
+    //width: 100%;
+}
+.AllSteps{
+    position: absolute;
+    display: flex;
+    width: 260px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    //margin: 0 auto;
+
+
+.UnitStep{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 284px;
+}
+}
+.buttonGroup {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    gap: 20px;
+}
+
+.Button{
+    //position: absolute;
+    //bottom:20px;
+    //left: 43%;
+    //margin-top: 50%;
+    //margin: 50px;
+    flex-grow: 1;
+    padding: 12px 24px;
+    gap: 10px;
+    margin: 840px auto;
+
+
+
+}
+
+}
