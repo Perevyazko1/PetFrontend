@@ -4,18 +4,18 @@
 }
 .LogoRandomPhoto {
     font: var(--font-large-main);
-    position: absolute;
-    left: 20px;
-    top: 30px;
+    //position: absolute;
+    //left: 20px;
+    //top: 30px;
 }
 
 .FirstPaw{
     transform: rotate(-60deg);
     width: 90px;
     height: 90px;
-    position: absolute;
-    left: 45px ;
-    top: 15px;
+    //position: absolute;
+    //left: 45px ;
+    //top: 15px;
 }
 .SecondPaw{
     width: 147px;
@@ -50,8 +50,7 @@
     .RandomPhotoPet{
     min-height: 493px;
     max-height: 531px;
-    width: 320px;
-    max-width: 320px;
+    width: 100%;
     border-radius: 8px;
     position: relative;
     text-align: center;
@@ -60,8 +59,7 @@
 .LogoRandomPhoto {
     font: var(--font-extra-large-main-mobile);
     //position: absolute;
-    left: 130px;
-    top: 60px;
+    margin: -80px 20px 0;
     color: var(--app-main-text);
 
 }
@@ -70,9 +68,9 @@
     transform: rotate(-60deg);
     width: 115px;
     height: 115px;
-    position: absolute;
-    left: 110px ;
-    top: 30px;
+    //position: absolute;
+    //left: 110px ;
+    //top: 30px;
 }
 .SecondPaw{
     display: none;
