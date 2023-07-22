@@ -110,13 +110,13 @@
 }
     .BigText {
     font: var(--font-extra-large-main-mobile);
-    margin-left: 40px;
+    margin: 0 auto;
     color: var(--app-main-text);
 }
 
 .SmallText {
     font: var(--font-small-main);
-    margin-left: 40px;
+    margin: 0 auto;
     color: var(--app-secondary-text);
 }
 
