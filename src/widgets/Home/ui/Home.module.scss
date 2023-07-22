@@ -95,8 +95,8 @@
     .Home {
     min-height: 493px;
     max-height: 493px;
-    width: 320px;
-    max-width: 320px;
+    width: 100%;
+    //max-width: 320px;
     border-radius: 8px;
     position: relative;
     text-align: center;
@@ -148,8 +148,7 @@
 
 
 .buttonGroup {
-    margin-top: 40px ;
-    margin-left: 40px;
+    margin: 40px auto;
     display: flex;
     flex-wrap: wrap;
     max-width: 300px;
