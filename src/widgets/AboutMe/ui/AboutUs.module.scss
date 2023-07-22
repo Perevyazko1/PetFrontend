@@ -8,17 +8,17 @@
     transform: rotate(-60deg);
     width: 90px;
     height: 90px;
-    position: absolute;
-    left: 45px ;
-    top: 15px;
+    //position: absolute;
+    //left: 45px ;
+    //top: 15px;
 
 
 }
 .LogoAbout{
     font: var(--font-large-main);
-    position: absolute;
-    left: 20px;
-    top: 30px;
+    //position: absolute;
+    //left: 20px;
+    //top: 30px;
 
 }
 .DogCat{
@@ -114,8 +114,8 @@
     //height: 90px;
     //position: absolute;
     //left: 45px ;
-    top: 15px;
-    left: 128px;
+    //top: 15px;
+    //left: 128px;
     width: 100px;
     height: 100px;
     //position: absolute;
@@ -125,9 +125,10 @@
 }
 .LogoAbout{
     font: var(--font-extra-large-main-mobile);
+    color: var(--app-main-text);
     //position: absolute;
     //left: 20px;
-    margin: 20px 127px 126px;
+    margin: -70px auto 0;
     //top: 30px;
 
 }
