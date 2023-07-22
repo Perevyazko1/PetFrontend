@@ -43,19 +43,19 @@
     right: 0px;
 }
 .Visa{
-    position: absolute;
-    left: 20px;
-    bottom:30px;
-    width: calc(405px/1.1);
-    height: calc(249px/1.1);
+    //position: absolute;
+    //left: 20px;
+    //bottom:30px;
+    //width: calc(405px/1.1);
+    //height: calc(249px/1.1);
 
 }
 .BackVisa{
-    position: absolute;
-    left: 368px;
-    bottom:35px;
-    width: calc(198px/1.1);
-    height: calc(238px/1.1);
+    //position: absolute;
+    //left: 368px;
+    //bottom:35px;
+    //width: calc(198px/1.1);
+    //height: calc(238px/1.1);
 }
 .FirstParagraph{
     color: var(--app-secondary-text);
@@ -72,46 +72,199 @@
     left: 20px;
     top: 150px;
 }
-.SelectDonations{
-    position: absolute;
-    left: 20px;
-    top: 200px;
-
-}
-.ButtonDonat{
-    width: 100px;
-    height: 35px;
-    font-size: 0.7rem;
+.ButtonSumm{
+    gap: 10px;
+    flex-grow: 1;
+    padding: 12px 24px;
 }
 .NumberCard{
-    position: absolute;
-    bottom: 110px;
-    left: 37px;
-    width: 310px;
-    height: 40px;
+    //position: absolute;
+    //bottom: 110px;
+    //left: 37px;
+    //width: 310px;
+    //height: 40px;
 
 }
 .MonthCard{
-    position: absolute;
-    bottom: 40px;
-    left: 94px;
-    width: 65px;
-    height: 40px;
+    //position: absolute;
+    //bottom: 40px;
+    //left: 94px;
+    //width: 65px;
+    //height: 40px;
 
 }
 .YearCard{
-    position: absolute;
-    bottom: 40px;
-    left: 37px;
-    width: 53px;
-    height: 40px;
+    //position: absolute;
+    //bottom: 40px;
+    //left: 37px;
+    //width: 53px;
+    //height: 40px;
 
 }
 .CvcCard{
-    position: absolute;
-    bottom: 100px;
-    left: 400px;
-    width: 63px;
-    height: 40px;
+    //position: absolute;
+    //bottom: 100px;
+    //left: 400px;
+    //width: 63px;
+    //height: 40px;
 
+}
+.buttonGroup {
+    margin-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    gap: 20px;
+}
+.BlockVisa{
+    position: relative;
+    margin: -328px auto;
+}
+
+
+@media screen and (max-width: 768px){
+.Donations{
+    min-height: 1208px;
+    max-height: 1208px;
+    width: 100%;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    padding: 29px 0;
+}
+.Paw{
+    transform: rotate(-60deg);
+    width: 105px;
+    height: 105px;
+    position: absolute;
+    left: 123px;
+    top: 4px;
+
+}
+.LogoDonations{
+    font: var(--font-extra-large-main-mobile);
+    position: relative;
+    margin: 10px auto;
+    left: auto;
+    top: auto;
+
+}
+.MiniBone{
+    width: 55px;
+    height: 55px;
+    //transform: rotate(70deg);
+    position: absolute;
+    right: 455px;
+    top: 82px;
+}
+.SecondPaw{
+    position: absolute;
+    right: 420px;
+    bottom: 50px;
+    width: 100px;
+    height: 100px;
+
+}
+.Dog{
+    width: calc(320px*1.1);
+    height: calc(344px*1.1);
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    right: 0;
+}
+.Visa{
+    position: absolute;
+    bottom: 70px;
+    left: 36px;
+
+    width: 290px;
+    height: 194px;
+}
+.BackVisa{
+    display: none;
+}
+.BackVisaMobile{
+    //position: absolute;
+    //bottom: 75px;
+    //left: 20px;
+    width: 282px;
+    height:79px;
+}
+.FirstParagraph{
+    color: var(--app-secondary-text);
+    font: var(--font-small-main-mobile);
+    position: relative;
+    left:auto;
+    top: auto;
+    margin: 12px auto;
+
+
+}
+.SecondParagraph{
+    font: var(--font-medium-main);
+    position: relative;
+    left:auto;
+    top: auto;
+    margin: 24px auto;
+}
+.ButtonSumm{
+    //width: 100px;
+    //height: 35px;
+    //font-size: 0.7rem;
+    gap: 10px;
+    flex-grow: 1;
+    padding: 12px 24px;
+}
+.ButtonDonat{
+    margin: 270px auto;
+    flex-grow: 1;
+    padding: 12px 85px;
+    gap: 10px;
+
+
+}
+
+.buttonGroup {
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 200px;
+    gap: 20px;
+}
+
+.NumberCard{
+    position: absolute;
+    bottom: 142px;
+    left: 49px;
+    width: 240px;
+    height: 27px;
+}
+.MonthCard{
+    position: absolute;
+    bottom: 81px;
+    left: 48px;
+    width: 28px;
+    height: 29px;
+}
+.YearCard{
+    position: absolute;
+    bottom: 81px;
+    left: 98px;
+    width: 23.125px;
+    height: 29px;
+}
+.CvcCard{
+    position: absolute;
+    bottom: 0px;
+    left: 45px;
+    width: calc(63px/1.3);
+    height: calc(40px/1.3);
+
+}
+.BlockVisa{
+    position: relative;
+    margin: -420px auto;
+
+}
 }

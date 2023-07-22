@@ -28,6 +28,7 @@
     font: var(--font-extra-large-main);
     margin-left: 40px;
     color: var(--app-main-text);
+
 }
 
 .SmallText {
@@ -162,7 +163,7 @@
     //align-items: flex-start;
     gap: 10px;
     //border-radius: 8px;
-    background: var(--100, #2C5F42);
+    //background: var(--100, #2C5F42);
 }
 
 .RightButton {
@@ -170,10 +171,10 @@
     flex-grow: 1;
     padding: 12px 24px;
     //align-items: flex-start;
-    text-align: center;
+    //text-align: center;
     gap: 10px;
-    border-radius: 8px;
-    background: var(--100, #2C5F42);
+    //border-radius: 8px;
+    //background: var(--100, #2C5F42);
 }
 
 
