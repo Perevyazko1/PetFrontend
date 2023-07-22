@@ -42,7 +42,7 @@ function App() {
         </WithWrapper>
     )
 
-    return pageWidth <= 1200 ? mobileView : desktopView;
+    return pageWidth <= 992 ? mobileView : desktopView;
 }
 
 export default App;

@@ -4,12 +4,9 @@
     margin-left: 300px;
     overflow-y: auto;
     overflow-x: hidden;
-    //@media screen and (min-width: 1200px) {
-    //       margin-left:20px;
-    //
-    //}
 }
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 992px) {
 .MainPage {
     width: 100%;
     max-width: 100%;
@@ -17,3 +14,4 @@
     overflow-y: auto;
     overflow-x: hidden;
 }}
+
