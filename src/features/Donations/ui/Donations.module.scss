@@ -6,17 +6,17 @@
     transform: rotate(-60deg);
     width: 90px;
     height: 90px;
-    position: absolute;
-    left: 45px ;
-    top: 15px;
+    //position: absolute;
+    //left: 45px ;
+    //top: 15px;
 
 
 }
 .LogoDonations{
     font: var(--font-large-main);
-    position: absolute;
-    left: 20px;
-    top: 30px;
+    //position: absolute;
+    //left: 20px;
+    //top: 30px;
 
 }
 .MiniBone{
@@ -136,33 +136,34 @@
     transform: rotate(-60deg);
     width: 105px;
     height: 105px;
-    position: absolute;
-    left: 123px;
-    top: 4px;
+    //position: absolute;
+    //left: 123px;
+    //top: 4px;
 
 }
 .LogoDonations{
     font: var(--font-extra-large-main-mobile);
-    position: relative;
-    margin: 10px auto;
-    left: auto;
-    top: auto;
+    margin: -65px auto 0;
+    color: var(--app-main-text);
+
 
 }
 .MiniBone{
-    width: 55px;
-    height: 55px;
-    //transform: rotate(70deg);
-    position: absolute;
-    right: 455px;
-    top: 82px;
+    //width: 55px;
+    //height: 55px;
+    ////transform: rotate(70deg);
+    //position: absolute;
+    //right: 455px;
+    //top: 82px;
+    display: none;
 }
 .SecondPaw{
-    position: absolute;
-    right: 420px;
-    bottom: 50px;
-    width: 100px;
-    height: 100px;
+    //position: absolute;
+    //right: 420px;
+    //bottom: 50px;
+    //width: 100px;
+    //height: 100px;
+    display: none;
 
 }
 .Dog{
@@ -217,7 +218,7 @@
     padding: 12px 24px;
 }
 .ButtonDonat{
-    margin: 270px auto;
+    margin: 270px auto 0;
     flex-grow: 1;
     padding: 12px 85px;
     gap: 10px;
@@ -264,7 +265,8 @@
 }
 .BlockVisa{
     position: relative;
-    margin: -420px auto;
+    margin: -150px auto;
+    width: 360px;
 
 }
 }
