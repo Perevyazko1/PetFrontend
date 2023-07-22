@@ -86,6 +86,14 @@
     height: 80px;
 
 }
+@media screen and (max-width: 992px){
+    .AboutUs{
+    height: calc(350px - 40%);
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 40px;
+
+}}
 
 @media screen and (max-width: 768px) {
     .AboutUs{
