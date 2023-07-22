@@ -9,17 +9,17 @@
     transform: rotate(-60deg);
     width: 90px;
     height: 90px;
-    position: absolute;
-    left: 45px ;
-    top: 15px;
+    //position: absolute;
+    //left: 45px ;
+    //top: 15px;
 
 
 }
 .LogoRecord{
     font: var(--font-large-main);
-    position: absolute;
-    left: 20px;
-    top: 30px;
+    //position: absolute;
+    //left: 20px;
+    //top: 30px;
 
 }
 .Instruction{
@@ -94,28 +94,31 @@
     transform: rotate(-60deg);
     width: 150px;
     height: 150px;
-    position: absolute;
-    left: 105px ;
-    top: -10px;
+    //position: absolute;
+    //left: 105px ;
+    //top: -10px;
 
 
 }
 .LogoRecord{
     font: var(--font-extra-large-main-mobile);
+    color: var(--app-main-text);
     //position: absolute;
     //left: 20px;
     //top: 30px;
-    display: flex;
+    //display: flex;
     //flex-direction: column;
     width: 290px;
-    margin: 20px 15px 15px;
+    margin: -105px auto 0;
+
+    //margin: 20px 15px 15px;
 
 
 }
 .Instruction{
     font: var(--font-small-main-mobile);
     color: var(--app-secondary-text);
-    margin: 100px 16px 16px;
+    margin: 100px 20px 16px;
 }
 .Dog{
     width: calc(306px *1.1);
