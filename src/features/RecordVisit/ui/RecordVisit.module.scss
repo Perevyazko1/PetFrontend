@@ -1,7 +1,7 @@
 .RecordVisit{
     height: calc(494px/1.9);
     position: relative;
-    padding-top: 90px;
+    padding-top: 1px;
     padding-left: 20px;
 
 }
@@ -9,39 +9,45 @@
     transform: rotate(-60deg);
     width: 90px;
     height: 90px;
-    //position: absolute;
-    //left: 45px ;
-    //top: 15px;
+    position: absolute;
+    left: 45px ;
+    top: 15px;
 
 
 }
 .LogoRecord{
     font: var(--font-large-main);
-    //position: absolute;
-    //left: 20px;
-    //top: 30px;
+    position: absolute;
+    left: 20px;
+    top: 30px;
 
 }
 .Instruction{
     font: var(--font-small-main);
     color: var(--app-secondary-text);
-    margin-left: 20px;
+    margin: 115px 10px 0;
 }
 .Dog{
-    width: calc(754px/2.3);
-    height: calc(296px/2.3);
+    width: 494px;
+    //height: calc(296px/2.3);
     position: absolute;
     right: 10px;
     bottom: 0px;
 
 }
 .BigBone{
-    width: 231px;
-    height: 228px;
+    //width: 231px;
+    //height: 228px;
     transform: rotate(50deg);
     position: absolute;
-    right:130px;
-    top: 35px;
+    //right:130px;
+    //top: 35px;
+
+    width: 260px;
+    //transform: rotate(50deg);
+    //position: absolute;
+    right: 261px;
+    top: -9px;
 
 
 }
@@ -50,26 +56,29 @@
     height: 55px;
     //transform: rotate(70deg);
     position: absolute;
-    right: 280px;
-    top: 92px;
+    right: 425px;
+    top: 62px;
 }
 .buttonInputGroup {
-    margin: 0 auto;
+    margin: 30px 10px 0 ;
     display: flex;
     flex-wrap: wrap;
-    max-width: 768px;
+    max-width: 932px;
     gap: 20px;
 }
 .InputRecord{
-        flex-grow: 1;
+
+    flex-grow: 1;
     //padding: 12px 24px;
     align-items: flex-start;
+    margin: 0;
     gap: 10px;
     border-radius: 8px;
 
 }
 .ButtonRecord{
     margin: 0 auto;
+    padding: 12px 24px;
 }
 
 @media screen and (max-width: 992px) {
@@ -94,7 +103,7 @@
     transform: rotate(-60deg);
     width: 150px;
     height: 150px;
-    //position: absolute;
+    position: initial;
     //left: 105px ;
     //top: -10px;
 
@@ -103,7 +112,7 @@
 .LogoRecord{
     font: var(--font-extra-large-main-mobile);
     color: var(--app-main-text);
-    //position: absolute;
+    position: initial;
     //left: 20px;
     //top: 30px;
     //display: flex;
