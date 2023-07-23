@@ -30,7 +30,9 @@ export const AboutUs = memo((props: AboutMeProps) => {
                 <p className={cls.LogoAbout}>О нас</p>
                 <img src={bone} className={cls.BigBone}/>
                 <img src={bone} className={cls.MiniBone}/>
-                <img src={dogCat} className={cls.DogCat}/>
+                <div className={cls.ContainDogCat}>
+                    <img src={dogCat} className={cls.DogCat}/>
+                </div>
                 <p className={cls.FirstParagraph}>
                     <span className={cls.Quotes}>«Лапки»</span> - это приют, где бездомные животные находят заботу, уход безопасность и надежду на новый дом.
                 </p>

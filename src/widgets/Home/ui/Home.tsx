@@ -43,8 +43,10 @@ export const Home = memo((props: HomeProps) => {
                         Пожертвовать
                     </Button>
                 </div>
+                <div className={cls.ContainDog}>
+                    <img className={cls.Dog} src={firstDog}/>
+                </div>
 
-                <img className={cls.Dog} src={firstDog}/>
             </div>
         </ContentWrapper>
     );
