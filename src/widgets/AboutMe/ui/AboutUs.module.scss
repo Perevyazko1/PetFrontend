@@ -8,17 +8,17 @@
     transform: rotate(-60deg);
     width: 90px;
     height: 90px;
-    //position: absolute;
-    //left: 45px ;
-    //top: 15px;
+    position: absolute;
+    left: 45px ;
+    top: 15px;
 
 
 }
 .LogoAbout{
     font: var(--font-large-main);
-    //position: absolute;
-    //left: 20px;
-    //top: 30px;
+    position: absolute;
+    left: 20px;
+    top: 30px;
 
 }
 .ContainDogCat{
@@ -27,11 +27,12 @@
     margin: -90px auto;
 }
 .DogCat{
-    //width: 391px;
-    //height: 237px;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
+    width: 540px;
+    height: 356px;
+    //position: absolute;
+    //bottom: 0px;
+    //right: 0px;
+    margin: 50px 30px;
     max-width: 100%;
     object-fit: contain;
 
@@ -44,24 +45,19 @@
 }
 .FirstParagraph{
 
-    margin-left: 450px;
-    margin-right: 20px;
+    margin: 30px 30px 0 630px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
 
 }
 .SecondParagraph{
-    margin-top: 30px;
-    margin-left: 450px;
-    margin-right: 20px;
+    margin: 30px 30px 0 630px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
 
 }
 .ThirdParagraph{
-    margin-top: 30px;
-    margin-left: 450px;
-    margin-right: 20px;
+    margin: 30px 30px 0 630px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
 
@@ -125,15 +121,15 @@
     //left: 128px;
     width: 100px;
     height: 100px;
-    //position: absolute;
-    align-items: center;
+    position: initial;
+    //align-items: center;
 
 
 }
 .LogoAbout{
     font: var(--font-extra-large-main-mobile);
     color: var(--app-main-text);
-    //position: absolute;
+    position: initial;
     //left: 20px;
     margin: -70px auto 0;
     //top: 30px;
@@ -146,31 +142,39 @@
     //position: absolute;
     //align-items: center;
     //left: 20px;
-    bottom: 0;
+    //bottom: 0;
+    height: 100%;
     object-fit: contain;
-
-
+    margin: 0;
 }
+.ContainDogCat {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+
 .Quotes{
     color: var(--app-primary-100);
     font: var(--font-extra-large-main-mobile);
 }
 .FirstParagraph{
 
-    margin: 30px 16px 16px;
+    margin: 20px 16px 16px;
     //margin-right: 10px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
 
 }
 .SecondParagraph{
-    margin: 30px 16px 16px;
+    margin: 20px 16px 16px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
 
 }
 .ThirdParagraph{
-    margin: 30px 16px 16px;
+    margin: 20px 16px 16px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
 
