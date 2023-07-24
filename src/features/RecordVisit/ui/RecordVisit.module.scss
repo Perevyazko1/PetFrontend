@@ -28,7 +28,7 @@
     margin: 115px 10px 0;
 }
 .Dog{
-    width: 494px;
+    width: 335px;
     //height: calc(296px/2.3);
     position: absolute;
     right: 10px;
@@ -36,18 +36,11 @@
 
 }
 .BigBone{
-    //width: 231px;
-    //height: 228px;
     transform: rotate(50deg);
     position: absolute;
-    //right:130px;
-    //top: 35px;
-
     width: 260px;
-    //transform: rotate(50deg);
-    //position: absolute;
-    right: 261px;
-    top: -9px;
+    right: 125px;
+    top: 10px;
 
 
 }
@@ -56,14 +49,14 @@
     height: 55px;
     //transform: rotate(70deg);
     position: absolute;
-    right: 425px;
-    top: 62px;
+    right: 290px;
+    top: 105px;
 }
 .buttonInputGroup {
     margin: 30px 10px 0 ;
     display: flex;
     flex-wrap: wrap;
-    max-width: 932px;
+    max-width: 655px;
     gap: 20px;
 }
 .InputRecord{

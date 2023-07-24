@@ -1,6 +1,5 @@
 .Home {
-    min-height: 650px;
-    max-height: 650px;
+    height: 585px;
     border-radius: 8px;
     position: relative;
 }
@@ -50,8 +49,8 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
-    width: 100%;
-    max-width: 700px;
+    //width: 100%;
+    width: 490px;
     object-fit: contain;
 
 }
@@ -59,6 +58,7 @@
 .LogoText {
     font: var(--font-medium-logo);
     position: relative;
+    margin: 0 14px;
 }
 
 .Logo {

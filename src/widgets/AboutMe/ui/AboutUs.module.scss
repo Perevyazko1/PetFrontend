@@ -27,12 +27,12 @@
     margin: -90px auto;
 }
 .DogCat{
-    width: 540px;
-    height: 356px;
+    width: 435px;
+    //height: 356px;
     //position: absolute;
     //bottom: 0px;
     //right: 0px;
-    margin: 50px 30px;
+    margin: 95px 30px;
     max-width: 100%;
     object-fit: contain;
 
@@ -45,19 +45,19 @@
 }
 .FirstParagraph{
 
-    margin: 30px 30px 0 630px;
+    margin: 50px 30px 0 500px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
 
 }
 .SecondParagraph{
-    margin: 30px 30px 0 630px;
+    margin: 15px 30px 0 500px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
 
 }
 .ThirdParagraph{
-    margin: 30px 30px 0 630px;
+    margin: 15px 30px 0 500px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
 

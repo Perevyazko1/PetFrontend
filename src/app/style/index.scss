@@ -9,7 +9,7 @@
 
     --font-family-main: "CeraPro-Regular", serif;
     // font  s
-    --font-size-small-main: 18px;
+    --font-size-small-main: 15px;
     --font-line-height-small-main: 140%;
     --font-small-main: var(--font-size-small-main) / var(--font-line-height-small-main) var(--font-family-main) ;
 
@@ -21,20 +21,20 @@
 
 
     // font logo l
-    --font-size-large-main: 48px;
+    --font-size-large-main: 38px;
     --font-line-height-large-main: 120%;
     --font-weight-large-main: 700;
     --font-large-main: var(--font-weight-large-main) var(--font-size-large-main) / var(--font-line-height-large-main) var(--font-family-main) ;
 
     // font logo xl
-    --font-size-extra-large-main: 72px;
+    --font-size-extra-large-main: 46px;
     --font-line-height-extra-large-main: 110%;
     --font-weight-extra-large-main: 700;
     --font-extra-large-main: var(--font-weight-extra-large-main) var(--font-size-extra-large-main)  / var(--font-line-height-extra-large-main) var(--font-family-main)  ;
 
 
     // button
-    --font-size-button: 18px;
+    --font-size-button: 15px;
     --font-line-height-button: 140%;
     --font-weight-button: 500;
     --font-button: var(--font-weight-button) var(--font-size-button)  / var(--font-line-height-button) var(--font-family-main)  ;
