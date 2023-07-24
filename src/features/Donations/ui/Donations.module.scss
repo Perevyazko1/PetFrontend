@@ -1,22 +1,23 @@
 .Donations{
     height: 524px;
     position: relative;
+    padding: 1px;
 }
 .Paw{
     transform: rotate(-60deg);
     width: 90px;
     height: 90px;
-    //position: absolute;
-    //left: 45px ;
-    //top: 15px;
+    position: absolute;
+    left: 45px ;
+    top: 15px;
 
 
 }
 .LogoDonations{
     font: var(--font-large-main);
-    //position: absolute;
-    //left: 20px;
-    //top: 30px;
+    position: absolute;
+    left: 20px;
+    top: 30px;
 
 }
 .MiniBone{
@@ -29,7 +30,7 @@
 }
 .SecondPaw{
     position: absolute;
-    right: 420px;
+    right: 370px;
     bottom: 50px;
     width: 100px;
     height: 100px;
@@ -43,20 +44,24 @@
     right: 0px;
 }
 .Visa{
-    //position: absolute;
-    //left: 20px;
-    //bottom:30px;
-    //width: calc(405px/1.1);
-    //height: calc(249px/1.1);
+    position: absolute;
+    left: 20px;
+    bottom:30px;
+    width: calc(405px/1.1);
+    height: calc(249px/1.1);
 
 }
 .BackVisa{
-    //position: absolute;
-    //left: 368px;
-    //bottom:35px;
-    //width: calc(198px/1.1);
-    //height: calc(238px/1.1);
+    position: absolute;
+    left: 368px;
+    bottom:35px;
+    width: calc(198px/1.1);
+    height: calc(238px/1.1);
 }
+.BackVisaMobile{
+    display: none;
+}
+
 .FirstParagraph{
     color: var(--app-secondary-text);
     font: var(--font-small-main);
@@ -83,6 +88,7 @@
     //left: 37px;
     //width: 310px;
     //height: 40px;
+    display: none;
 
 }
 .MonthCard{
@@ -91,6 +97,7 @@
     //left: 94px;
     //width: 65px;
     //height: 40px;
+    display: none;
 
 }
 .YearCard{
@@ -99,6 +106,7 @@
     //left: 37px;
     //width: 53px;
     //height: 40px;
+    display: none;
 
 }
 .CvcCard{
@@ -107,18 +115,18 @@
     //left: 400px;
     //width: 63px;
     //height: 40px;
+    display: none;
 
 }
 .buttonGroup {
-    margin-left: 40px;
+    margin: 210px 20px 0;
     display: flex;
     flex-wrap: wrap;
-    max-width: 300px;
-    gap: 20px;
-}
+    width: 590px;
+    gap: 10px;}
 .BlockVisa{
     position: relative;
-    margin: -328px auto;
+    margin: 270px auto;
 }
 
 
@@ -136,7 +144,7 @@
     transform: rotate(-60deg);
     width: 105px;
     height: 105px;
-    //position: absolute;
+    position: initial;
     //left: 123px;
     //top: 4px;
 
@@ -145,6 +153,7 @@
     font: var(--font-extra-large-main-mobile);
     margin: -65px auto 0;
     color: var(--app-main-text);
+    position: initial;
 
 
 }
@@ -186,7 +195,7 @@
     display: none;
 }
 .BackVisaMobile{
-    //position: absolute;
+    display: initial;
     //bottom: 75px;
     //left: 20px;
     width: 282px;
@@ -218,9 +227,9 @@
     padding: 12px 24px;
 }
 .ButtonDonat{
-    margin: 270px auto 0;
+    margin: 290px auto 0;
     flex-grow: 1;
-    padding: 12px 85px;
+    //padding: 12px 85px;
     gap: 10px;
 
 
@@ -230,7 +239,7 @@
     margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
-    max-width: 200px;
+    width: 185px;
     gap: 20px;
 }
 
@@ -265,7 +274,7 @@
 }
 .BlockVisa{
     position: relative;
-    margin: -150px auto;
+    margin: -180px auto;
     width: 360px;
 
 }

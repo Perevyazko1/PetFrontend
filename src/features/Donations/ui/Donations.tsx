@@ -44,8 +44,9 @@ export const DetailsDonations = memo((props: DonationsProps) => {
                     <Button className={cls.ButtonSumm}>500₽</Button>
                     <Button className={cls.ButtonSumm}>1000₽</Button>
                     <Button className={cls.ButtonSumm}>Другая сумма</Button>
+                    <Button className={cls.ButtonDonat}>Пожертвовать</Button>
                 </div>
-                <Button className={cls.ButtonDonat}>Пожертвовать</Button>
+
                 <div className={cls.BlockVisa}>
                     <img src={backVisa} className={cls.BackVisa}/>
                     <img src={backVisaMobile} className={cls.BackVisaMobile}/>
