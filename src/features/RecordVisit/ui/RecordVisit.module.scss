@@ -1,8 +1,9 @@
 .RecordVisit{
     height: calc(494px/1.9);
     position: relative;
-    padding-top: 1px;
-    padding-left: 20px;
+    padding: 1px 330px 0 20px
+    //padding-top: 1px;
+    //padding-left: 20px;
 
 }
 .Paw{
@@ -56,7 +57,7 @@
     margin: 30px 10px 0 ;
     display: flex;
     flex-wrap: wrap;
-    max-width: 660px;
+    max-width: 725px;
     gap: 20px;
 }
 .InputRecord{
