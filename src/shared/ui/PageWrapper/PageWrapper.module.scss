@@ -1,6 +1,5 @@
 .PageWrapper{
     display: flex;
-    //flex-direction: column;
     gap: 20px;
     padding: 0 40px;
 }
@@ -8,8 +7,7 @@
 @media screen and (max-width: 768px) {
 .PageWrapper{
     display: flex;
-    //flex-direction: column;
     gap: 20px;
-    padding: 0px;
+    padding: 0;
 }
 }
