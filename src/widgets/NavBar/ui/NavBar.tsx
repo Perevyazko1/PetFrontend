@@ -1,5 +1,4 @@
 import React, {memo} from 'react';
-import {ContentWrapper} from "shared/ui/ContentWrapper/ContentWrapper";
 import cls from "./NavBar.module.scss"
 import {Link, useLocation} from "react-router-dom";
 import {routeConfig} from "../../../app/providers/router/config/routeConfig";
