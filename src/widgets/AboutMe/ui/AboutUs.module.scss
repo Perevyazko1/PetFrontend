@@ -2,7 +2,6 @@
     height: 350px;
     position: relative;
     padding-top: 80px;
-
 }
 .FirstPaw{
     transform: rotate(-60deg);
@@ -11,15 +10,12 @@
     position: absolute;
     left: 45px ;
     top: 15px;
-
-
 }
 .LogoAbout{
     font: var(--font-large-main);
     position: absolute;
     left: 20px;
     top: 30px;
-
 }
 .ContainDogCat{
     width: 100%;
@@ -28,14 +24,9 @@
 }
 .DogCat{
     width: 435px;
-    //height: 356px;
-    //position: absolute;
-    //bottom: 0px;
-    //right: 0px;
     margin: 95px 30px;
     max-width: 100%;
     object-fit: contain;
-
 }
 .Quotes{
     color: var(--app-primary-100);
@@ -44,7 +35,6 @@
     font-size: 1.2rem;
 }
 .FirstParagraph{
-
     margin: 50px 30px 0 500px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
@@ -54,13 +44,11 @@
     margin: 15px 30px 0 500px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
-
 }
 .ThirdParagraph{
     margin: 15px 30px 0 500px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
-
 }
 .BigBone{
     width: 80px;
@@ -68,8 +56,6 @@
     position: absolute;
     right: 10px;
     top: 20px;
-
-
 }
 .MiniBone{
     width: 25px;
@@ -78,8 +64,6 @@
     position: absolute;
     right: 15px;
     top: 32px;
-
-
 }
 .SecondPaw{
     position: absolute;
@@ -87,16 +71,7 @@
     bottom: 50px;
     width: 80px;
     height: 80px;
-
 }
-//@media screen and (max-width: 992px){
-//    .AboutUs{
-//    height: calc(350px - 40%);
-//    position: relative;
-//    padding-top: 80px;
-//    padding-bottom: 40px;
-//
-//}}
 
 @media screen and (max-width: 1110px) {
     .AboutUs{
@@ -108,41 +83,20 @@
     text-align: center;
     padding: 29px 0 ;
     align-items: center;
-
-
 }
 .FirstPaw{
     transform: rotate(-60deg);
-    //width: 90px;
-    //height: 90px;
-    //position: absolute;
-    //left: 45px ;
-    //top: 15px;
-    //left: 128px;
     width: 100px;
     height: 100px;
     position: initial;
-    //align-items: center;
-
-
 }
 .LogoAbout{
     font: var(--font-extra-large-main-mobile);
     color: var(--app-main-text);
     position: initial;
-    //left: 20px;
     margin: -70px auto 0;
-    //top: 30px;
-
 }
 .DogCat{
-    //width: 292px;
-    //height: 192px;
-    //margin: 0 auto;
-    //position: absolute;
-    //align-items: center;
-    //left: 20px;
-    //bottom: 0;
     height: 100%;
     object-fit: contain;
     margin: 0;
@@ -154,30 +108,24 @@
     bottom: 0;
     margin: 0;
 }
-
 .Quotes{
     color: var(--app-primary-100);
     font: var(--font-extra-large-main-mobile);
 }
 .FirstParagraph{
-
     margin: 20px 16px 16px;
-    //margin-right: 10px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
-
 }
 .SecondParagraph{
     margin: 20px 16px 16px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
-
 }
 .ThirdParagraph{
     margin: 20px 16px 16px;
     font: var(--font-small-main);
     color: var(--app-secondary-text);
-
 }
 .BigBone{
     width: 120px;
@@ -185,7 +133,6 @@
     position: absolute;
     left: 7px;
     top: 162px;
-
 }
 .MiniBone{
     width: 30px;
@@ -194,8 +141,6 @@
     position: absolute;
     left: 82px;
     top: 191px;
-
-
 }
 .SecondPaw{
     position: absolute;
@@ -203,7 +148,5 @@
     bottom: 300px;
     width: 120px;
     height: 120px;
-
 }
-
 }
