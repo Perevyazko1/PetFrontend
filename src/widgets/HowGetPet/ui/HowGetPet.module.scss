@@ -1,6 +1,5 @@
 .HowGetPet{
     height: 360px;
-    //padding-top: 200px;
     position: relative;
     padding: 1px;
 }
@@ -11,15 +10,12 @@
     position: absolute;
     left: 45px ;
     top: 15px;
-
-
 }
 .LogoHowGet{
     font: var(--font-large-main);
     position: absolute;
     left: 20px;
     top: 30px;
-
 }
 .MiniBone{
     width: 35px;
@@ -37,7 +33,6 @@
     left: 145px;
     bottom: 10px;
 }
-
 .BigBone{
     width: 110px;
     height: 110px;
@@ -47,97 +42,58 @@
 }
 .StepNumbers{
     font: var(--font-large-logo);
-    //position: absolute;
-    //top: 150px;
-    //margin-left: 120px;
-    //display: grid;
-    //grid-template-columns: 1fr 1fr 1fr 1fr;
-    //width: 100%;
-
 }
 .StepText {
     color: var(--app-secondary-text);
     font: var(--font-small-main);
-    //position: absolute;
-    //top: 230px;
-    //margin-left: 50px;
-    //display: grid;
-    //grid-template-columns: 1fr 1fr 1fr 1fr;
-    //grid-template-rows: 50px ;
-    //width: 100%;
 }
-.AllSteps{
-    //position: absolute;
+.AllSteps {
     display: flex;
     width: 930px;
     align-items: flex-start;
     gap: 108px;
     margin: 105px auto 0;
-    //top: 80px;
-
-
+}
 .UnitStep{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 155px;
     text-align: center;
-    //flex-shrink: 0;
-}
 }
 .buttonGroup {
-    //margin-top: 40px ;
-    //margin-left: 40px;
     display: flex;
     flex-wrap: wrap;
-    //max-width: 300px;
     width: 100%;
-    //gap: 20px;
     padding: 0;
 }
 .Button{
-    //position: absolute;
-    //bottom:20px;
-    //left: 43%;
-    //margin-top: 50%;
-    //margin: 50px;
-    //flex-grow: 1;
     padding: 12px 24px;
     gap: 10px;
     margin:0 auto;
-
 }
 
 @media screen and (max-width: 1110px) {
-    .HowGetPet{
-        min-height: 922px;
-        max-height: 922px;
-        width: 100%;
-        border-radius: 8px;
-        position: relative;
-        text-align: center;
-        padding: 29px 0 ;
-        //margin: 0 auto;
+.HowGetPet{
+    min-height: 922px;
+    max-height: 922px;
+    width: 100%;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    padding: 29px 0 ;
 }
 .Paw{
     transform: rotate(-60deg);
     width: 120px;
     height: 120px;
-
     position: initial;
-    //left: 125px ;
-    //top: 5px;
-    //margin: 15px auto;
-
-
 }
 .LogoHowGet{
     font: var(--font-extra-large-main-mobile);
     margin: -80px auto 0;
     color: var(--app-main-text);
     position: initial;
-
-
 }
 .MiniBone{
     width: 50px;
@@ -147,15 +103,8 @@
     right: 210px;
     top: 500px;}
 .AverageBone{
-    //width: 95px;
-    //height: 95px;
-    //transform: rotate(70deg);
-    //position: absolute;
-    //left: 145px;
-    //bottom: 10px;
     display: none;
 }
-
 .BigBone{
     width: 180px;
     height: 180px;
@@ -165,42 +114,24 @@
 }
 .StepNumbers{
     font: var(--font-large-logo);
-    //position: absolute;
-    //top: 150px;
-    //margin-left: 120px;
-    //display: grid;
-    //grid-template-columns: 1fr 1fr 1fr 1fr;
-    //width: 100%;
-
 }
 .StepText {
     color: var(--app-secondary-text);
     font: var(--font-small-main);
-    //position: absolute;
-    //top: 230px;
-    //margin-left: 50px;
-    //display: grid;
-    //grid-template-columns: 1fr 1fr 1fr 1fr;
-    //grid-template-rows: 50px ;
-    //width: 100%;
 }
-.AllSteps{
-    //position: absolute;
+.AllSteps {
     display: flex;
     width: 260px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
     margin: 60px auto;
-    //margin: 0 auto;
-
-
+}
 .UnitStep{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 260px;
-}
 }
 .buttonGroup {
     margin: 0 auto;
@@ -209,20 +140,10 @@
     max-width: 300px;
     gap: 20px;
 }
-
 .Button{
-    //position: absolute;
-    //bottom:20px;
-    //left: 43%;
-    //margin-top: 50%;
-    //margin: 50px;
     flex-grow: 1;
     padding: 12px 24px;
     gap: 10px;
     margin: 0 auto;
-
-
-
 }
-
 }
