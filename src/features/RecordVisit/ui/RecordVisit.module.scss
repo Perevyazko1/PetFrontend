@@ -2,9 +2,6 @@
     height: calc(494px/1.9);
     position: relative;
     padding: 1px 330px 0 20px
-    //padding-top: 1px;
-    //padding-left: 20px;
-
 }
 .Paw{
     transform: rotate(-60deg);
@@ -13,15 +10,12 @@
     position: absolute;
     left: 45px ;
     top: 15px;
-
-
 }
 .LogoRecord{
     font: var(--font-large-main);
     position: absolute;
     left: 20px;
     top: 30px;
-
 }
 .Instruction{
     font: var(--font-small-main);
@@ -30,10 +24,9 @@
 }
 .Dog{
     width: 335px;
-    //height: calc(296px/2.3);
     position: absolute;
     right: 10px;
-    bottom: 0px;
+    bottom: 0;
 
 }
 .BigBone{
@@ -42,13 +35,10 @@
     width: 260px;
     right: 125px;
     top: 10px;
-
-
 }
 .MiniBone{
     width: 55px;
     height: 55px;
-    //transform: rotate(70deg);
     position: absolute;
     right: 290px;
     top: 105px;
@@ -63,7 +53,6 @@
 .InputRecord{
 
     flex-grow: 1;
-    //padding: 12px 24px;
     align-items: flex-start;
     margin: 0;
     gap: 10px;
@@ -73,16 +62,10 @@
 }
 .ButtonRecord{
     margin: 0 auto;
-    //padding: 12px 24px;
 }
 
 @media screen and (max-width: 1110px) {
     .RecordVisit{
-    //height: calc(494px/1.9);
-    //position: relative;
-    //padding-top: 90px;
-    //padding-left: 20px;
-
     min-height: 721px;
     max-height: 721px;
     width: 100%;
@@ -90,34 +73,19 @@
     position: relative;
     text-align: center;
     padding: 29px 0 ;
-    //align-items: center;
-
-
 }
 .Paw{
     transform: rotate(-60deg);
     width: 150px;
     height: 150px;
     position: initial;
-    //left: 105px ;
-    //top: -10px;
-
-
 }
 .LogoRecord{
     font: var(--font-extra-large-main-mobile);
     color: var(--app-main-text);
     position: initial;
-    //left: 20px;
-    //top: 30px;
-    //display: flex;
-    //flex-direction: column;
     width: 290px;
     margin: -105px auto 0;
-
-    //margin: 20px 15px 15px;
-
-
 }
 .Instruction{
     font: var(--font-small-main-mobile);
@@ -127,31 +95,22 @@
 .Dog{
     width: calc(306px *1.1);
     height: calc(118px *1.1);
-    //position: absolute;
-    //right: 10px;
-    //bottom: 0px;
-
 }
 .BigBone{
     width: 200px;
     height: 200px;
     transform: rotate(50deg);
-    //position: absolute;
     right:160px;
     top:570px;
-    //display: none;
-
-
 }
 .MiniBone{
     width: 50px;
     height: 50px;
-    //transform: rotate(70deg);
     position: absolute;
     right: 290px;
     top: 620px;
 }
-    .buttonInputGroup {
+.buttonInputGroup {
     margin: 0 auto;
     padding: 12px 24px;
     display: flex;
@@ -162,7 +121,6 @@
 
 .InputRecord{
     flex-grow: 1;
-    //padding: 12px 24px;
     align-items: flex-start;
     gap: 10px;
     border-radius: 8px;
