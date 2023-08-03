@@ -36,6 +36,7 @@ function App() {
     const mobileView = (
         <WithWrapper>
             <PageWrapper>
+                <NavBar/>
                 {contentBlock}
             </PageWrapper>
         </WithWrapper>

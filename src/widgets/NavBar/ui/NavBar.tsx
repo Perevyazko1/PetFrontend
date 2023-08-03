@@ -9,6 +9,8 @@ import paw from "../../../shared/assets/icons/PawLogo.svg";
 import call from "../../../shared/assets/icons/call.svg"
 import local from "../../../shared/assets/icons/location.svg"
 import pawButton from "../../../shared/assets/icons/PawButton.svg"
+import menu from "../../../shared/assets/icons/Menu.svg"
+import  filter from  "../../../shared/assets/icons/Filter.svg"
 
 
 export const NavBar = memo(() => {
@@ -36,6 +38,8 @@ export const NavBar = memo(() => {
     return (
         <div className={cls.NavbarWrapper}>
             <nav className={classNames(cls.Navbar)}>
+                <img src={filter} className={cls.Filter} />
+                <img src={menu} className={cls.Menu} />
                 <div className={cls.LogoText}>
                     Лапки
                     <img className={cls.PawLogo} src={paw}/>
