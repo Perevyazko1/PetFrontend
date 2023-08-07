@@ -1,4 +1,4 @@
-import React, {memo, ReactNode, useState} from 'react';
+import React, {memo, ReactNode, useState, useEffect} from 'react';
 import cls from "./NavBar.module.scss"
 import {Link, useLocation} from "react-router-dom";
 import {routeConfig} from "../../../app/providers/router/config/routeConfig";
@@ -33,13 +33,19 @@ export const NavBar = memo((props: NavBarProps) => {
     const handleToggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
+    const handleHiddenNavBar = () => {
+    setIsNavbarOpen(false);
+  };
+    const location = useLocation();
+    useEffect(() => {
+    handleHiddenNavBar();
+  }, [location]);
 
     const mods: Mods = {
         [cls.Open]: isNavbarOpen,
         [cls.Hidden]: !isNavbarOpen,
     };
 
-    const location = useLocation();
     const combinedClassName = classNames("", mods, [className]);
     const linkComponent =
         <div className={cls.ContainerButton}>
@@ -61,7 +67,9 @@ export const NavBar = memo((props: NavBarProps) => {
 
         </div>
 
+
     return (
+
         <div className={cls.NavbarWrapper}>
             <nav className={cls.Navbar}>
                 <div className={cls.LogoText}>
