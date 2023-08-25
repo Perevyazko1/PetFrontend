@@ -85,7 +85,7 @@ export const Filter = memo((props: FilterProps) => {
 
         }
 
-                const handleBreed =()=>{
+        const handleBreed =()=>{
             if(iconBreed===chevronDown){
 
                SetBreed(true)
@@ -96,6 +96,19 @@ export const Filter = memo((props: FilterProps) => {
             }
 
         }
+
+        const handleColor =()=>{
+            if(iconColor===chevronDown){
+
+               SetColor(true)
+                SetIconColor(chevronUp)
+            }else {
+                SetColor(false)
+                SetIconColor(chevronDown)
+            }
+
+        }
+
 
 
     const {
@@ -198,36 +211,40 @@ export const Filter = memo((props: FilterProps) => {
 
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Окрас</p>
-                <img src={chevronDown}/>
+                <img src={iconColor} onClick={handleColor}/>
             </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Белый</p>
-            </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Палевый</p>
-            </div>
-            <div className={cls.CheckHeader}>
-               <Input type={"checkbox"}/>
-                <p>Рыжий</p>
-            </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Светлый</p>
-            </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Тигровый</p>
-            </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Темный</p>
-            </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Все</p>
-            </div>
+            {color &&
+                <div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Белый</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Палевый</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                       <Input type={"checkbox"}/>
+                        <p>Рыжий</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Светлый</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Тигровый</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Темный</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Все</p>
+                    </div>
+                </div>
+            }
 
 
 
