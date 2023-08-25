@@ -1,0 +1,17 @@
+.Filter{
+    position: absolute;
+    right: 20px;
+    background: var(--app-accent);
+    border-radius: 0.44rem;
+    padding: 110px 20px 30px;
+    width: 250px;
+    min-width: 250px ;
+    max-width: 250px ;
+    margin-top: 20px;
+}
+.HeaderFilters{
+    font: var(--font-small-main-mobile);
+}
+.CheckHeader{
+    font: var(--font-small-main);
+}

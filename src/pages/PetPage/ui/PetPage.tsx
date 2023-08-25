@@ -2,6 +2,8 @@ import {memo, ReactNode, useEffect} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import {useAppDispatch, useAppSelector} from "../../../shared/lib/hook/reduxHooks/reduxHooks";
 import {petPageActions} from "../model/slice/petPageSlice";
+import cls from "./PetPage.module.scss"
+import {Filter} from "../../../features/Filter/Filter";
 
 interface PetPageProps {
     className?: string
@@ -39,10 +41,11 @@ const PetPage = memo((props: PetPageProps) => {
 
     return (
         <div
-            className={classNames('', mods, [className])}
+            className={classNames(cls.PetPage, mods, [className])}
             {...otherProps}
         >
             <h1>Страница Животного</h1>
+            <Filter/>
             {isLoading
                 ?
                 <>Skeleton</>
@@ -55,7 +58,7 @@ const PetPage = memo((props: PetPageProps) => {
                     ))}
                 </>
             }
-
+            {children}
         </div>
     );
 });

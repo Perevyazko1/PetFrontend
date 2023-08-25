@@ -6,6 +6,7 @@ import {Provider} from 'react-redux';
 import {BrowserRouter} from "react-router-dom";
 import './app/style/index.scss'
 
+
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
