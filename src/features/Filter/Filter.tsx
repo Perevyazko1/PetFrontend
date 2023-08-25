@@ -85,6 +85,17 @@ export const Filter = memo((props: FilterProps) => {
 
         }
 
+                const handleBreed =()=>{
+            if(iconBreed===chevronDown){
+
+               SetBreed(true)
+                SetIconBreed(chevronUp)
+            }else {
+                SetBreed(false)
+                SetIconBreed(chevronDown)
+            }
+
+        }
 
 
     const {
@@ -181,7 +192,7 @@ export const Filter = memo((props: FilterProps) => {
 
             <div className={cls.CheckHeader}>
                 <p className={cls.CheckHeader}>Порода</p>
-                <img src={chevronDown}/>
+                <img src={iconBreed} onClick={handleBreed}/>
             </div>
 
 
