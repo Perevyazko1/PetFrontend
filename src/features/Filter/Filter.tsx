@@ -23,17 +23,17 @@ export const Filter = memo((props: FilterProps) => {
     const [age, SetAge] = useState(false)
     const [iconAge, SetIconAge] = useState(chevronDown)
 
-    const [typeAnimal, Set] = useState()
-    const [iconTypeAnimal, SeticonTypeAnimal] = useState(chevronDown)
+    const [typeAnimal, SetTypeAnimal] = useState(false)
+    const [iconTypeAnimal, SetIconTypeAnimal] = useState(chevronDown)
 
-    const [breed, SetTypeAnimal] = useState()
-    const [iconBreed, SeticonBreed] = useState(chevronDown)
+    const [breed, SetBreed] = useState(false)
+    const [iconBreed, SetIconBreed] = useState(chevronDown)
 
-    const [color, SetColor] = useState()
-    const [iconColor, SeticonColor] = useState(chevronDown)
+    const [color, SetColor] = useState(false)
+    const [iconColor, SetIconColor] = useState(chevronDown)
 
-    const [size, SetSize] = useState()
-    const [iconSize, SeticonSize] = useState(chevronDown)
+    const [size, SetSize] = useState(false)
+    const [iconSize, SetIconSize] = useState(chevronDown)
 
 
         const handleDateReceipt =()=>{
@@ -61,18 +61,29 @@ export const Filter = memo((props: FilterProps) => {
 
     }
 
-                const handleAge =()=>{
-        if(iconAge===chevronDown){
+        const handleAge =()=>{
+            if(iconAge===chevronDown){
 
-           SetAge(true)
-            SetIconAge(chevronUp)
-        }else {
-            SetAge(false)
-            SetIconAge(chevronDown)
+               SetAge(true)
+                SetIconAge(chevronUp)
+            }else {
+                SetAge(false)
+                SetIconAge(chevronDown)
+            }
+
         }
 
-    }
+        const handleTypeAnimal =()=>{
+            if(iconTypeAnimal===chevronDown){
 
+               SetTypeAnimal(true)
+                SetIconTypeAnimal(chevronUp)
+            }else {
+                SetTypeAnimal(false)
+                SetIconTypeAnimal(chevronDown)
+            }
+
+        }
 
 
 
@@ -148,20 +159,24 @@ export const Filter = memo((props: FilterProps) => {
 
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Вид животного</p>
-                <img src={chevronDown}/>
+                <img onClick={handleTypeAnimal} src={iconTypeAnimal}/>
             </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Кошка</p>
+            {typeAnimal &&
+                <div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Кошка</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                       <Input type={"checkbox"}/>
+                        <p>Собака</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Все</p>
+                    </div>
             </div>
-            <div className={cls.CheckHeader}>
-               <Input type={"checkbox"}/>
-                <p>Собака</p>
-            </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Все</p>
-            </div>
+            }
 
 
             <div className={cls.CheckHeader}>
