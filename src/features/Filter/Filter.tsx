@@ -20,8 +20,8 @@ export const Filter = memo((props: FilterProps) => {
     const [summViews, SetSummViews] = useState(false)
     const [iconSummViews, SetIconSummViews] = useState(chevronDown)
 
-    const [age, SetAge] = useState()
-    const [iconAge, SeticonAge] = useState(chevronDown)
+    const [age, SetAge] = useState(false)
+    const [iconAge, SetIconAge] = useState(chevronDown)
 
     const [typeAnimal, Set] = useState()
     const [iconTypeAnimal, SeticonTypeAnimal] = useState(chevronDown)
@@ -61,6 +61,17 @@ export const Filter = memo((props: FilterProps) => {
 
     }
 
+                const handleAge =()=>{
+        if(iconAge===chevronDown){
+
+           SetAge(true)
+            SetIconAge(chevronUp)
+        }else {
+            SetAge(false)
+            SetIconAge(chevronDown)
+        }
+
+    }
 
 
 
@@ -115,14 +126,17 @@ export const Filter = memo((props: FilterProps) => {
             <p>Отфлиртовать по:</p>
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Возрасту</p>
-                <img src={chevronDown}/>
+                <img onClick={handleAge} src={iconAge}/>
             </div>
+            {age &&
+            <div>
+                <p>От</p>
+                {/*<Input>--</Input>*/}
+                <p>До</p>
+                {/*<Input>--</Input>*/}
+            </div>
+            }
 
-
-            <p>От</p>
-            {/*<Input>--</Input>*/}
-            <p>До</p>
-            {/*<Input>--</Input>*/}
             <div className={cls.CheckHeader}>
                 <Input type={"checkbox"}/>
                 <p>По возрастанию</p>
