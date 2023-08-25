@@ -1,8 +1,9 @@
-import {memo, ReactNode} from 'react';
+import {memo, ReactNode, useState} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import {Input} from "../../shared/ui/Input/Input";
 import cls from "./Filter.module.scss"
 import chevronDown from "../../shared/assets/icons/ChevronDown.svg"
+import chevronUp from "../../shared/assets/icons/chevronUp.svg"
 
 interface FilterProps {
     className?: string
@@ -11,6 +12,59 @@ interface FilterProps {
 
 
 export const Filter = memo((props: FilterProps) => {
+
+
+    const [dateReceipt, SetDateReceipt] = useState(false)
+    const [iconDateReceipt, SetIconDateReceipt] = useState(chevronDown)
+
+    const [summViews, SetSummViews] = useState(false)
+    const [iconSummViews, SetIconSummViews] = useState(chevronDown)
+
+    const [age, SetAge] = useState()
+    const [iconAge, SeticonAge] = useState(chevronDown)
+
+    const [typeAnimal, Set] = useState()
+    const [iconTypeAnimal, SeticonTypeAnimal] = useState(chevronDown)
+
+    const [breed, SetTypeAnimal] = useState()
+    const [iconBreed, SeticonBreed] = useState(chevronDown)
+
+    const [color, SetColor] = useState()
+    const [iconColor, SeticonColor] = useState(chevronDown)
+
+    const [size, SetSize] = useState()
+    const [iconSize, SeticonSize] = useState(chevronDown)
+
+
+        const handleDateReceipt =()=>{
+        if(iconDateReceipt===chevronDown){
+
+           SetDateReceipt(true)
+            SetIconDateReceipt(chevronUp)
+        }else {
+            SetDateReceipt(false)
+            SetIconDateReceipt(chevronDown)
+        }
+
+    }
+
+
+        const handleSummViews =()=>{
+        if(iconSummViews===chevronDown){
+
+           SetSummViews(true)
+            SetIconSummViews(chevronUp)
+        }else {
+            SetSummViews(false)
+            SetIconSummViews(chevronDown)
+        }
+
+    }
+
+
+
+
+
     const {
         className,
         children,
@@ -30,7 +84,7 @@ export const Filter = memo((props: FilterProps) => {
             <Input/>
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Дата приема</p>
-                <img src={chevronDown}/>
+                <img onClick={handleDateReceipt} src={iconDateReceipt}/>
             </div>
 
             <div className={cls.CheckHeader}>
@@ -43,16 +97,20 @@ export const Filter = memo((props: FilterProps) => {
             </div>
             <div className={cls.CheckHeader}>
                 <p>Количество просмотров </p>
-                <img src={chevronDown}/>
+                <img onClick={handleSummViews} src={iconSummViews}/>
             </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>По возрастанию</p>
-            </div>
-            <div className={cls.CheckHeader}>
-               <Input type={"checkbox"}/>
-                <p>По убыванию</p>
-            </div>
+            {summViews &&
+               <div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>По возрастанию</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                       <Input type={"checkbox"}/>
+                        <p>По убыванию</p>
+                    </div>
+                </div>
+            }
 
             <p>Отфлиртовать по:</p>
             <div className={cls.CheckHeader}>
