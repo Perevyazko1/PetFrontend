@@ -110,6 +110,19 @@ export const Filter = memo((props: FilterProps) => {
         }
 
 
+        const handleSize =()=>{
+            if(iconSize===chevronDown){
+
+               SetSize(true)
+                SetIconSize(chevronUp)
+            }else {
+                SetSize(false)
+                SetIconSize(chevronDown)
+            }
+
+        }
+
+
 
     const {
         className,
@@ -249,29 +262,33 @@ export const Filter = memo((props: FilterProps) => {
 
 
             <div className={cls.CheckHeader}>
-                <p className={cls.HeaderFilters}>Размер</p>
-                <img src={chevronDown}/>
+                <p className={cls.HeaderFilters} >Размер</p>
+                <img src={iconSize} onClick={handleSize}/>
             </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Крупный</p>
-            </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Маленький</p>
-            </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Небольшой</p>
-            </div>
-            <div className={cls.CheckHeader}>
-               <Input type={"checkbox"}/>
-                <p>Средний</p>
-            </div>
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>Все</p>
-            </div>
+            {size &&
+                <div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Крупный</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Маленький</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Небольшой</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                       <Input type={"checkbox"}/>
+                        <p>Средний</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>Все</p>
+                    </div>
+                </div>
+            }
         </div>
     );
 });
