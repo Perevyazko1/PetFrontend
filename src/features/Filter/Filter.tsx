@@ -220,7 +220,7 @@ export const Filter = memo((props: FilterProps) => {
 
 
             <div className={cls.CheckHeader}>
-                <p className={cls.CheckHeader}>Порода</p>
+                <p className={cls.HeaderFilters}>Порода</p>
                 <img src={iconBreed} onClick={handleBreed}/>
             </div>
 
