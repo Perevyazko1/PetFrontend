@@ -4,6 +4,7 @@ import {Input} from "../../shared/ui/Input/Input";
 import cls from "./Filter.module.scss"
 import chevronDown from "../../shared/assets/icons/ChevronDown.svg"
 import chevronUp from "../../shared/assets/icons/chevronUp.svg"
+import {InputCheckbox} from "../../shared/ui/InputCheckbox/InputCheckbox";
 
 interface FilterProps {
     className?: string
@@ -165,7 +166,7 @@ export const Filter = memo((props: FilterProps) => {
             {summViews &&
                <div>
                     <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
+                        <InputCheckbox/>
                         <p>По возрастанию</p>
                     </div>
                     <div className={cls.CheckHeader}>
