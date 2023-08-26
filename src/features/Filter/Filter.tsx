@@ -4,6 +4,7 @@ import {Input} from "../../shared/ui/Input/Input";
 import cls from "./Filter.module.scss"
 import chevronDown from "../../shared/assets/icons/ChevronDown.svg"
 import chevronUp from "../../shared/assets/icons/chevronUp.svg"
+import glass from "../../shared/assets/icons/glass.svg"
 
 interface FilterProps {
     className?: string
