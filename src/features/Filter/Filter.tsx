@@ -140,7 +140,7 @@ export const Filter = memo((props: FilterProps) => {
             {...otherProps}
         >
             <p className={cls.HeaderFilters}>Искать в содержимом статьи:</p>
-            <Input/>
+            <Input className={cls.Input}/>
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Дата приема</p>
                 <img onClick={handleDateReceipt} src={iconDateReceipt}/>
