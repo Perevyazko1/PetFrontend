@@ -4,6 +4,8 @@ import {useAppDispatch, useAppSelector} from "../../../shared/lib/hook/reduxHook
 import {petPageActions} from "../model/slice/petPageSlice";
 import cls from "./PetPage.module.scss"
 import {Filter} from "../../../features/Filter/Filter";
+import {Button} from "../../../shared/ui/Button/Button";
+import eye from "../../../shared/assets/icons/eye.svg"
 
 interface PetPageProps {
     className?: string
@@ -44,7 +46,23 @@ const PetPage = memo((props: PetPageProps) => {
             className={classNames(cls.PetPage, mods, [className])}
             {...otherProps}
         >
-            <h1>Страница Животного</h1>
+            <div className={cls.CardPage}>
+                <div className={cls.ContainerPhoto}>
+                    <img className={cls.PhotoPet} src={'https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg'}/>
+                    <p className={cls.HeaderDate}>#В приюте с 13.06.2023</p>
+                </div>
+                <div className={cls.HeaderCardPet}>Чудесный, молодой Космо ждет свою семью в приюте.
+                    Чтобы найти контакт ...
+                </div>
+                <div className={cls.BottomCard}>
+                    <Button>Читать далее...</Button>
+                    <div className={cls.Views}>
+                        <img src={eye}/>
+                        <p>105</p>
+                </div>
+
+                </div>
+            </div>
             <Filter/>
             {isLoading
                 ?

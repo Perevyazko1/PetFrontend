@@ -2,8 +2,50 @@
     margin-left: 300px;
     overflow-y: auto;
     overflow-x: hidden;
+    display: flex;
 }
+.CardPage{
+    width: 349px;
+    height: 404px;
+    margin: 20px;
+    background: var(--app-accent);
+    border-radius: 5px;
+}
+.HeaderCardPet{
+    font: var(--font-small-main);
+    margin: 10px 20px;
+}
+.PhotoPet{
+    width: 309px;
+    height: 222px;
+    border-radius: 5px;
+    //margin: 20px 20px;
+}
+.ContainerPhoto{
+    width: 309px;
+    height: 222px;
+    border-radius: 5px;
+    margin: 20px 20px;
 
+
+}
+.HeaderDate{
+    font: var(--font-medium-main);
+    color: var(--app-background);
+    text-decoration: underline;
+    margin: -50px 20px;
+}
+.Views{
+    display: flex;
+    margin-left: 90px;
+}
+.Button{
+    width: 349px;
+}
+.BottomCard{
+    display: flex;
+    margin: 20px 20px;
+}
 @media screen and (max-width: 1439px) {
 .PetPage {
     width: 100%;
