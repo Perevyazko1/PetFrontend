@@ -169,7 +169,7 @@ export const Filter = memo((props: FilterProps) => {
                         <p>По возрастанию</p>
                     </div>
                     <div className={cls.CheckHeader}>
-                       <Input type={"checkbox"}/>
+                       <Input type={"radio"}/>
                         <p>По убыванию</p>
                     </div>
                 </div>
@@ -184,9 +184,9 @@ export const Filter = memo((props: FilterProps) => {
             <div>
                 <div className={cls.BlockInput}>
                     <p>От</p>
-                    <Input className={cls.UnitInput}  type={"number"}/>
+                    <Input className={cls.UnitInput} placeholder={"   — —"} type={"number"}/>
                     <p>До</p>
-                    <Input className={cls.UnitInput} value={"--"} type={"number"}/>
+                    <Input className={cls.UnitInput} placeholder={"   — —"} type={"number"}/>
                 </div>
 
                 <div className={cls.CheckHeader}>
