@@ -182,10 +182,12 @@ export const Filter = memo((props: FilterProps) => {
             </div>
             {age &&
             <div>
-                <p>От</p>
-                {/*<Input>--</Input>*/}
-                <p>До</p>
-                {/*<Input>--</Input>*/}
+                <div className={cls.BlockInput}>
+                    <p>От</p>
+                    <Input className={cls.UnitInput}  type={"number"}/>
+                    <p>До</p>
+                    <Input className={cls.UnitInput} value={"--"} type={"number"}/>
+                </div>
 
                 <div className={cls.CheckHeader}>
                     <Input type={"checkbox"}/>
