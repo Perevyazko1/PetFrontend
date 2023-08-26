@@ -3,7 +3,7 @@
     right: 20px;
     background: var(--app-accent);
     border-radius: 0.44rem;
-    padding: 110px 20px 30px;
+    padding: 80px 20px 30px;
     width: 250px;
     min-width: 250px ;
     max-width: 250px ;
@@ -14,8 +14,15 @@
     color: #a2a2a2;
 }
 .CheckHeader{
-    font: var(--font-small-main);
     display: flex;
+}
+p{
+    font: var(--font-small-main);
+    color: #747474;
+}
+.TypeFilter{
+    font: var(--font-small-main-filter);
+    margin: 10px;
 }
 .Input{
     width: 100%;

@@ -4,7 +4,6 @@ import {Input} from "../../shared/ui/Input/Input";
 import cls from "./Filter.module.scss"
 import chevronDown from "../../shared/assets/icons/ChevronDown.svg"
 import chevronUp from "../../shared/assets/icons/chevronUp.svg"
-import glass from "../../shared/assets/icons/glass.svg"
 
 interface FilterProps {
     className?: string
@@ -142,6 +141,7 @@ export const Filter = memo((props: FilterProps) => {
         >
             <p className={cls.HeaderFilters}>Искать в содержимом статьи:</p>
             <Input className={cls.Input}/>
+            <div className={cls.TypeFilter}>Сортировать по:</div>
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Дата приема</p>
                 <img onClick={handleDateReceipt} src={iconDateReceipt}/>
@@ -175,7 +175,7 @@ export const Filter = memo((props: FilterProps) => {
                 </div>
             }
 
-            <p>Отфлиртовать по:</p>
+            <div className={cls.TypeFilter}>Отфлиртовать по:</div>
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Возрасту</p>
                 <img onClick={handleAge} src={iconAge}/>
