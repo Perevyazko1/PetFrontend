@@ -11,14 +11,15 @@
 }
 .HeaderFilters{
     font: var(--font-small-main-mobile);
-    color: #a2a2a2;
+    color: rgba(18, 18, 18, 0.7);
 }
 .CheckHeader{
     display: flex;
 }
 p{
     font: var(--font-small-main);
-    color: #747474;
+    color: rgba(18, 18, 18, 0.52);
+;
 }
 .TypeFilter{
     font: var(--font-small-main-filter);
