@@ -139,23 +139,26 @@ export const Filter = memo((props: FilterProps) => {
             className={classNames(cls.Filter, mods, [className])}
             {...otherProps}
         >
-            <p>Искать в содержимом статьи:</p>
+            <p className={cls.HeaderFilters}>Искать в содержимом статьи:</p>
             <Input/>
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Дата приема</p>
                 <img onClick={handleDateReceipt} src={iconDateReceipt}/>
             </div>
-
+            {dateReceipt &&
+                <div>
+                    <div className={cls.CheckHeader}>
+                        <Input type={"checkbox"}/>
+                        <p>По возрастанию</p>
+                    </div>
+                    <div className={cls.CheckHeader}>
+                       <Input type={"checkbox"}/>
+                        <p>По убыванию</p>
+                    </div>
+                </div>
+            }
             <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>По возрастанию</p>
-            </div>
-            <div className={cls.CheckHeader}>
-               <Input type={"checkbox"}/>
-                <p>По убыванию</p>
-            </div>
-            <div className={cls.CheckHeader}>
-                <p>Количество просмотров </p>
+                <p className={cls.HeaderFilters}>Количество просмотров </p>
                 <img onClick={handleSummViews} src={iconSummViews}/>
             </div>
             {summViews &&
@@ -182,17 +185,17 @@ export const Filter = memo((props: FilterProps) => {
                 {/*<Input>--</Input>*/}
                 <p>До</p>
                 {/*<Input>--</Input>*/}
+
+                <div className={cls.CheckHeader}>
+                    <Input type={"checkbox"}/>
+                    <p>По возрастанию</p>
+                </div>
+                <div className={cls.CheckHeader}>
+                   <Input type={"checkbox"}/>
+                    <p>По убыванию</p>
+                </div>
             </div>
             }
-
-            <div className={cls.CheckHeader}>
-                <Input type={"checkbox"}/>
-                <p>По возрастанию</p>
-            </div>
-            <div className={cls.CheckHeader}>
-               <Input type={"checkbox"}/>
-                <p>По убыванию</p>
-            </div>
 
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Вид животного</p>
