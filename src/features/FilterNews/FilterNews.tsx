@@ -22,11 +22,11 @@ export const FilterNews = memo((props: FilterNewsProps) => {
     const [summViews, SetSummViews] = useState(false)
     const [iconSummViews, SetIconSummViews] = useState(chevronDown)
 
-    const [age, SetAge] = useState(false)
-    const [iconAge, SetIconAge] = useState(chevronDown)
+    const [date, SetDate] = useState(false)
+    const [iconDate, SetIconDate] = useState(chevronDown)
 
-    const [typeAnimal, SetTypeAnimal] = useState(false)
-    const [iconTypeAnimal, SetIconTypeAnimal] = useState(chevronDown)
+    const [categoryNews, SetCategoryNews] = useState(false)
+    const [iconCategoryNews, SetIconCategoryNews] = useState(chevronDown)
 
 
 
@@ -55,26 +55,26 @@ export const FilterNews = memo((props: FilterNewsProps) => {
 
     }
 
-        const handleAge =()=>{
-            if(iconAge===chevronDown){
+        const handleDate =()=>{
+            if(iconDate===chevronDown){
 
-               SetAge(true)
-                SetIconAge(chevronUp)
+               SetDate(true)
+                SetIconDate(chevronUp)
             }else {
-                SetAge(false)
-                SetIconAge(chevronDown)
+                SetDate(false)
+                SetIconDate(chevronDown)
             }
 
         }
 
-        const handleTypeAnimal =()=>{
-            if(iconTypeAnimal===chevronDown){
+        const handleCategoryNews =()=>{
+            if(iconCategoryNews===chevronDown){
 
-               SetTypeAnimal(true)
-                SetIconTypeAnimal(chevronUp)
+               SetCategoryNews(true)
+                SetIconCategoryNews(chevronUp)
             }else {
-                SetTypeAnimal(false)
-                SetIconTypeAnimal(chevronDown)
+                SetCategoryNews(false)
+                SetIconCategoryNews(chevronDown)
             }
 
         }
@@ -101,7 +101,7 @@ export const FilterNews = memo((props: FilterNewsProps) => {
             <Input className={cls.Input}/>
             <div className={cls.TypeFilter}>Сортировать по:</div>
             <div className={cls.CheckHeader}>
-                <p className={cls.HeaderFilters}>Дате</p>
+                <p className={cls.HeaderFilters}>Дата</p>
                 <img onClick={handleDateReceipt} src={iconDateReceipt}/>
             </div>
             {dateReceipt &&
@@ -135,10 +135,10 @@ export const FilterNews = memo((props: FilterNewsProps) => {
 
             <div className={cls.TypeFilter}>Отфлиртовать по:</div>
             <div className={cls.CheckHeader}>
-                <p className={cls.HeaderFilters}>Дате</p>
-                <img onClick={handleAge} src={iconAge}/>
+                <p className={cls.HeaderFilters}>Дата</p>
+                <img onClick={handleDate} src={iconDate}/>
             </div>
-            {age &&
+            {date &&
             <div>
                 <div className={cls.BlockInput}>
                     <p>От</p>
@@ -159,10 +159,10 @@ export const FilterNews = memo((props: FilterNewsProps) => {
             }
 
             <div className={cls.CheckHeader}>
-                <p className={cls.HeaderFilters}>Категории</p>
-                <img onClick={handleTypeAnimal} src={iconTypeAnimal}/>
+                <p className={cls.HeaderFilters}>Категория</p>
+                <img onClick={handleCategoryNews} src={iconCategoryNews}/>
             </div>
-            {typeAnimal &&
+            {categoryNews &&
 
                 <div>
 
