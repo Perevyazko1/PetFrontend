@@ -1,0 +1,44 @@
+.FilterNews{
+    position: absolute;
+    right: 20px;
+    background: var(--app-accent);
+    border-radius: 0.44rem;
+    padding: 80px 20px 30px;
+    width: 250px;
+    min-width: 250px ;
+    max-width: 250px ;
+    margin-top: 20px;
+}
+.HeaderFilters{
+    font: var(--font-small-main-mobile);
+    color: rgba(18, 18, 18, 0.7);
+}
+.CheckHeader{
+    display: flex;
+}
+p{
+    font: var(--font-small-main);
+    color: rgba(18, 18, 18, 0.52);
+;
+}
+.TypeFilter{
+    font: var(--font-small-main-filter);
+    margin: 10px;
+}
+.Input{
+    width: 100%;
+    background-image: url("../../shared/assets/icons/glass.svg");
+    background-repeat: no-repeat;
+    background-position:  right 20px center;
+}
+.UnitInput{
+    width: 80px;
+    font: var(--font-small-main-mobile);
+
+}
+.UnitInputChecked{
+
+}
+.BlockInput{
+    display: flex;
+}

@@ -3,6 +3,7 @@ import {classNames, Mods} from "shared/lib/classNames/classNames";
 import {useAppDispatch, useAppSelector} from "../../../shared/lib/hook/reduxHooks/reduxHooks";
 import {userPageActions} from "../../UserPage/model/slice/userPageSlice";
 import {newsPageActions} from "../model/slice/newsPageSlice";
+import {FilterNews} from "../../../features/FilterNews/FilterNews";
 
 interface NewsPageProps {
     className?: string
@@ -42,12 +43,12 @@ const NewsPage = memo((props: NewsPageProps) => {
             className={classNames('')}
             {...otherProps}
         >
-            <h1>Личный кабинет</h1>
             {isLoading
             ?
                 <>Skeleton</>
                 :
                 <>
+                    <FilterNews/>
                     {
                         newsList?.map((news)=>(
                             <div key={news.id}>
