@@ -1,36 +1,37 @@
-.PetPage{
+.NewsPage{
     margin-left: 300px;
     overflow-y: auto;
     overflow-x: hidden;
     display: flex;
+
 }
-.CardPage{
-    width: 349px;
-    height: 404px;
+.CardNews{
+    width: 70%;
+    height: 672px;
     margin: 20px;
     background: var(--app-accent);
     border-radius: 5px;
 }
-.HeaderCardPet{
+.HeaderNews{
     font: var(--font-small-main);
     margin: 10px 20px;
     color: rgba(18, 18, 18, 0.7);
 }
-.PhotoPet{
-    width: 309px;
-    height: 222px;
+.PhotoNews{
+    width: 97%;
+    height: 467px;
     border-radius: 5px;
     //margin: 20px 20px;
 }
 .ContainerPhoto{
-    width: 309px;
-    height: 222px;
+    width: 97%;
+    height: 467px;
     border-radius: 5px;
     margin: 20px 20px;
 
 
 }
-.HeaderDate{
+.HeaderPhoto{
     font: var(--font-medium-main);
     color: var(--app-background);
     text-decoration: underline;
@@ -38,17 +39,23 @@
 }
 .Views{
     display: flex;
-    margin-left: 90px;
+    margin-left: 50%;
+}
+.Calendar{
+    margin: 10px 30px 0 10px;
 }
 .Button{
     width: 349px;
 }
-.BottomCard{
+.BottomNews{
     display: flex;
     margin: 20px 20px;
 }
+
+
+
 @media screen and (max-width: 1439px) {
-.PetPage {
+.NewsPage {
     width: 100%;
     max-width: 100%;
     margin-left:auto;
