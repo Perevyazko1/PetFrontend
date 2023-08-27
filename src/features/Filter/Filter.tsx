@@ -5,6 +5,7 @@ import cls from "./Filter.module.scss"
 import chevronDown from "../../shared/assets/icons/ChevronDown.svg"
 import chevronUp from "../../shared/assets/icons/chevronUp.svg"
 import {InputCheckbox} from "../../shared/ui/InputCheckbox/InputCheckbox";
+import {InputRadio} from "../../shared/ui/InputRadio/InputRadio";
 
 interface FilterProps {
     className?: string
@@ -14,6 +15,10 @@ interface FilterProps {
 
 export const Filter = memo((props: FilterProps) => {
 
+    const [arrayTypePet ,SetArrayTypePet] = useState(["Кошка","Собака","Все"])
+    const [arrayBreed ,SetArrayBreed] = useState(["Терьер","Мэйнкун"])
+    const [arrayColor ,SetArrayColor] = useState(["Белый","Палевый","Рыжий","Светлый","Тигровый","Темный","Все"])
+    const [arraySize ,SetArraySize] = useState(["Крупный","Маленький","Небольшой","Средний","Все"])
 
     const [dateReceipt, SetDateReceipt] = useState(false)
     const [iconDateReceipt, SetIconDateReceipt] = useState(chevronDown)
@@ -150,11 +155,11 @@ export const Filter = memo((props: FilterProps) => {
             {dateReceipt &&
                 <div>
                     <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
+                        <InputRadio/>
                         <p>По возрастанию</p>
                     </div>
                     <div className={cls.CheckHeader}>
-                       <Input type={"checkbox"}/>
+                       <InputRadio/>
                         <p>По убыванию</p>
                     </div>
                 </div>
@@ -166,11 +171,11 @@ export const Filter = memo((props: FilterProps) => {
             {summViews &&
                <div>
                     <div className={cls.CheckHeader}>
-                        <InputCheckbox/>
+                        <InputRadio/>
                         <p>По возрастанию</p>
                     </div>
                     <div className={cls.CheckHeader}>
-                       <Input type={"radio"}/>
+                       <InputRadio/>
                         <p>По убыванию</p>
                     </div>
                 </div>
@@ -191,11 +196,11 @@ export const Filter = memo((props: FilterProps) => {
                 </div>
 
                 <div className={cls.CheckHeader}>
-                    <Input type={"checkbox"}/>
+                    <InputRadio/>
                     <p>По возрастанию</p>
                 </div>
                 <div className={cls.CheckHeader}>
-                   <Input type={"checkbox"}/>
+                   <InputRadio/>
                     <p>По убыванию</p>
                 </div>
             </div>
@@ -207,19 +212,14 @@ export const Filter = memo((props: FilterProps) => {
             </div>
             {typeAnimal &&
                 <div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Кошка</p>
+                    {arrayTypePet.map(type=>(
+                   <div key={type} className={cls.CheckHeader}>
+                        <InputCheckbox/>
+                        <p>{type}</p>
                     </div>
-                    <div className={cls.CheckHeader}>
-                       <Input type={"checkbox"}/>
-                        <p>Собака</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Все</p>
-                    </div>
-            </div>
+
+                    ))}
+                </div>
             }
 
 
@@ -227,6 +227,18 @@ export const Filter = memo((props: FilterProps) => {
                 <p className={cls.HeaderFilters}>Порода</p>
                 <img src={iconBreed} onClick={handleBreed}/>
             </div>
+            {breed &&
+                <div>
+                    {arrayBreed.map(breedPet=>(
+                   <div key={breedPet} className={cls.CheckHeader}>
+                        <InputCheckbox/>
+                        <p>{breedPet}</p>
+                    </div>
+
+                    ))}
+                </div>
+
+            }
 
 
             <div className={cls.CheckHeader}>
@@ -235,34 +247,12 @@ export const Filter = memo((props: FilterProps) => {
             </div>
             {color &&
                 <div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Белый</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Палевый</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                       <Input type={"checkbox"}/>
-                        <p>Рыжий</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Светлый</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Тигровый</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Темный</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Все</p>
-                    </div>
+                    {arrayColor.map(colorAnimal =>(
+                        <div key={colorAnimal} className={cls.CheckHeader}>
+                            <InputCheckbox/>
+                            <p>{colorAnimal}</p>
+                        </div>
+                    ))}
                 </div>
             }
 
@@ -274,26 +264,13 @@ export const Filter = memo((props: FilterProps) => {
             </div>
             {size &&
                 <div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Крупный</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Маленький</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Небольшой</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                       <Input type={"checkbox"}/>
-                        <p>Средний</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                        <Input type={"checkbox"}/>
-                        <p>Все</p>
-                    </div>
+                    {arraySize.map(sizeAnimal=>(
+                        <div key={sizeAnimal} className={cls.CheckHeader}>
+                            <InputCheckbox/>
+                            <p>{sizeAnimal}</p>
+                        </div>
+
+                    ))}
                 </div>
             }
         </div>

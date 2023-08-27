@@ -167,9 +167,9 @@ export const FilterNews = memo((props: FilterNewsProps) => {
                 <div>
 
                     {category.map(item => (
-                        <div className={cls.CheckHeader}>
+                        <div key={item} className={cls.CheckHeader}>
                             <InputCheckbox/>
-                            <p key={item}>{item}</p>
+                            <p >{item}</p>
                         </div>
                     ))}
                 </div>
