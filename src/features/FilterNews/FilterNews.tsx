@@ -2,10 +2,7 @@ import {memo, ReactNode, useState} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import {Input} from "../../shared/ui/Input/Input";
 import cls from "./FilterNews.module.scss"
-import chevronDown from "../../shared/assets/icons/ChevronDown.svg"
-import chevronUp from "../../shared/assets/icons/chevronUp.svg"
 import {InputCheckbox} from "../../shared/ui/InputCheckbox/InputCheckbox";
-import {InputRadio} from "../../shared/ui/InputRadio/InputRadio";
 import {useQueryParams} from "../../shared/hooks/useQueryParams/useQueryParams";
 import {GroupRadio} from "../../shared/ui/GroupRadio/GroupRadio";
 import {HideBlockFilter} from "../../shared/ui/HideBlockFilter/HideBlockFilter";
@@ -20,8 +17,6 @@ interface FilterNewsProps {
 export const FilterNews = memo((props: FilterNewsProps) => {
 
     const [category, setCategory] = useState(["Корм", "Кошки","Собаки", "Воспитание", "Игры", "Прогулка", "Ухаживание"])
-    const [dateReceipt, SetDateReceipt] = useState(false)
-    const [iconDateReceipt, SetIconDateReceipt] = useState(chevronDown)
 
     const {setQueryParam, queryParameters, initialLoad} = useQueryParams();
     const [valueInput, setValueInput] = useState<string>(queryParameters.name || '')
@@ -68,7 +63,7 @@ export const FilterNews = memo((props: FilterNewsProps) => {
             <HideBlockFilter nameBlock={"Категория"}>
                     {category.map(item => (
                         <div key={item} className={cls.CheckHeader}>
-                            <InputCheckbox/>
+                            <InputCheckbox nameCheck={item}/>
                             <p >{item}</p>
                         </div>
                     ))}

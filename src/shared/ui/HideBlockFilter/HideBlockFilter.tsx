@@ -46,9 +46,9 @@ export const HideBlockFilter = memo((props: HideBlockFilterProps) => {
             className={classNames(cls.HideBlockFilter, mods, [className])}
             {...otherProps}
         >
-            <div className={cls.CheckHeader}>
+            <div onClick={handleSummViews} className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>{nameBlock}</p>
-                <img onClick={handleSummViews} src={icon}/>
+                <img  src={icon}/>
             </div>
             {hideBlock &&
                 <>

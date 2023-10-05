@@ -56,7 +56,7 @@ export const Filter = memo((props: FilterProps) => {
             <HideBlockFilter nameBlock={"Вид животного"}>
                     {arrayTypePet.map(type=>(
                    <div key={type} className={cls.CheckHeader}>
-                        <InputCheckbox/>
+                        <InputCheckbox nameCheck={type}/>
                         <p>{type}</p>
                     </div>
                     ))}
@@ -64,7 +64,7 @@ export const Filter = memo((props: FilterProps) => {
             <HideBlockFilter nameBlock={"Порода"}>
                     {arrayBreed.map(breedPet=>(
                    <div key={breedPet} className={cls.CheckHeader}>
-                        <InputCheckbox/>
+                        <InputCheckbox nameCheck={breedPet}/>
                         <p>{breedPet}</p>
                     </div>
 
@@ -73,7 +73,7 @@ export const Filter = memo((props: FilterProps) => {
             <HideBlockFilter nameBlock={"Окрас"}>
                     {arrayColor.map(colorAnimal =>(
                         <div key={colorAnimal} className={cls.CheckHeader}>
-                            <InputCheckbox/>
+                            <InputCheckbox nameCheck={colorAnimal}/>
                             <p>{colorAnimal}</p>
                         </div>
                     ))}
@@ -81,7 +81,7 @@ export const Filter = memo((props: FilterProps) => {
             <HideBlockFilter nameBlock={"Размер"}>
                     {arraySize.map(sizeAnimal=>(
                         <div key={sizeAnimal} className={cls.CheckHeader}>
-                            <InputCheckbox/>
+                            <InputCheckbox nameCheck={sizeAnimal}/>
                             <p>{sizeAnimal}</p>
                         </div>
                     ))}
