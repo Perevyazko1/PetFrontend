@@ -6,6 +6,7 @@ import chevronDown from "../../shared/assets/icons/ChevronDown.svg"
 import chevronUp from "../../shared/assets/icons/chevronUp.svg"
 import {InputCheckbox} from "../../shared/ui/InputCheckbox/InputCheckbox";
 import {InputRadio} from "../../shared/ui/InputRadio/InputRadio";
+import {GroupRadio} from "../../shared/ui/GroupRadio/GroupRadio";
 
 interface FilterProps {
     className?: string
@@ -153,32 +154,34 @@ export const Filter = memo((props: FilterProps) => {
                 <img onClick={handleDateReceipt} src={iconDateReceipt}/>
             </div>
             {dateReceipt &&
-                <div>
-                    <div className={cls.CheckHeader}>
-                        <InputRadio onChange={event =>{ console.log(event.target.checked)}}/>
-                        <p>По возрастанию</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                       <InputRadio/>
-                        <p>По убыванию</p>
-                    </div>
-                </div>
+                <GroupRadio decrease={"dateReceiptDecrease"} increase={"dateReceiptIncrease"}/>
+                // <div>
+                //     <div className={cls.CheckHeader}>
+                //         <InputRadio onChange={event =>{ console.log(event.target.checked)}}/>
+                //         <p>По возрастанию</p>
+                //     </div>
+                //     <div className={cls.CheckHeader}>
+                //        <InputRadio/>
+                //         <p>По убыванию</p>
+                //     </div>
+                // </div>
             }
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Количество просмотров </p>
                 <img onClick={handleSummViews} src={iconSummViews}/>
             </div>
             {summViews &&
-               <div>
-                    <div className={cls.CheckHeader}>
-                        <InputRadio/>
-                        <p>По возрастанию</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                       <InputRadio/>
-                        <p>По убыванию</p>
-                    </div>
-                </div>
+                <GroupRadio decrease={"summViewsPostPetDecrease"} increase={"summViewsPostPetIncrease"}/>
+               // <div>
+               //      <div className={cls.CheckHeader}>
+               //          <InputRadio/>
+               //          <p>По возрастанию</p>
+               //      </div>
+               //      <div className={cls.CheckHeader}>
+               //         <InputRadio/>
+               //          <p>По убыванию</p>
+               //      </div>
+               //  </div>
             }
 
             <div className={cls.TypeFilter}>Отфлиртовать по:</div>
@@ -194,15 +197,15 @@ export const Filter = memo((props: FilterProps) => {
                     <p>До</p>
                     <Input className={cls.UnitInput} placeholder={"   — —"} type={"number"}/>
                 </div>
-
-                <div className={cls.CheckHeader}>
-                    <InputRadio/>
-                    <p>По возрастанию</p>
-                </div>
-                <div className={cls.CheckHeader}>
-                   <InputRadio/>
-                    <p>По убыванию</p>
-                </div>
+                <GroupRadio decrease={"AgePetDecrease"} increase={"AgePetIncrease"}/>
+                {/*<div className={cls.CheckHeader}>*/}
+                {/*    <InputRadio/>*/}
+                {/*    <p>По возрастанию</p>*/}
+                {/*</div>*/}
+                {/*<div className={cls.CheckHeader}>*/}
+                {/*   <InputRadio/>*/}
+                {/*    <p>По убыванию</p>*/}
+                {/*</div>*/}
             </div>
             }
 
@@ -214,7 +217,7 @@ export const Filter = memo((props: FilterProps) => {
                 <div>
                     {arrayTypePet.map(type=>(
                    <div key={type} className={cls.CheckHeader}>
-                        <InputCheckbox onChange={event =>{ console.log(event.target.checked)}}/>
+                        <InputCheckbox/>
                         <p>{type}</p>
                     </div>
 
@@ -239,8 +242,6 @@ export const Filter = memo((props: FilterProps) => {
                 </div>
 
             }
-
-
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Окрас</p>
                 <img src={iconColor} onClick={handleColor}/>
@@ -255,9 +256,6 @@ export const Filter = memo((props: FilterProps) => {
                     ))}
                 </div>
             }
-
-
-
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters} >Размер</p>
                 <img src={iconSize} onClick={handleSize}/>

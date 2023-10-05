@@ -135,16 +135,18 @@ export const FilterNews = memo((props: FilterNewsProps) => {
                 <img onClick={handleSummViews} src={iconSummViews}/>
             </div>
             {summViews &&
-               <div>
-                    <div className={cls.CheckHeader}>
-                        <InputRadio/>
-                        <p>По возрастанию</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                       <InputRadio/>
-                        <p>По убыванию</p>
-                    </div>
-                </div>
+               // <div>
+               //      <div className={cls.CheckHeader}>
+               //          <InputRadio/>
+               //          <p>По возрастанию</p>
+               //      </div>
+               //      <div className={cls.CheckHeader}>
+               //         <InputRadio/>
+               //          <p>По убыванию</p>
+               //      </div>
+               //  </div>
+                <GroupRadio decrease={"SummViewNewsDecrease"} increase={"SummViewNewsIncrease"}/>
+
             }
 
             <div className={cls.TypeFilter}>Отфлиртовать по:</div>
@@ -160,15 +162,15 @@ export const FilterNews = memo((props: FilterNewsProps) => {
                     <p>До</p>
                     <Input className={cls.UnitInput} placeholder={"   — —"} type={"date"}/>
                 </div>
-
-                <div className={cls.CheckHeader}>
-                    <InputRadio/>
-                    <p>По возрастанию</p>
-                </div>
-                <div className={cls.CheckHeader}>
-                   <InputRadio/>
-                    <p>По убыванию</p>
-                </div>
+                {/*<GroupRadio decrease={"dateSummViewDecrease"} increase={"dateSummViewIncrease"}/>*/}
+                {/*<div className={cls.CheckHeader}>*/}
+                {/*    <InputRadio/>*/}
+                {/*    <p>По возрастанию</p>*/}
+                {/*</div>*/}
+                {/*<div className={cls.CheckHeader}>*/}
+                {/*   <InputRadio/>*/}
+                {/*    <p>По убыванию</p>*/}
+                {/*</div>*/}
             </div>
             }
 
