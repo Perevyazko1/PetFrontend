@@ -8,6 +8,7 @@ import {InputCheckbox} from "../../shared/ui/InputCheckbox/InputCheckbox";
 import {InputRadio} from "../../shared/ui/InputRadio/InputRadio";
 import {useQueryParams} from "../../shared/hooks/useQueryParams/useQueryParams";
 import {GroupRadio} from "../../shared/ui/GroupRadio/GroupRadio";
+import {HideBlockFilter} from "../../shared/ui/HideBlockFilter/HideBlockFilter";
 
 
 interface FilterNewsProps {
@@ -22,70 +23,8 @@ export const FilterNews = memo((props: FilterNewsProps) => {
     const [dateReceipt, SetDateReceipt] = useState(false)
     const [iconDateReceipt, SetIconDateReceipt] = useState(chevronDown)
 
-    const [summViews, SetSummViews] = useState(false)
-    const [iconSummViews, SetIconSummViews] = useState(chevronDown)
-
-    const [date, SetDate] = useState(false)
-    const [iconDate, SetIconDate] = useState(chevronDown)
-
-    const [categoryNews, SetCategoryNews] = useState(false)
-    const [iconCategoryNews, SetIconCategoryNews] = useState(chevronDown)
-
     const {setQueryParam, queryParameters, initialLoad} = useQueryParams();
     const [valueInput, setValueInput] = useState<string>(queryParameters.name || '')
-
-
-
-        const handleDateReceipt =()=>{
-        if(iconDateReceipt===chevronDown){
-
-           SetDateReceipt(true)
-            SetIconDateReceipt(chevronUp)
-        }else {
-            SetDateReceipt(false)
-            SetIconDateReceipt(chevronDown)
-        }
-
-    }
-
-
-        const handleSummViews =()=>{
-        if(iconSummViews===chevronDown){
-
-           SetSummViews(true)
-            SetIconSummViews(chevronUp)
-        }else {
-            SetSummViews(false)
-            SetIconSummViews(chevronDown)
-        }
-
-    }
-
-        const handleDate =()=>{
-            if(iconDate===chevronDown){
-
-               SetDate(true)
-                SetIconDate(chevronUp)
-            }else {
-                SetDate(false)
-                SetIconDate(chevronDown)
-            }
-
-        }
-
-        const handleCategoryNews =()=>{
-            if(iconCategoryNews===chevronDown){
-
-               SetCategoryNews(true)
-                SetIconCategoryNews(chevronUp)
-            }else {
-                SetCategoryNews(false)
-                SetIconCategoryNews(chevronDown)
-            }
-
-        }
-
-
 
 
     const {
@@ -110,89 +49,30 @@ export const FilterNews = memo((props: FilterNewsProps) => {
             }} value={valueInput} className={cls.Input}
             />
             <div className={cls.TypeFilter}>Сортировать по:</div>
-            <div className={cls.CheckHeader}>
-                <p className={cls.HeaderFilters}>Дата</p>
-                <img onClick={handleDateReceipt} src={iconDateReceipt}/>
-            </div>
-            {dateReceipt &&
-                // <div>
-                //     <div className={cls.CheckHeader}>
-                //         <InputRadio
-                //             onChange={event => {setQueryParam("dateReceiptIncrease", event.target.value)}}/>
-                //         <p>По возрастанию</p>
-                //     </div>
-                //     <div className={cls.CheckHeader}>
-                //        <InputRadio
-                //         checked={false}
-                //            onChange={event => {setQueryParam("dateReceiptDecrease", event.target.value)}}/>
-                //         <p>По убыванию</p>
-                //     </div>
-                // </div>
+            <HideBlockFilter nameBlock={"Дата"}>
                 <GroupRadio decrease={"dateNewsDecrease"} increase={"dateNewsIncrease"}/>
-            }
-            <div className={cls.CheckHeader}>
-                <p className={cls.HeaderFilters}>Количество просмотров </p>
-                <img onClick={handleSummViews} src={iconSummViews}/>
-            </div>
-            {summViews &&
-               // <div>
-               //      <div className={cls.CheckHeader}>
-               //          <InputRadio/>
-               //          <p>По возрастанию</p>
-               //      </div>
-               //      <div className={cls.CheckHeader}>
-               //         <InputRadio/>
-               //          <p>По убыванию</p>
-               //      </div>
-               //  </div>
+            </HideBlockFilter>
+            <HideBlockFilter nameBlock={"Количество просмотров"}>
                 <GroupRadio decrease={"SummViewNewsDecrease"} increase={"SummViewNewsIncrease"}/>
-
-            }
+            </HideBlockFilter>
 
             <div className={cls.TypeFilter}>Отфлиртовать по:</div>
-            <div className={cls.CheckHeader}>
-                <p className={cls.HeaderFilters}>Дата</p>
-                <img onClick={handleDate} src={iconDate}/>
-            </div>
-            {date &&
-            <div>
+            <HideBlockFilter nameBlock={"Дата"}>
                 <div className={cls.BlockInput}>
                     <p>От</p>
                     <Input className={cls.UnitInput} placeholder={"   — —"} type={"date"}/>
                     <p>До</p>
                     <Input className={cls.UnitInput} placeholder={"   — —"} type={"date"}/>
                 </div>
-                {/*<GroupRadio decrease={"dateSummViewDecrease"} increase={"dateSummViewIncrease"}/>*/}
-                {/*<div className={cls.CheckHeader}>*/}
-                {/*    <InputRadio/>*/}
-                {/*    <p>По возрастанию</p>*/}
-                {/*</div>*/}
-                {/*<div className={cls.CheckHeader}>*/}
-                {/*   <InputRadio/>*/}
-                {/*    <p>По убыванию</p>*/}
-                {/*</div>*/}
-            </div>
-            }
-
-            <div className={cls.CheckHeader}>
-                <p className={cls.HeaderFilters}>Категория</p>
-                <img onClick={handleCategoryNews} src={iconCategoryNews}/>
-            </div>
-            {categoryNews &&
-
-                <div>
-
+            </HideBlockFilter>
+            <HideBlockFilter nameBlock={"Категория"}>
                     {category.map(item => (
                         <div key={item} className={cls.CheckHeader}>
                             <InputCheckbox/>
                             <p >{item}</p>
                         </div>
                     ))}
-                </div>
-            }
-
-
-
+            </HideBlockFilter>
         </div>
     );
 });

@@ -2,10 +2,7 @@ import {memo, ReactNode, useState} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import {Input} from "../../shared/ui/Input/Input";
 import cls from "./Filter.module.scss"
-import chevronDown from "../../shared/assets/icons/ChevronDown.svg"
-import chevronUp from "../../shared/assets/icons/chevronUp.svg"
 import {InputCheckbox} from "../../shared/ui/InputCheckbox/InputCheckbox";
-import {InputRadio} from "../../shared/ui/InputRadio/InputRadio";
 import {GroupRadio} from "../../shared/ui/GroupRadio/GroupRadio";
 import {HideBlockFilter} from "../../shared/ui/HideBlockFilter/HideBlockFilter";
 
