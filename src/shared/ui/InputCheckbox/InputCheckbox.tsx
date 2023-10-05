@@ -1,6 +1,7 @@
 import {InputHTMLAttributes, memo, ReactNode} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import cls from "./InputCheckbox.module.scss"
+import check from "../../assets/icons/check.svg"
 
 interface InputCheckboxProps extends InputHTMLAttributes<HTMLInputElement>{
     className?: string
@@ -20,11 +21,11 @@ export const InputCheckbox = memo((props: InputCheckboxProps) => {
     };
 
     return (
-        <input type={"checkbox"}
-            className={classNames(cls.Checked, mods, [className])}
-            {...otherProps}
-        >
-            {children}
-        </input>
+        <label className={cls.CustomCheckbox}>
+            <input type={"checkbox"}
+                className={classNames("", mods, [className])}
+                {...otherProps}/>
+            <span className={cls.Checkmark}></span>
+        </label>
     );
 });

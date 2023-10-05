@@ -155,7 +155,7 @@ export const Filter = memo((props: FilterProps) => {
             {dateReceipt &&
                 <div>
                     <div className={cls.CheckHeader}>
-                        <InputRadio/>
+                        <InputRadio onChange={event =>{ console.log(event.target.checked)}}/>
                         <p>По возрастанию</p>
                     </div>
                     <div className={cls.CheckHeader}>
@@ -214,7 +214,7 @@ export const Filter = memo((props: FilterProps) => {
                 <div>
                     {arrayTypePet.map(type=>(
                    <div key={type} className={cls.CheckHeader}>
-                        <InputCheckbox/>
+                        <InputCheckbox onChange={event =>{ console.log(event.target.checked)}}/>
                         <p>{type}</p>
                     </div>
 

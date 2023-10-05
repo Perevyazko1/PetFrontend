@@ -6,6 +6,9 @@ import chevronDown from "../../shared/assets/icons/ChevronDown.svg"
 import chevronUp from "../../shared/assets/icons/chevronUp.svg"
 import {InputCheckbox} from "../../shared/ui/InputCheckbox/InputCheckbox";
 import {InputRadio} from "../../shared/ui/InputRadio/InputRadio";
+import {useQueryParams} from "../../shared/hooks/useQueryParams/useQueryParams";
+import {GroupRadio} from "../../shared/ui/GroupRadio/GroupRadio";
+
 
 interface FilterNewsProps {
     className?: string
@@ -27,6 +30,9 @@ export const FilterNews = memo((props: FilterNewsProps) => {
 
     const [categoryNews, SetCategoryNews] = useState(false)
     const [iconCategoryNews, SetIconCategoryNews] = useState(chevronDown)
+
+    const {setQueryParam, queryParameters, initialLoad} = useQueryParams();
+    const [valueInput, setValueInput] = useState<string>(queryParameters.name || '')
 
 
 
@@ -98,23 +104,31 @@ export const FilterNews = memo((props: FilterNewsProps) => {
             {...otherProps}
         >
             <p className={cls.HeaderFilters}>Искать в содержимом статьи:</p>
-            <Input className={cls.Input}/>
+            <Input onChange={event => {
+                setQueryParam("name", event.target.value)
+                setValueInput(event.target.value)
+            }} value={valueInput} className={cls.Input}
+            />
             <div className={cls.TypeFilter}>Сортировать по:</div>
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Дата</p>
                 <img onClick={handleDateReceipt} src={iconDateReceipt}/>
             </div>
             {dateReceipt &&
-                <div>
-                    <div className={cls.CheckHeader}>
-                        <InputRadio/>
-                        <p>По возрастанию</p>
-                    </div>
-                    <div className={cls.CheckHeader}>
-                       <InputRadio/>
-                        <p>По убыванию</p>
-                    </div>
-                </div>
+                // <div>
+                //     <div className={cls.CheckHeader}>
+                //         <InputRadio
+                //             onChange={event => {setQueryParam("dateReceiptIncrease", event.target.value)}}/>
+                //         <p>По возрастанию</p>
+                //     </div>
+                //     <div className={cls.CheckHeader}>
+                //        <InputRadio
+                //         checked={false}
+                //            onChange={event => {setQueryParam("dateReceiptDecrease", event.target.value)}}/>
+                //         <p>По убыванию</p>
+                //     </div>
+                // </div>
+                <GroupRadio decrease={"dateNewsDecrease"} increase={"dateNewsIncrease"}/>
             }
             <div className={cls.CheckHeader}>
                 <p className={cls.HeaderFilters}>Количество просмотров </p>

@@ -44,7 +44,7 @@ export const Home = memo((props: HomeProps) => {
                     </Button>
                 </div>
                 <div className={cls.ContainDog}>
-                    <img className={cls.Dog} src={firstDog}/>
+                        <img className={cls.Dog} src={firstDog}/>
                 </div>
 
             </div>

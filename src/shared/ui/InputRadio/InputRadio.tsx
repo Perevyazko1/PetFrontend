@@ -20,11 +20,11 @@ export const InputRadio = memo((props: InputRadioProps) => {
     };
 
     return (
-        <input type={"radio"}
-            className={classNames(cls.InputRadio, mods, [className])}
-            {...otherProps}
-        >
-            {children}
-        </input>
+        <label className={cls.CustomRadio}>
+            <input type={"radio"}
+                className={classNames("", mods, [className])}
+                {...otherProps} />
+            <span className={cls.Checkmark}></span>
+        </label>
     );
 });
