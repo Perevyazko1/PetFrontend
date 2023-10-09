@@ -1,6 +1,7 @@
-import {memo, ReactNode, useState} from 'react';
+import React, {memo, ReactNode, useState} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import {Input} from "../../shared/ui/Input/Input";
+import {Button} from "../../shared/ui/Button/Button";
 import cls from "./FilterNews.module.scss"
 import {InputCheckbox} from "../../shared/ui/InputCheckbox/InputCheckbox";
 import {useQueryParams} from "../../shared/hooks/useQueryParams/useQueryParams";
@@ -20,6 +21,25 @@ export const FilterNews = memo((props: FilterNewsProps) => {
 
     const {setQueryParam, queryParameters, initialLoad} = useQueryParams();
     const [valueInput, setValueInput] = useState<string>(queryParameters.name || '')
+    const [stateFilter, setStateFilter] = useState<boolean|undefined>(false)
+    const handleChangeFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(event.target.checked)
+      if(event.target.checked){
+          setStateFilter(true)
+      }else {
+          setStateFilter(false)
+      }
+    }
+    const handleClearFilter = () => {
+        Object.keys(queryParameters).map(item=>(
+            setQueryParam(item,"")
+        ))
+
+      setStateFilter(false)
+    }
+    const handleStateFilterNull = () => {
+      setStateFilter(undefined)
+    }
 
 
     const {
@@ -40,8 +60,8 @@ export const FilterNews = memo((props: FilterNewsProps) => {
             <p className={cls.HeaderFilters}>Искать в содержимом статьи:</p>
             <Input onChange={event => {
                 setQueryParam("name", event.target.value)
-                setValueInput(event.target.value)
-            }} value={valueInput} className={cls.Input}
+                // setValueInput(event.target.value)
+            }} value={queryParameters.name} className={cls.Input}
             />
             <div className={cls.TypeFilter}>Сортировать по:</div>
             <HideBlockFilter nameBlock={"Дата"}>
@@ -63,11 +83,12 @@ export const FilterNews = memo((props: FilterNewsProps) => {
             <HideBlockFilter nameBlock={"Категория"}>
                     {category.map(item => (
                         <div key={item} className={cls.CheckHeader}>
-                            <InputCheckbox nameCheck={item}/>
-                            <p >{item}</p>
+                            <InputCheckbox onClick={handleStateFilterNull} checked={!!queryParameters.item} nameCheck={item}/>
+                            <p>{item}</p>
                         </div>
                     ))}
             </HideBlockFilter>
+            <Button onClick={handleClearFilter}>Очистить фильтры</Button>
         </div>
     );
 });
