@@ -15,7 +15,7 @@ export const routeNames: { [key in AppRoutes]: string } = {
 }
 
 
-export const getRouteMain = () => '/';
+export const getRouteMain = () => '/PetFrontend';
 export const getRouteNews = () => '/news';
 export const getRoutePet = () => '/pet';
 // export const getRouteProfile = (id: string) => `/profile/${id}`;
