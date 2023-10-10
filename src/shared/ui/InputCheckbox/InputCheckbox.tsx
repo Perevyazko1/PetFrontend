@@ -24,8 +24,8 @@ export const InputCheckbox = memo((props: InputCheckboxProps) => {
         ...otherProps
     } = props
       const handleCheckChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(!!queryParameters.nameCheck)
-        if (event.target.value){
+        console.log(event.target.value)
+        if (!queryParameters[nameCheck] && event.target.value){
             setIsChecked(true);
             setQueryParam(nameCheck, event.target.value);
         }else {

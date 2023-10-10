@@ -1,10 +1,12 @@
-import {memo, ReactNode, useState} from 'react';
+import React, {memo, ReactNode, useState} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import {Input} from "../../shared/ui/Input/Input";
 import cls from "./Filter.module.scss"
 import {InputCheckbox} from "../../shared/ui/InputCheckbox/InputCheckbox";
 import {GroupRadio} from "../../shared/ui/GroupRadio/GroupRadio";
 import {HideBlockFilter} from "../../shared/ui/HideBlockFilter/HideBlockFilter";
+import {Button} from "../../shared/ui/Button/Button";
+import {useQueryParams} from "../../shared/hooks/useQueryParams/useQueryParams";
 
 interface FilterProps {
     className?: string
@@ -18,6 +20,19 @@ export const Filter = memo((props: FilterProps) => {
     const [arrayBreed ,SetArrayBreed] = useState(["Терьер","Мэйнкун"])
     const [arrayColor ,SetArrayColor] = useState(["Белый","Палевый","Рыжий","Светлый","Тигровый","Темный","Все"])
     const [arraySize ,SetArraySize] = useState(["Крупный","Маленький","Небольшой","Средний","Все"])
+
+    const {setQueryParam, queryParameters, initialLoad} = useQueryParams();
+    const [stateFilter, setStateFilter] = useState<boolean|undefined>(false)
+
+
+        const handleClearFilter = () => {
+        Object.keys(queryParameters).map(item=>(
+            setQueryParam(item,"")
+        ))
+
+      setStateFilter(false)
+    }
+
 
     const {
         className,
@@ -56,7 +71,7 @@ export const Filter = memo((props: FilterProps) => {
             <HideBlockFilter nameBlock={"Вид животного"}>
                     {arrayTypePet.map(type=>(
                    <div key={type} className={cls.CheckHeader}>
-                        <InputCheckbox nameCheck={type}/>
+                        <InputCheckbox checked={!!queryParameters[type]} nameCheck={type}/>
                         <p>{type}</p>
                     </div>
                     ))}
@@ -64,7 +79,7 @@ export const Filter = memo((props: FilterProps) => {
             <HideBlockFilter nameBlock={"Порода"}>
                     {arrayBreed.map(breedPet=>(
                    <div key={breedPet} className={cls.CheckHeader}>
-                        <InputCheckbox nameCheck={breedPet}/>
+                        <InputCheckbox checked={!!queryParameters[breedPet]} nameCheck={breedPet}/>
                         <p>{breedPet}</p>
                     </div>
 
@@ -73,7 +88,7 @@ export const Filter = memo((props: FilterProps) => {
             <HideBlockFilter nameBlock={"Окрас"}>
                     {arrayColor.map(colorAnimal =>(
                         <div key={colorAnimal} className={cls.CheckHeader}>
-                            <InputCheckbox nameCheck={colorAnimal}/>
+                            <InputCheckbox checked={!!queryParameters[colorAnimal]} nameCheck={colorAnimal}/>
                             <p>{colorAnimal}</p>
                         </div>
                     ))}
@@ -81,11 +96,13 @@ export const Filter = memo((props: FilterProps) => {
             <HideBlockFilter nameBlock={"Размер"}>
                     {arraySize.map(sizeAnimal=>(
                         <div key={sizeAnimal} className={cls.CheckHeader}>
-                            <InputCheckbox nameCheck={sizeAnimal}/>
+                            <InputCheckbox checked={!!queryParameters[sizeAnimal]} nameCheck={sizeAnimal}/>
                             <p>{sizeAnimal}</p>
                         </div>
                     ))}
             </HideBlockFilter>
+            <Button onClick={handleClearFilter}>Очистить фильтры</Button>
+
         </div>
     );
 });

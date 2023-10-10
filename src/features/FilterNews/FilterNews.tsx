@@ -81,12 +81,17 @@ export const FilterNews = memo((props: FilterNewsProps) => {
                 </div>
             </HideBlockFilter>
             <HideBlockFilter nameBlock={"Категория"}>
-                    {category.map(item => (
-                        <div key={item} className={cls.CheckHeader}>
-                            <InputCheckbox onClick={handleStateFilterNull} checked={!!queryParameters.item} nameCheck={item}/>
+                {category.map((item, index) => {
+        // console.log(` айтем ${!!queryParameters[item]}`);
+        return           <div key={item} className={cls.CheckHeader}>
+                            <InputCheckbox  checked={!!queryParameters[item]} nameCheck={item}/>
                             <p>{item}</p>
                         </div>
-                    ))}
+;
+      })}
+                    {/*{category.map((item) =>  {*/}
+                    {/*    return*/}
+                    {/*})}*/}
             </HideBlockFilter>
             <Button onClick={handleClearFilter}>Очистить фильтры</Button>
         </div>

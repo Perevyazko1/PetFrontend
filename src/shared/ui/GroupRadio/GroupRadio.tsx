@@ -1,4 +1,4 @@
-import {memo, ReactNode, useState} from 'react';
+import {memo, ReactNode, useEffect, useState} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import cls from "./GroupRadio.module.scss"
 import {InputRadio} from "../InputRadio/InputRadio";
@@ -40,8 +40,14 @@ export const GroupRadio = memo((props: GroupRadioProps) => {
         setQueryParam(decrease, event.target.value);
         setQueryParam(increase, "");
       };
+      console.log(queryParameters[increase])
+      console.log(queryParameters[decrease])
 
-
+    useEffect(()=>{
+        if(!queryParameters[decrease]){
+            setQueryParam(increase, "on");
+        }
+    },[])
 
 
     const mods: Mods = {
@@ -55,14 +61,14 @@ export const GroupRadio = memo((props: GroupRadioProps) => {
         >
             <div className={cls.CheckHeader}>
                 <InputRadio
-                    checked={isIncreasing}
+                    checked={!!queryParameters[increase]}
                     onChange={handleIncreaseChange}
                 />
                 <p>По возрастанию</p>
             </div>
             <div className={cls.CheckHeader}>
                <InputRadio
-                checked={isDecreasing}
+                checked={!!queryParameters[decrease]}
                    onChange={handleDecreaseChange}
                />
                 <p>По убыванию</p>
