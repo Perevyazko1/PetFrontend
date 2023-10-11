@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/PetFrontend/static/css/main.75d0d470.css",
-    "main.js": "/PetFrontend/static/js/main.0c2c9450.js",
-    "static/css/85.e5ef3063.chunk.css": "/PetFrontend/static/css/85.e5ef3063.chunk.css",
+    "main.css": "/PetFrontend/static/css/main.6fceac9f.css",
+    "main.js": "/PetFrontend/static/js/main.3f706be2.js",
+    "static/css/85.2fa779e5.chunk.css": "/PetFrontend/static/css/85.2fa779e5.chunk.css",
     "static/js/85.d78ae928.chunk.js": "/PetFrontend/static/js/85.d78ae928.chunk.js",
-    "static/css/564.cb0a4bdb.chunk.css": "/PetFrontend/static/css/564.cb0a4bdb.chunk.css",
+    "static/css/564.fc1e080a.chunk.css": "/PetFrontend/static/css/564.fc1e080a.chunk.css",
     "static/js/564.7d98465a.chunk.js": "/PetFrontend/static/js/564.7d98465a.chunk.js",
     "static/css/98.354a60f5.chunk.css": "/PetFrontend/static/css/98.354a60f5.chunk.css",
     "static/js/98.174b50e4.chunk.js": "/PetFrontend/static/js/98.174b50e4.chunk.js",
@@ -15,13 +15,17 @@
     "static/media/DogAndCat.png": "/PetFrontend/static/media/DogAndCat.cac1684014b6c691f047.png",
     "static/media/CeraPro-Regular.eot": "/PetFrontend/static/media/CeraPro-Regular.964f3bbc1023238792f1.eot",
     "static/media/CeraPro-Regular.ttf": "/PetFrontend/static/media/CeraPro-Regular.1b7f7963cbafd9cc1e33.ttf",
+    "static/media/CeraPro-Bold.eot": "/PetFrontend/static/media/CeraPro-Bold.63369bdaaef76965c16a.eot",
+    "static/media/CeraPro-Bold.ttf": "/PetFrontend/static/media/CeraPro-Bold.9516746e439619b13031.ttf",
     "static/media/CeraPro-Regular.woff": "/PetFrontend/static/media/CeraPro-Regular.c7da3a40565f40d48ea7.woff",
+    "static/media/CeraPro-Bold.woff": "/PetFrontend/static/media/CeraPro-Bold.b7759d3a48655f563f30.woff",
     "static/media/Airfool.eot": "/PetFrontend/static/media/Airfool.389aa28807590b93bec4.eot",
     "static/media/Airfool.pfb": "/PetFrontend/static/media/Airfool.65e761974d171795985d.pfb",
     "static/media/Airfool.woff2": "/PetFrontend/static/media/Airfool.8f19ed2b9c138dd1ca3e.woff2",
     "static/media/Airfool.otf": "/PetFrontend/static/media/Airfool.0deef97e23e5075473ad.otf",
     "static/media/Airfool.ttf": "/PetFrontend/static/media/Airfool.0deef97e23e5075473ad.ttf",
     "static/media/CeraPro-Regular.woff2": "/PetFrontend/static/media/CeraPro-Regular.98174a78a68fda76bc80.woff2",
+    "static/media/CeraPro-Bold.woff2": "/PetFrontend/static/media/CeraPro-Bold.b1c16c1f6b8d0ca8bef1.woff2",
     "static/media/Airfool.woff": "/PetFrontend/static/media/Airfool.2c8fdd3e9f4d7d4c970d.woff",
     "static/media/Visa.png": "/PetFrontend/static/media/Visa.fff5425456cbc91a1e7c.png",
     "static/media/calendar.svg": "/PetFrontend/static/media/calendar.7f9807434e336921f5a0de46e3a868b1.svg",
@@ -38,18 +42,18 @@
     "static/media/ChevronDown.svg": "/PetFrontend/static/media/ChevronDown.0a4f425084b93cee412db4f6a13cf295.svg",
     "static/media/location.svg": "/PetFrontend/static/media/location.621c81f160b35830aa724d8ac9b3773b.svg",
     "static/media/circle.svg": "/PetFrontend/static/media/circle.a4d9fcad8d95e5c6ff8c.svg",
-    "main.75d0d470.css.map": "/PetFrontend/static/css/main.75d0d470.css.map",
-    "main.0c2c9450.js.map": "/PetFrontend/static/js/main.0c2c9450.js.map",
-    "85.e5ef3063.chunk.css.map": "/PetFrontend/static/css/85.e5ef3063.chunk.css.map",
+    "main.6fceac9f.css.map": "/PetFrontend/static/css/main.6fceac9f.css.map",
+    "main.3f706be2.js.map": "/PetFrontend/static/js/main.3f706be2.js.map",
+    "85.2fa779e5.chunk.css.map": "/PetFrontend/static/css/85.2fa779e5.chunk.css.map",
     "85.d78ae928.chunk.js.map": "/PetFrontend/static/js/85.d78ae928.chunk.js.map",
-    "564.cb0a4bdb.chunk.css.map": "/PetFrontend/static/css/564.cb0a4bdb.chunk.css.map",
+    "564.fc1e080a.chunk.css.map": "/PetFrontend/static/css/564.fc1e080a.chunk.css.map",
     "564.7d98465a.chunk.js.map": "/PetFrontend/static/js/564.7d98465a.chunk.js.map",
     "98.354a60f5.chunk.css.map": "/PetFrontend/static/css/98.354a60f5.chunk.css.map",
     "98.174b50e4.chunk.js.map": "/PetFrontend/static/js/98.174b50e4.chunk.js.map",
     "164.adbc86f2.chunk.js.map": "/PetFrontend/static/js/164.adbc86f2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.75d0d470.css",
-    "static/js/main.0c2c9450.js"
+    "static/css/main.6fceac9f.css",
+    "static/js/main.3f706be2.js"
   ]
 }
