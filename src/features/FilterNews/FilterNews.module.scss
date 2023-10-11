@@ -42,3 +42,8 @@ p{
 .BlockInput{
     display: flex;
 }
+@media screen and (max-width: 1420px) {
+    .FilterNews{
+        display: none;
+    }
+}

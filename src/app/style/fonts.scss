@@ -20,8 +20,13 @@
        url('fonts/CeraPro-Regular.woff') format('woff'),
        url('fonts/CeraPro-Regular.woff2') format('woff2');
 
-    //font-weight: 500;
-    //font-style: normal;
-    //font-size: 20px;
-    //line-height: 26.81px;
+}
+
+@font-face {
+  font-family: 'CeraPro-Bold';
+  src: url('fonts/CeraPro-Bold.eot') format('eot');
+  src: local('@'),url('./fonts/CeraPro-Bold.ttf') format('ttf'),
+       url('fonts/CeraPro-Bold.woff') format('woff'),
+       url('fonts/CeraPro-Bold.woff2') format('woff2');
+
 }

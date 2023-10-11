@@ -83,10 +83,19 @@ export const NavBar = memo((props: NavBarProps) => {
                     {linkComponent}
                     <hr className={cls.SecondHr}/>
                     <div className={cls.BottomContact}>
-                        <p><img src={call}/> 8-931-351-88-84</p>
-                        <p><img src={local}/> Санкт-Петербург, ул. Ленина, 49</p>
-                        <p>Пн - Вс 10:00 - 19:00 </p>
-                        <p className={cls.EveryDay}>Ждем Вас каждый день!</p>
+                        <div className={cls.ContactInfo}>
+                            <img className={cls.IconNumber} src={call}/>
+                            8-931-351-88-84
+                        </div>
+                        <div className={cls.ContactInfo}>
+                            <img className={cls.IconAddress} src={local}/>
+                            Санкт-Петербург, ул. Ленина, 49
+                        </div>
+
+                        <div className={cls.ContactInfo}>Пн - Вс
+                            <span className={cls.GreenTimeContact}>10:00 - 19:00</span>
+                        </div>
+                        <div className={cls.EveryDay}>Ждем Вас каждый день!</div>
                     </div>
                 </div>
             </nav>

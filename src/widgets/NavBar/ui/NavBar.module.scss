@@ -1,10 +1,8 @@
 .Navbar {
     background: var(--app-accent);
     border-radius: 0.44rem;
-    padding: 110px 20px 30px;
-    width: 250px;
-    min-width: 250px ;
-    max-width: 250px ;
+    padding: 50px 20px 30px;
+    width: 220px;
     margin-top: 20px;
 }
 .Hidden{
@@ -47,7 +45,7 @@
     transform: rotate(2deg);
 }
 .LogoText {
-    margin-bottom: 90px;
+    margin-bottom: 70px;
     font: var(--font-small-logo);
     display: flex;
     position: relative;
@@ -68,34 +66,52 @@
 }
 .ContainerButton{
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     flex-direction: column;
+    width: 130px;
+    margin: 0 auto;
 }
 .FirstHr{
     margin-bottom: 40px;
 }
 .SecondHr{
-    margin: 40px 0;
+    margin: 40px 0 20px 0;
 }
 p {
     font-family: CeraPro-Regular, serif;
     font-size: 1.25rem;
     margin: 10px;
 }
-.EveryDay{
-    font: var(--font-small-main);
-    font-weight: 900;
+.ContactInfo{
+    font-family: var(--font-family-main);
+    font-size: 1.25rem;
+    margin: 5px;
+
+}
+.IconNumber{
+    margin: 0 5px -3px 0px;
+}
+.IconAddress{
+    margin: -16px 0 0 10px;
+}
+.GreenTimeContact{
     color: var(--app-primary-100);
+    margin-left: 5px;
+}
+
+.EveryDay{
+    font-family: var(--font-family-main-bold);
+    font-size: 1.25rem;
+    color: var(--app-primary-100);
+    margin: 10px 0 10px 0;
 }
 .BottomContact{
     font: var(--font-small-main);
     text-align: center;
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
 }
 .PawButton{
     position: absolute;

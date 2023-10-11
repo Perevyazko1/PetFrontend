@@ -9,7 +9,7 @@ export enum AppRoutes {
 export const routeNames: { [key in AppRoutes]: string } = {
     [AppRoutes.MAIN]: "Главная",
     [AppRoutes.NEWS]: "Новости",
-    [AppRoutes.PET]: "Страница животного",
+    [AppRoutes.PET]: "Питомцы",
     [AppRoutes.USER]: "Личный кабинет",
     [AppRoutes.NOT_FOUND]: "Страница не найдена",
 }

@@ -7,7 +7,7 @@
     --posX:0;
     --posY:0;
 
-
+    --font-family-main-bold: "CeraPro-Bold", serif;
     --font-family-main: "CeraPro-Regular", serif;
     // font  s
     --font-size-small-main: 15px;
@@ -44,6 +44,9 @@
     --font-line-height-button: 140%;
     --font-weight-button: 500;
     --font-button: var(--font-weight-button) var(--font-size-button)  / var(--font-line-height-button) var(--font-family-main)  ;
+
+        // active button
+    --font-active-button: var(--font-weight-button) var(--font-size-button)  / var(--font-line-height-button) var(--font-family-main-bold)  ;
 
 
 
