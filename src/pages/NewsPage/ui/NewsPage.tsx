@@ -8,6 +8,7 @@ import cls from "./NewsPage.module.scss"
 import {Button} from "../../../shared/ui/Button/Button";
 import eye from "../../../shared/assets/icons/eye.svg";
 import calendar from "../../../shared/assets/icons/calendar.svg"
+import {useWindowWidth} from "../../../shared/lib/hook/useWindowWidth/useWindowWidth";
 
 interface NewsPageProps {
     className?: string
@@ -23,13 +24,14 @@ const NewsPage = memo((props: NewsPageProps) => {
     } = props
 
         const dispatch = useAppDispatch();
+        const windowWith = useWindowWidth()
 
         useEffect(() => {
         setTimeout(() => {
             dispatch(newsPageActions.setUsers([
                 {
                     id: 1,
-                    header: "Новость",
+                    header: "",
                     text: "",
                     category: ""
                 }
@@ -72,8 +74,10 @@ const NewsPage = memo((props: NewsPageProps) => {
                         </div>
                     </div>
             </div>
+                    {windowWith > 1050 &&
+                        <FilterNews/>
+                    }
 
-                    <FilterNews/>
                     {
                         newsList?.map((news)=>(
                             <div key={news.id}>

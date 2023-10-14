@@ -12,6 +12,8 @@ import pawButton from "../../../shared/assets/icons/PawButton.svg"
 import menu from "../../../shared/assets/icons/Menu.svg"
 import  filter from  "../../../shared/assets/icons/Filter.svg"
 import cross from "../../../shared/assets/icons/cross.svg"
+import { FilterNews } from 'features/FilterNews/FilterNews';
+import {useWindowWidth} from "../../../shared/lib/hook/useWindowWidth/useWindowWidth";
 
 
 interface NavBarProps {
@@ -30,6 +32,13 @@ export const NavBar = memo((props: NavBarProps) => {
     } = props
 
     const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const windowWith = useWindowWidth()
+
+    const handleToggleFilter = () => {
+    setIsFilterOpen(!isFilterOpen);
+  };
+
     const handleToggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
@@ -42,11 +51,13 @@ export const NavBar = memo((props: NavBarProps) => {
   }, [location]);
 
     const mods: Mods = {
-        [cls.Open]: isNavbarOpen,
-        [cls.Hidden]: !isNavbarOpen,
+        // [cls.Open]: isNavbarOpen && !isFilterOpen,
+        // [cls.Hidden]: !isNavbarOpen && isFilterOpen,
+        // [cls.FilterOpen]: isFilterOpen && !isNavbarOpen,
+        // [cls.FilterHidden]: !isFilterOpen && isNavbarOpen
     };
 
-    const combinedClassName = classNames("", mods, [className]);
+    // const combinedClassName = classNames("", mods, [className]);
     const linkComponent =
         <div className={cls.ContainerButton}>
             {Object.entries(routeConfig)
@@ -72,32 +83,57 @@ export const NavBar = memo((props: NavBarProps) => {
 
         <div className={cls.NavbarWrapper}>
             <nav className={cls.Navbar}>
-                <div className={cls.LogoText}>
-                    {/*<img src={filter} />*/}
-                    <img src={menu} onClick={handleToggleNavbar} className={cls.Menu}/>
-                    Лапки
-                    <img className={cls.PawLogo} src={paw}/>
-                </div>
-                <div className={combinedClassName}>
-                    <hr className={cls.FirstHr}/>
-                    {linkComponent}
-                    <hr className={cls.SecondHr}/>
-                    <div className={cls.BottomContact}>
-                        <div className={cls.ContactInfo}>
-                            <img className={cls.IconNumber} src={call}/>
-                            8-931-351-88-84
+                {!isNavbarOpen && !isFilterOpen &&
+                    <>
+                        <div className={cls.LogoText}>
+                            {windowWith <= 1050 &&
+                                <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
+                            }
+                            <img src={menu} onClick={handleToggleNavbar} className={cls.Menu}/>
+                            Лапки
+                            <img className={cls.PawLogo} src={paw}/>
                         </div>
-                        <div className={cls.ContactInfo}>
-                            <img className={cls.IconAddress} src={local}/>
-                            Санкт-Петербург, ул. Ленина, 49
-                        </div>
+                    </>
+                }
+                {isNavbarOpen &&
+                    <img src={cross} onClick={handleHiddenNavBar}/>
+                }
+                <div className={isNavbarOpen? cls.Open: cls.Hidden}>
+                    {!isFilterOpen &&
+                        <>
+                            <hr className={cls.FirstHr}/>
+                            {linkComponent}
+                            <hr className={cls.SecondHr}/>
+                            <div className={cls.BottomContact}>
+                                <div className={cls.ContactInfo}>
+                                    <img className={cls.IconNumber} src={call}/>
+                                    8-931-351-88-84
+                                </div>
+                                <div className={cls.ContactInfo}>
+                                    <img className={cls.IconAddress} src={local}/>
+                                    Санкт-Петербург, ул. Ленина, 49
+                                </div>
 
-                        <div className={cls.ContactInfo}>Пн - Вс
-                            <span className={cls.GreenTimeContact}>10:00 - 19:00</span>
-                        </div>
-                        <div className={cls.EveryDay}>Ждем Вас каждый день!</div>
-                    </div>
+                                <div className={cls.ContactInfo}>Пн - Вс
+                                    <span className={cls.GreenTimeContact}>10:00 - 19:00</span>
+                                </div>
+                                <div className={cls.EveryDay}>Ждем Вас каждый день!</div>
+                            </div>
+
+                        </>
+                    }
                 </div>
+                {isFilterOpen &&
+                    <img src={cross} onClick={handleToggleFilter}/>
+                }
+
+                {isFilterOpen &&
+                    <div className={isFilterOpen? cls.FilterOpen:cls.FilterHidden}>
+                        <FilterNews/>
+                    </div>
+
+                    }
+
             </nav>
         </div>
     );

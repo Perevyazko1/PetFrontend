@@ -10,6 +10,12 @@
 .Open{
     height: 100vh;
 }
+.FilterHidden{
+}
+.FilterOpen{
+    height: 100vh;
+}
+
 .Menu{
     display: none;
 }
@@ -141,6 +147,10 @@ p {
 .Hidden{
     display: none;
 }
+.FilterHidden{
+    display: none;
+}
+
 
 .Menu{
     display: initial;
@@ -152,9 +162,9 @@ p {
 .Filter{
     display: initial;
     position: absolute;
-    top: 25px;
     left: 10px;
-    width: 24px;
+    width: 35px;
+    cursor: pointer;
 }
 .NavbarWrapper{
     position: fixed;

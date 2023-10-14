@@ -1,5 +1,4 @@
 .FilterNews{
-    position: absolute;
     right: 20px;
     background: var(--app-accent);
     border-radius: 0.44rem;
@@ -44,6 +43,14 @@ p{
 }
 @media screen and (max-width: 1420px) {
     .FilterNews{
-        display: none;
-    }
+    right: 20px;
+    background: var(--app-accent);
+    border-radius: 0.44rem;
+    padding: 80px 20px 30px;
+    width: 250px;
+    min-width: 250px ;
+    max-width: 250px ;
+    margin: 20px 0 20px 10px;
+}
+
 }
