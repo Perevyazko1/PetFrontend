@@ -6,6 +6,7 @@ import cls from "./PetPage.module.scss"
 import {Filter} from "../../../features/Filter/Filter";
 import {Button} from "../../../shared/ui/Button/Button";
 import eye from "../../../shared/assets/icons/eye.svg"
+import {useWindowWidth} from "../../../shared/lib/hook/useWindowWidth/useWindowWidth";
 
 interface PetPageProps {
     className?: string
@@ -21,6 +22,7 @@ const PetPage = memo((props: PetPageProps) => {
     } = props
 
     const dispatch = useAppDispatch();
+    const windowWith = useWindowWidth()
 
     useEffect(() => {
         setTimeout(() => {
@@ -64,7 +66,9 @@ const PetPage = memo((props: PetPageProps) => {
 
                 </div>
             </div>
-            <Filter/>
+            {windowWith > 1050 &&
+                <Filter/>
+            }
             {/*{isLoading*/}
             {/*    ?*/}
             {/*    <>Skeleton</>*/}

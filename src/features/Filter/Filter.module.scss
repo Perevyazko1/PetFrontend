@@ -1,6 +1,4 @@
 .Filter{
-    position: absolute;
-    right: 20px;
     background: var(--app-accent);
     border-radius: 0.44rem;
     padding: 80px 20px 30px;
@@ -41,4 +39,15 @@ p{
 }
 .BlockInput{
     display: flex;
+}
+@media screen and (max-width: 1420px) {
+    .Filter{
+    background: var(--app-accent);
+    border-radius: 0.44rem;
+    padding: 80px 20px 30px;
+    width: auto;
+    min-width: 250px;
+    margin: 20px 20px 20px auto;
+    }
+
 }
