@@ -8,12 +8,24 @@
 .Hidden{
 }
 .Open{
-    height: 100vh;
+    height: 79vh;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--app-accent);
 }
 .FilterHidden{
 }
 .FilterOpen{
     height: 100vh;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background: var(--app-accent);
+}
+.Cross{
+    position: absolute;
+    right: 40px;
 }
 
 .Menu{
@@ -27,7 +39,6 @@
     overflow-y: hidden;
     max-height: calc(100% - 20px);
     border-radius: 0.84rem;
-    //height: 100vh;
 }
 .NavbarWrapper:hover{
     overflow-y: auto;
@@ -60,6 +71,11 @@
     align-items: center;
     z-index: 10;
 }
+.PawLogoOpenNavBar{
+}
+.LogoTextOpenNavBar {
+}
+
 .ContactText{
     font-family: CeraPro-Regular, serif;
 }
@@ -206,6 +222,21 @@ p {
     z-index: 10;
     top: 30px;
 }
+.PawLogoOpenNavBar{
+    position: absolute;
+    top: 60px;
+    width: 125px;
+    transform: rotate(2deg);
+}
+.LogoTextOpenNavBar {
+    margin: 60px auto 0;
+    font: var(--font-small-logo);
+    font-size: 40px;
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;}
+
 .ContactText{
     font-family: CeraPro-Regular, serif;
 }
@@ -220,24 +251,19 @@ p {
     display: flex;
     gap: 2rem;
     flex-direction: column;
-    width: 250px;
-    margin: 40px auto;
+    width: 130px;
+    margin: 25px auto;
 }
 .FirstHr{
-    margin-bottom: 40px;
+    margin: 40px 15% 0 15%;
 }
 .SecondHr{
-    margin: 25px 0;
+    margin: 25px  15% 0 15% ;
 }
 p {
     font-family: CeraPro-Regular, serif;
     font-size: 1.25rem;
     margin: 10px;
-}
-.EveryDay{
-    font: var(--font-small-main);
-    font-weight: 900;
-    color: var(--app-primary-100);
 }
 .BottomContact{
     font: var(--font-small-main);

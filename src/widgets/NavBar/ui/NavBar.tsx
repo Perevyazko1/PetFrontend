@@ -82,9 +82,8 @@ export const NavBar = memo((props: NavBarProps) => {
     return (
 
         <div className={cls.NavbarWrapper}>
-            <nav className={cls.Navbar}>
+            <nav className={isNavbarOpen? cls.Open: cls.Navbar}>
                 {!isNavbarOpen && !isFilterOpen &&
-                    <>
                         <div className={cls.LogoText}>
                             {windowWith <= 1050 &&
                                 <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
@@ -93,14 +92,16 @@ export const NavBar = memo((props: NavBarProps) => {
                             Лапки
                             <img className={cls.PawLogo} src={paw}/>
                         </div>
-                    </>
                 }
                 {isNavbarOpen &&
-                    <img src={cross} onClick={handleHiddenNavBar}/>
+                    <img src={cross} className={cls.Cross} onClick={handleHiddenNavBar}/>
                 }
-                <div className={isNavbarOpen? cls.Open: cls.Hidden}>
-                    {!isFilterOpen &&
+                    {(isNavbarOpen||windowWith >= 1420) &&
                         <>
+                            <div className={cls.LogoTextOpenNavBar}>
+                                Лапки
+                                <img className={cls.PawLogoOpenNavBar} src={paw}/>
+                            </div>
                             <hr className={cls.FirstHr}/>
                             {linkComponent}
                             <hr className={cls.SecondHr}/>
@@ -122,9 +123,8 @@ export const NavBar = memo((props: NavBarProps) => {
 
                         </>
                     }
-                </div>
                 {isFilterOpen &&
-                    <img src={cross} onClick={handleToggleFilter}/>
+                    <img src={cross} className={cls.Cross} onClick={handleToggleFilter}/>
                 }
 
                 {isFilterOpen &&
