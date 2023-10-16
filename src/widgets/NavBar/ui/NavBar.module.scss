@@ -23,6 +23,15 @@
     border-radius: 5px;
     background: var(--app-accent);
 }
+.FilterOpenNavbar{
+    position: sticky !important;
+    margin: 20px auto !important;
+
+}
+.FilterNewsOpenNavbar{
+    margin: 20px auto !important;
+}
+
 .Cross{
     position: absolute;
     right: 40px;

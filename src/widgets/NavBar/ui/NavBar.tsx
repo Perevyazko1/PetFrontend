@@ -85,9 +85,12 @@ export const NavBar = memo((props: NavBarProps) => {
             <nav className={(isNavbarOpen||isFilterOpen)? cls.Open: cls.Navbar}>
                 {!isNavbarOpen && !isFilterOpen &&
                         <div className={cls.LogoText}>
-                            {windowWith <= 1050   &&
-                                <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
-                            }
+                            {getRouteMain()!==location.pathname &&
+                                <>
+                                    {windowWith <= 1050   &&
+                                        <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
+                                    }
+                                </>}
                             <img src={menu} onClick={handleToggleNavbar} className={cls.Menu}/>
                             Лапки
                             <img className={cls.PawLogo} src={paw}/>
@@ -98,10 +101,12 @@ export const NavBar = memo((props: NavBarProps) => {
                 }
                     {(isNavbarOpen||windowWith >= 1420) &&
                         <>
-                            <div className={cls.LogoTextOpenNavBar}>
-                                Лапки
-                                <img className={cls.PawLogoOpenNavBar} src={paw}/>
-                            </div>
+                            {isNavbarOpen &&
+                                <div className={cls.LogoTextOpenNavBar}>
+                                    Лапки
+                                    <img className={cls.PawLogoOpenNavBar} src={paw}/>
+                                </div>
+                            }
                             <hr className={cls.FirstHr}/>
                             {linkComponent}
                             <hr className={cls.SecondHr}/>
@@ -130,10 +135,10 @@ export const NavBar = memo((props: NavBarProps) => {
                 {isFilterOpen &&
                     <>
                         {getRouteNews()===location.pathname &&
-                            <FilterNews/>
+                            <FilterNews className={cls.FilterNewsOpenNavbar}/>
                         }
                         {getRoutePet()===location.pathname &&
-                            <Filter/>
+                            <Filter className={cls.FilterOpenNavbar}/>
                         }
                     </>
 
