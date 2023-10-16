@@ -8,7 +8,7 @@
 .Hidden{
 }
 .Open{
-    height: 79vh;
+    height: 100vh;
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -192,6 +192,7 @@ p {
     cursor: pointer;
 }
 .NavbarWrapper{
+    background: var(--app-background);
     position: fixed;
     overflow-y: hidden;
     border-radius: 0.84rem;
