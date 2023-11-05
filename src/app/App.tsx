@@ -17,7 +17,7 @@ function App() {
 
     const contentBlock = (
         <Routes>
-            <Route path="/PetFrontend" element={<MainPage/>}/>
+            <Route path="/" element={<MainPage/>}/>
             <Route path="/news" element={<NewsPage/>}/>
             <Route path="/pet" element={<PetPage/>}/>
             <Route path="/user" element={<UserPage/>}/>
