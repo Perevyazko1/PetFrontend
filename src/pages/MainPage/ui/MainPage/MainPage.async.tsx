@@ -1,5 +1,5 @@
 import {FC, lazy,Suspense} from "react";
-import AnimationLoader from "shared/ui/AnimationLoader/AnimationLoader";
+import {AnimationLoader} from "shared/ui/AnimationLoader/AnimationLoader";
 
 // TODO удалить задержку загрузки в прод
 // export const MainPageAsync = lazy<FC>(() => import('./MainPage'));

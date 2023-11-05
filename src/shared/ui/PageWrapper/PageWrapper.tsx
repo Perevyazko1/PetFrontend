@@ -1,4 +1,4 @@
-import {memo, ReactNode} from 'react';
+import React, {memo, ReactNode} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import cls from "./PageWrapper.module.scss"
 
@@ -24,6 +24,7 @@ export const PageWrapper = memo((props: PageWrapperProps) => {
             className={classNames(cls.PageWrapper, mods, [className])}
             {...otherProps}
         >
+            {/* eslint-disable-next-line react/jsx-no-undef */}
             {children}
         </div>
     );
