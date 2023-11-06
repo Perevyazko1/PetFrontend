@@ -5,4 +5,9 @@ export type pet = {
     age?: number;
     about?: string;
     status?: string;
+    header: string;
+    headerPhoto: string;
+    views: number;
+    photo: string;
+
 }
