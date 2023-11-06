@@ -69,7 +69,7 @@ const NewsPage = memo((props: NewsPageProps) => {
                         <p className={cls.HeaderPhoto}>{news.headerPhoto}</p>
                     </div>
 
-                    {isLoading? <Skeleton className={cls.HeaderNews}/>:
+                    {newsList? <Skeleton className={cls.HeaderNews}/>:
                     <div className={cls.HeaderNews}>{news.header}</div>
                     }
                     {isLoading ? <Skeleton className={cls.BottomNews}/>:

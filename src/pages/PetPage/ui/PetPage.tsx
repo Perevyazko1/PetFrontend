@@ -1,4 +1,4 @@
-import {memo, ReactNode, useEffect} from 'react';
+import {memo, ReactNode, useEffect, useState} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import {useAppDispatch, useAppSelector} from "../../../shared/lib/hook/reduxHooks/reduxHooks";
 import {petPageActions} from "../model/slice/petPageSlice";
@@ -7,6 +7,7 @@ import {Filter} from "../../../features/Filter/Filter";
 import {Button} from "../../../shared/ui/Button/Button";
 import eye from "../../../shared/assets/icons/eye.svg"
 import {useWindowWidth} from "../../../shared/lib/hook/useWindowWidth/useWindowWidth";
+import Skeleton from "react-loading-skeleton";
 
 interface PetPageProps {
     className?: string
@@ -20,6 +21,7 @@ const PetPage = memo((props: PetPageProps) => {
         children,
         ...otherProps
     } = props
+    const [isLoadingImg,setIsLoadingImg]=useState(false)
 
     const dispatch = useAppDispatch();
     const windowWith = useWindowWidth()
@@ -57,12 +59,21 @@ const PetPage = memo((props: PetPageProps) => {
                     key={pet.id}
                     className={cls.CardPage}
                 >
-                    <div className={cls.ContainerPhoto}>
-                        <img className={cls.PhotoPet} src={pet.photo}/>
+                    {!isLoadingImg && <Skeleton className={cls.ContainerPhoto}/>}
+                    <div className={isLoadingImg ?cls.ContainerPhoto:cls.None}>
+                        <img
+                            className={cls.PhotoPet}
+                            src={pet.photo}
+                            onLoad={()=> setIsLoadingImg(true)}
+                        />
                         <p className={cls.HeaderDate}>{pet.headerPhoto}</p>
                     </div>
-                    <div className={cls.HeaderCardPet}>{pet.header}</div>
-                    <div className={cls.BottomCard}>
+
+                    {isLoading? <Skeleton className={cls.HeaderCardPet}/>:
+                        <div className={cls.HeaderCardPet}>{pet.header}</div>
+                    }
+                    {isLoading? <Skeleton className={cls.BottomCard}/>:
+                        <div className={cls.BottomCard}>
                         <Button>Читать далее...</Button>
                         <div className={cls.Views}>
                             <img src={eye}/>
@@ -70,6 +81,7 @@ const PetPage = memo((props: PetPageProps) => {
                     </div>
 
                     </div>
+                    }
                 </div>
             ))}
             {windowWith > 1050 &&
