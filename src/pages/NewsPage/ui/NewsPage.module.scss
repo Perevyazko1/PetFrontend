@@ -5,30 +5,35 @@
     display: flex;
 
 }
+.None{
+    display: none;
+}
 .CardNews{
-    height: 672px;
+    width: 767px;
     margin: 20px;
     background: var(--app-accent);
     border-radius: 5px;
+    padding: 5px;
 }
 .HeaderNews{
     font: var(--font-small-main);
-    margin: 10px 20px;
+    margin: 10px auto 0 auto;
     color: rgba(18, 18, 18, 0.7);
+    width: 95%;
 }
 .PhotoNews{
-    width: 97%;
-    height: 467px;
+    width: 100%;
     border-radius: 5px;
-    //margin: 20px 20px;
 }
 .ContainerPhoto{
-    width: 97%;
-    height: 467px;
+    width: 95%;
+    height: auto;
+    max-height: 467px;
+    min-height: 222px;
     border-radius: 5px;
-    margin: 20px 20px;
-
-
+    margin: 20px auto;
+    overflow: hidden;
+    display: flex;
 }
 .HeaderPhoto{
     font: var(--font-medium-main);
@@ -45,12 +50,12 @@
     margin: 10px 30px 0 10px;
 }
 .Button{
-    width: 349px;
 }
 .BottomNews{
     display: flex;
     position: relative;
-    margin: 20px 20px;
+    margin: 20px auto;
+    width: 95%;
 }
 
 
@@ -62,11 +67,10 @@
     margin-left:auto;
     margin-top: 100px;
     overflow-y: auto;
-    padding: 0 25px;
+    padding: 0 10px;
 }
     .CardNews{
     max-width: 950px;
-    height: 672px;
     margin: 20px auto;
     background: var(--app-accent);
     border-radius: 5px;
@@ -76,14 +80,28 @@
 @media screen and (max-width: 576px) {
     .BottomNews{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
     position: relative;
-    margin: 20px 20px;
+    margin: 20px auto;
+    width: 95%;
 }
 .Views{
     display: flex;
-    position: absolute;
-    right: 0;
+    position: static;
+    margin-top: -15px;
+    width: 100%;
 }
+.Button{
+    flex-grow: 1;
+}
+.Calendar{
+    margin: 10px auto 0 10px;
+}
+.HeaderPhoto{
+    font-size: 18px;
+}
+
 
 
 }

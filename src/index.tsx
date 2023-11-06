@@ -5,6 +5,7 @@ import store from 'app/providers/storeProvider/store';
 import {Provider} from 'react-redux';
 import {BrowserRouter, HashRouter} from "react-router-dom";
 import './app/style/index.scss'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
 const root = ReactDOM.createRoot(

@@ -1,4 +1,4 @@
-import {memo, ReactNode, useEffect} from 'react';
+import {memo, ReactNode, useEffect, useState} from 'react';
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import {useAppDispatch, useAppSelector} from "../../../shared/lib/hook/reduxHooks/reduxHooks";
 import {userPageActions} from "../../UserPage/model/slice/userPageSlice";
@@ -9,6 +9,7 @@ import {Button} from "../../../shared/ui/Button/Button";
 import eye from "../../../shared/assets/icons/eye.svg";
 import calendar from "../../../shared/assets/icons/calendar.svg"
 import {useWindowWidth} from "../../../shared/lib/hook/useWindowWidth/useWindowWidth";
+import Skeleton from "react-loading-skeleton";
 
 interface NewsPageProps {
     className?: string
@@ -22,7 +23,7 @@ const NewsPage = memo((props: NewsPageProps) => {
         children,
         ...otherProps
     } = props
-
+        const [isLoadingImg,setIsLoadingImg]=useState(false)
         const dispatch = useAppDispatch();
         const windowWith = useWindowWidth()
 
@@ -31,9 +32,16 @@ const NewsPage = memo((props: NewsPageProps) => {
             dispatch(newsPageActions.setUsers([
                 {
                     id: 1,
-                    header: "",
+                    header: "Чудесный, молодой Космо ждет свою семью в приюте.\n" +
+                        "22 МАЯ в приюте для бездомных животных «ЛАПКА» состоится ДЕНЬ ОТКРЫТЫХ ДВЕРЕЙ!С 11 до 17 часов\n" +
+                        "ждём в гости всех старых друзей приюта и будем очень рады новым знакомствам! Если вы мечтаете\n" +
+                        "погулять с собакой по весеннему лесу и сделать доброе дело — приезжайте к нам ...",
+                    headerPhoto:"#День открытых дверей",
                     text: "",
-                    category: ""
+                    category: "",
+                    photo:"https://www.science.org/do/10.1126/science.abq3966/full/_20220405_on_dogtalk-1675062809387.jpg",
+                    date:"15.06.23",
+                    views: 105
                 }
             ]))
         }, 1000)
@@ -42,51 +50,49 @@ const NewsPage = memo((props: NewsPageProps) => {
 
     const newsList = useAppSelector(state => state.newsPage.news);
     const isLoading = useAppSelector(state => state.newsPage.pageIsLoading);
-
+    // const isLoading = true
 
     return (
         <div
             className={classNames(cls.NewsPage)}
             {...otherProps}
         >
-            {isLoading
-            ?
-                <>Skeleton</>
-                :
-                <>
-                <div className={cls.CardNews}>
-                    <div className={cls.ContainerPhoto}>
-                        <img className={cls.PhotoNews} src={'https://www.science.org/do/10.1126/science.abq3966/full/_20220405_on_dogtalk-1675062809387.jpg'}/>
-                        <p className={cls.HeaderPhoto}>#День открытых дверей</p>
+            {
+                newsList?.map((news)=>(
+                    <div className={cls.CardNews} key={news.id}>
+                    {!isLoadingImg && <Skeleton className={cls.ContainerPhoto}/>}
+                        <div className={isLoadingImg ? cls.ContainerPhoto:cls.None}>
+                        <img className={cls.PhotoNews}
+                             src={news.photo}
+                             onLoad={()=> setIsLoadingImg(true)}
+                        />
+                        <p className={cls.HeaderPhoto}>{news.headerPhoto}</p>
                     </div>
-                    <div className={cls.HeaderNews}>Чудесный, молодой Космо ждет свою семью в приюте.
-                        22 МАЯ в приюте для бездомных животных «ЛАПКА» состоится ДЕНЬ ОТКРЫТЫХ ДВЕРЕЙ!С 11 до 17 часов
-                        ждём в гости всех старых друзей приюта и будем очень рады новым знакомствам! Если вы мечтаете
-                        погулять с собакой по весеннему лесу и сделать доброе дело — приезжайте к нам ...
-                    </div>
-                    <div className={cls.BottomNews}>
-                        <Button>Читать далее...</Button>
+
+                    {isLoading? <Skeleton className={cls.HeaderNews}/>:
+                    <div className={cls.HeaderNews}>{news.header}</div>
+                    }
+                    {isLoading ? <Skeleton className={cls.BottomNews}/>:
+                        <div className={cls.BottomNews}>
+                        <Button className={cls.Button}>Читать далее...</Button>
                         <div className={cls.Views}>
                             <img src={calendar}/>
-                            <p className={cls.Calendar}>15.06.23</p>
+                            <p className={cls.Calendar}>{news.date}</p>
                             <img src={eye}/>
-                            <p>105</p>
+                            <p>{news.views}</p>
                         </div>
                     </div>
-            </div>
-                    {windowWith > 1050 &&
+                    }
+
+
+
+                    </div>
+                ))
+            }
+                    {!isLoading && windowWith > 1050 &&
                         <FilterNews/>
                     }
 
-                    {
-                        newsList?.map((news)=>(
-                            <div key={news.id}>
-                                {news.header}
-                            </div>
-                        ))
-                    }
-                </>
-            }
             {children}
         </div>
     );
