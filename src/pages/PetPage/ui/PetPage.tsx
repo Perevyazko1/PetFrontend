@@ -31,9 +31,8 @@ const PetPage = memo((props: PetPageProps) => {
                     id: 1,
                     name: "Шарик",
                     gender: "man",
-                    header:"",
-                    headerPhoto:"Чудесный, молодой Космо ждет свою семью в приюте.\n" +
-                        "Чтобы найти контакт ...",
+                    header:"Чудесный, молодой Космо ждет свою семью в приюте. Чтобы найти контакт ...",
+                    headerPhoto:"#В приюте с 13.06.2023",
                     views: 150,
                     photo: "https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg",
                 }
@@ -53,24 +52,26 @@ const PetPage = memo((props: PetPageProps) => {
             className={classNames(cls.PetPage, mods, [className])}
             {...otherProps}
         >
+            {petList?.map((pet)=>(
+                <div
+                    key={pet.id}
+                    className={cls.CardPage}
+                >
+                    <div className={cls.ContainerPhoto}>
+                        <img className={cls.PhotoPet} src={pet.photo}/>
+                        <p className={cls.HeaderDate}>{pet.headerPhoto}</p>
+                    </div>
+                    <div className={cls.HeaderCardPet}>{pet.header}</div>
+                    <div className={cls.BottomCard}>
+                        <Button>Читать далее...</Button>
+                        <div className={cls.Views}>
+                            <img src={eye}/>
+                            <p>{pet.views}</p>
+                    </div>
 
-            <div className={cls.CardPage}>
-                <div className={cls.ContainerPhoto}>
-                    <img className={cls.PhotoPet} src={'https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg'}/>
-                    <p className={cls.HeaderDate}>#В приюте с 13.06.2023</p>
+                    </div>
                 </div>
-                <div className={cls.HeaderCardPet}>Чудесный, молодой Космо ждет свою семью в приюте.
-                    Чтобы найти контакт ...
-                </div>
-                <div className={cls.BottomCard}>
-                    <Button>Читать далее...</Button>
-                    <div className={cls.Views}>
-                        <img src={eye}/>
-                        <p>105</p>
-                </div>
-
-                </div>
-            </div>
+            ))}
             {windowWith > 1050 &&
                 <Filter/>
             }
