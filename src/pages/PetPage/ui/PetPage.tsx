@@ -69,10 +69,10 @@ const PetPage = memo((props: PetPageProps) => {
                         <p className={cls.HeaderDate}>{pet.headerPhoto}</p>
                     </div>
 
-                    {isLoading? <Skeleton className={cls.HeaderCardPet}/>:
-                        <div className={cls.HeaderCardPet}>{pet.header}</div>
+                    {!isLoadingImg? <Skeleton className={cls.HeaderCardPet}/>:
+                        <div className={cls.HeaderCardPet}>{`${pet.header.slice(0,50)}...`}</div>
                     }
-                    {isLoading? <Skeleton className={cls.BottomCard}/>:
+                    {!isLoadingImg? <Skeleton className={cls.BottomCard}/>:
                         <div className={cls.BottomCard}>
                         <Button>Читать далее...</Button>
                         <div className={cls.Views}>

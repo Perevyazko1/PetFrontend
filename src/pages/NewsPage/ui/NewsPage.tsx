@@ -50,7 +50,6 @@ const NewsPage = memo((props: NewsPageProps) => {
 
     const newsList = useAppSelector(state => state.newsPage.news);
     const isLoading = useAppSelector(state => state.newsPage.pageIsLoading);
-    // const isLoading = true
 
     return (
         <div
@@ -69,10 +68,10 @@ const NewsPage = memo((props: NewsPageProps) => {
                         <p className={cls.HeaderPhoto}>{news.headerPhoto}</p>
                     </div>
 
-                    {newsList? <Skeleton className={cls.HeaderNews}/>:
-                    <div className={cls.HeaderNews}>{news.header}</div>
+                    {!isLoadingImg? <Skeleton count={4} className={cls.HeaderNews}/>:
+                    <div className={cls.HeaderNews}>{windowWith<1420 ? `${news.header.slice(0,100)}...`:`${news.header.slice(0,300)}...`}</div>
                     }
-                    {isLoading ? <Skeleton className={cls.BottomNews}/>:
+                    {!isLoadingImg ? <Skeleton className={cls.BottomNews}/>:
                         <div className={cls.BottomNews}>
                         <Button className={cls.Button}>Читать далее...</Button>
                         <div className={cls.Views}>
