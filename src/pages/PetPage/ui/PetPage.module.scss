@@ -1,18 +1,24 @@
 .PetPage{
-    margin-left: 300px;
+    margin-left: 270px;
     overflow-y: auto;
     overflow-x: hidden;
     display: flex;
+    padding-right: 330px;
 }
 .None{
     display:none;
 }
 .CardPage{
-    width: 349px;
-    height: 404px;
-    margin: 20px;
+    width: 255px;
+    height: 295px;
+    margin: 20px 10px 10px 10px;
     background: var(--app-accent);
     border-radius: 5px;
+}
+.WrapperCards{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 .HeaderCardPet{
     display: flex;
@@ -22,36 +28,42 @@
     color: rgba(18, 18, 18, 0.7);
 }
 .PhotoPet{
-    width: 309px;
-    height: 222px;
+    width: 215px;
+    height: 150px;
     border-radius: 5px;
     //margin: 20px 20px;
 }
 .ContainerPhoto{
-    width: 309px;
-    height: 222px;
+    width: 215px;
+    height: 150px;
     border-radius: 5px;
     margin: 20px 20px;
     display: flex;
+    position: relative;
 
 
 }
 .HeaderDate{
-    font: var(--font-medium-main);
+    font: var(--font-hashtag-date-reception);
     color: var(--app-background);
     text-decoration: underline;
-    margin: -50px 20px;
+    position: absolute;
+    bottom: 2px;
 }
 .Views{
     display: flex;
-    margin-left: 90px;
+    margin-left: 37px;
+}
+.NumberViews{
+    margin: 10px 0 10px 10px;
 }
 .Button{
-    width: 349px;
+    height: 35px;
+
 }
 .BottomCard{
     display: flex;
-    margin: 20px 20px;
+    margin: 10px;
     width: 90%;
 }
 @media screen and (max-width: 1420px) {
@@ -62,3 +74,13 @@
     margin-top: 100px;
     overflow-y: auto;
 }}
+@media screen and (max-width: 1140px) {
+    .PetPage{
+        padding: 0;
+    }
+}
+@media screen and (max-width: 825px) {
+    .WrapperCards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

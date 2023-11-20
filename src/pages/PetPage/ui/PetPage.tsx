@@ -37,7 +37,26 @@ const PetPage = memo((props: PetPageProps) => {
                     headerPhoto:"#В приюте с 13.06.2023",
                     views: 150,
                     photo: "https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg",
+                },
+                {
+                    id: 1,
+                    name: "Шарик",
+                    gender: "man",
+                    header:"Чудесный, молодой Космо ждет свою семью в приюте. Чтобы найти контакт ...",
+                    headerPhoto:"#В приюте с 13.06.2023",
+                    views: 150,
+                    photo: "https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg",
+                },
+                {
+                    id: 1,
+                    name: "Шарик",
+                    gender: "man",
+                    header:"Чудесный, молодой Космо ждет свою семью в приюте. Чтобы найти контакт ...",
+                    headerPhoto:"#В приюте с 13.06.2023",
+                    views: 150,
+                    photo: "https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg",
                 }
+
             ]))
         }, 1000)
     }, [])
@@ -54,7 +73,8 @@ const PetPage = memo((props: PetPageProps) => {
             className={classNames(cls.PetPage, mods, [className])}
             {...otherProps}
         >
-            {petList?.map((pet)=>(
+            <div className={cls.WrapperCards}>
+                {petList?.map((pet)=>(
                 <div
                     key={pet.id}
                     className={cls.CardPage}
@@ -74,32 +94,22 @@ const PetPage = memo((props: PetPageProps) => {
                     }
                     {!isLoadingImg? <Skeleton className={cls.BottomCard}/>:
                         <div className={cls.BottomCard}>
-                        <Button>Читать далее...</Button>
+                        <Button className={cls.Button}>Читать далее...</Button>
                         <div className={cls.Views}>
                             <img src={eye}/>
-                            <p>{pet.views}</p>
+                            <p className={cls.NumberViews}>{pet.views}</p>
                     </div>
 
                     </div>
                     }
                 </div>
             ))}
-            {windowWith > 1050 &&
+            </div>
+            {children}
+                        {windowWith > 1140 &&
                 <Filter/>
             }
-            {/*{isLoading*/}
-            {/*    ?*/}
-            {/*    <>Skeleton</>*/}
-            {/*    :*/}
-            {/*    <>*/}
-            {/*        {petList?.map((pet) => (*/}
-            {/*            <div key={pet.id}>*/}
-            {/*                {pet.name}*/}
-            {/*            </div>*/}
-            {/*        ))}*/}
-            {/*    </>*/}
-            {/*}*/}
-            {children}
+
         </div>
     );
 });

@@ -40,7 +40,7 @@
 
 
     // button
-    --font-size-button: 15px;
+    --font-size-button: 13px;
     --font-line-height-button: 140%;
     --font-weight-button: 500;
     --font-button: var(--font-weight-button) var(--font-size-button)  / var(--font-line-height-button) var(--font-family-main)  ;
@@ -51,7 +51,7 @@
 
 
 
-            // font  s -mobile
+    // font  s -mobile
     --font-size-small-main-mobile: 16px;
     --font-line-height-small-main-mobile: 140%;
     --font-small-main-mobile: var(--font-size-small-main) / var(--font-line-height-small-main) var(--font-family-main) ;
@@ -87,11 +87,18 @@
     --font-line-height-large-logo: normal;
     --font-large-logo: var(--font-size-large-logo) / var(--font-line-height-large-logo) var(--font-family-logo);
 
-        //// m mobile
+    //// m mobile
     --font-size-medium-logo-mobile: 24px;
     --font-line-height-medium-logo-mobile: normal;
     --font-medium-logo-mobile: var(--font-size-medium-logo-mobile) / var(--font-line-height-medium-logo-mobile) var(--font-family-logo);
 
+        // hashtag date reception pet
+    --font-size-hashtag-date-reception: 17px;
+    --font-line-height-hashtag-date-reception: normal;
+    --font-style-hashtag-date-reception: normal;
+    --font-weight-hashtag-date-reception: 400;
+
+    --font-hashtag-date-reception: var(--font-weight-hashtag-date-reception) var(--font-size-hashtag-date-reception) / var(--font-line-height-hashtag-date-reception) var(--font-family-main-bold);
 
 
 

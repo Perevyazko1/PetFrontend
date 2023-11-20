@@ -87,7 +87,7 @@ export const NavBar = memo((props: NavBarProps) => {
                         <div className={cls.LogoText}>
                             {getRouteMain()!==location.pathname &&
                                 <>
-                                    {windowWith <= 1050   &&
+                                    {windowWith <= 1140   &&
                                         <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
                                     }
                                 </>}
@@ -99,7 +99,7 @@ export const NavBar = memo((props: NavBarProps) => {
                 {isNavbarOpen &&
                     <img src={cross} className={cls.Cross} onClick={handleHiddenNavBar}/>
                 }
-                    {(isNavbarOpen||windowWith >= 1420) &&
+                    {(isNavbarOpen||windowWith > 1420) &&
                         <>
                             {isNavbarOpen &&
                                 <div className={cls.LogoTextOpenNavBar}>
