@@ -1,19 +1,19 @@
 import React, {memo, ReactNode, useState, useEffect} from 'react';
 import cls from "./NavBar.module.scss"
 import {Link, useLocation} from "react-router-dom";
-import {routeConfig} from "../../../app/providers/router/config/routeConfig";
-import {Button} from "../../../shared/ui/Button/Button";
+import {routeConfig} from "app/providers/router/config/routeConfig";
+import {Button} from "shared/ui/Button/Button";
 import {AppRoutes, getRouteMain, getRouteNews, getRoutePet, routeNames} from "../../../shared/consts/routes/routes";
 import {classNames, Mods} from "shared/lib/classNames/classNames";
-import paw from "../../../shared/assets/icons/PawLogo.svg";
-import call from "../../../shared/assets/icons/call.svg"
-import local from "../../../shared/assets/icons/location.svg"
-import pawButton from "../../../shared/assets/icons/PawButton.svg"
-import menu from "../../../shared/assets/icons/Menu.svg"
-import  filter from  "../../../shared/assets/icons/Filter.svg"
-import cross from "../../../shared/assets/icons/cross.svg"
+import paw from "shared/assets/icons/PawLogo.svg";
+import call from "shared/assets/icons/call.svg"
+import local from "shared/assets/icons/location.svg"
+import pawButton from "shared/assets/icons/PawButton.svg"
+import menu from "shared/assets/icons/Menu.svg"
+import  filter from  "shared/assets/icons/Filter.svg"
+import cross from "shared/assets/icons/cross.svg"
 import { FilterNews } from 'features/FilterNews/FilterNews';
-import {useWindowWidth} from "../../../shared/lib/hook/useWindowWidth/useWindowWidth";
+import {useWindowWidth} from "shared/lib/hook/useWindowWidth/useWindowWidth";
 import { Filter } from 'features/Filter/Filter';
 
 
@@ -59,7 +59,7 @@ export const NavBar = memo((props: NavBarProps) => {
 
     // const combinedClassName = classNames("", mods, [className]);
     const linkComponent =
-        <div className={cls.ContainerButton}>
+        <div className={isNavbarOpen?`${cls.ContainerButton} ${cls.openButton}`:`${cls.ContainerButton}`}>
             {Object.entries(routeConfig)
                 .filter(([route, props]) => !props.authOnly)
                 .map(([rout, props]) => (
@@ -81,8 +81,8 @@ export const NavBar = memo((props: NavBarProps) => {
 
     return (
 
-        <div className={cls.NavbarWrapper}>
-            <nav className={(isNavbarOpen||isFilterOpen)? cls.Open: cls.Navbar}>
+        <div className={(isNavbarOpen||isFilterOpen)?`${cls.NavbarWrapper} ${cls.openWrapper}`:`${cls.NavbarWrapper}`}>
+            <nav className={(isNavbarOpen||isFilterOpen)?`${cls.Open} ${cls.openNav}`: `${cls.Navbar} ${cls.closeNav}`}>
                 {!isNavbarOpen && !isFilterOpen &&
                         <div className={cls.LogoText}>
                             {getRouteMain()!==location.pathname &&
