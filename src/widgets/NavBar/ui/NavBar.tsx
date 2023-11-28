@@ -105,7 +105,6 @@ export const NavBar = memo((props: NavBarProps) => {
                         className={(isNavbarOpen || isFilterOpen) ? `${cls.PawLogo} ${cls.openPawLogo}` : `${cls.PawLogo} ${cls.closePawLogo}`}
                         src={paw}/>
                 </div>
-                {windowWith < 1420 &&
                     <>
                         {/*{isNavbarOpen &&*/}
                         {/*    <div className={cls.LogoTextOpenNavBar}>*/}
@@ -133,7 +132,6 @@ export const NavBar = memo((props: NavBarProps) => {
                         </div>
 
                     </>
-                }
                 {isFilterOpen &&
                     <img src={cross} className={cls.Cross} onClick={handleToggleFilter}/>
                 }
