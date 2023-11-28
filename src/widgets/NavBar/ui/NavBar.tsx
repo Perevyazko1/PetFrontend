@@ -59,7 +59,8 @@ export const NavBar = memo((props: NavBarProps) => {
 
     // const combinedClassName = classNames("", mods, [className]);
     const linkComponent =
-        <div className={isNavbarOpen ? `${cls.ContainerButton} ${cls.openButton}` : `${cls.ContainerButton} ${cls.closeButton}`}>
+        <div
+            className={isNavbarOpen ? `${cls.ContainerButton} ${cls.openButton}` : `${cls.ContainerButton} ${cls.closeButton}`}>
             {Object.entries(routeConfig)
                 .filter(([route, props]) => !props.authOnly)
                 .map(([rout, props]) => (
@@ -100,7 +101,9 @@ export const NavBar = memo((props: NavBarProps) => {
                              onClick={handleHiddenNavBar}/>
                     }
                     Лапки
-                    <img className={(isNavbarOpen || isFilterOpen) ? `${cls.PawLogo} ${cls.openPawLogo}`:`${cls.PawLogo} ${cls.closePawLogo}`} src={paw}/>
+                    <img
+                        className={(isNavbarOpen || isFilterOpen) ? `${cls.PawLogo} ${cls.openPawLogo}` : `${cls.PawLogo} ${cls.closePawLogo}`}
+                        src={paw}/>
                 </div>
                 {windowWith < 1420 &&
                     <>
@@ -112,7 +115,7 @@ export const NavBar = memo((props: NavBarProps) => {
                         {/*}*/}
                         <hr className={cls.FirstHr}/>
                         {linkComponent}
-                        <hr className={isFilterOpen? `${cls.SecondHr} ${cls.openSecondHr}`:`${cls.SecondHr} ${cls.closeSecondHr}` }/>
+                        <hr className={isFilterOpen ? `${cls.SecondHr} ${cls.openSecondHr}` : `${cls.SecondHr} ${cls.closeSecondHr}`}/>
                         <div className={cls.BottomContact}>
                             <div className={cls.ContactInfo}>
                                 <img className={cls.IconNumber} src={call}/>
