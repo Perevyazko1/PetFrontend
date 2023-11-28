@@ -324,18 +324,40 @@ p {
         border-radius: 2px;
         height: 10px;
     }
+    @keyframes openPawLogoAnimation {
+        from{
+            width: 77px;
+        }
+        to{
+            width: 125px;
+        }
+    }
+    @keyframes closePawLogoAnimation {
+        from{
+            width: 125px;
+        }
+        to{
+            width: 77px;
+        }
+    }
     .PawLogo {
         position: absolute;
         transform: rotate(2deg);
 
         &.openPawlogo {
             top: 45px;
-            width: 125px;
+            animation-name: openPawLogoAnimation;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
         }
 
         &.closePawlogo {
             top: -50px;
-            width: 77px;
+                        animation-name: closePawLogoAnimation;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
 
         }
     }
