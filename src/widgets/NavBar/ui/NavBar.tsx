@@ -50,8 +50,6 @@ export const NavBar = memo((props: NavBarProps) => {
     const location = useLocation();
     useEffect(() => {
         handleHiddenNavBar();
-        console.log(getRouteMain())
-        console.log(location.pathname)
     }, [location]);
     useEffect(() => {
         windowWith > 1420 && setIsNavbarOpen(false);
@@ -61,7 +59,7 @@ export const NavBar = memo((props: NavBarProps) => {
 
     // const combinedClassName = classNames("", mods, [className]);
     const linkComponent =
-        <div className={isNavbarOpen ? `${cls.ContainerButton} ${cls.openButton}` : `${cls.ContainerButton}`}>
+        <div className={isNavbarOpen ? `${cls.ContainerButton} ${cls.openButton}` : `${cls.ContainerButton} ${cls.closeButton}`}>
             {Object.entries(routeConfig)
                 .filter(([route, props]) => !props.authOnly)
                 .map(([rout, props]) => (
@@ -87,33 +85,34 @@ export const NavBar = memo((props: NavBarProps) => {
             className={(isNavbarOpen || isFilterOpen) ? `${cls.NavbarWrapper} ${cls.openWrapper}` : `${cls.NavbarWrapper}`}>
             <nav
                 className={(isNavbarOpen || isFilterOpen) ? `${cls.Navbar} ${cls.openNav}` : `${cls.Navbar} ${cls.closeNav}`}>
-                {!isNavbarOpen && !isFilterOpen &&
-                    <div className={cls.LogoText}>
-                        {getRouteMain() !== location.pathname &&
-                            <>
-                                {windowWith <= 1140 &&
-                                    <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
-                                }
-                            </>}
-                        <img src={menu} onClick={handleToggleNavbar} className={cls.Menu}/>
-                        Лапки
-                        <img className={cls.PawLogo} src={paw}/>
-                    </div>
-                }
-                {isNavbarOpen &&
-                    <img src={cross} className={cls.Cross} onClick={handleHiddenNavBar}/>
-                }
-                {(isNavbarOpen || windowWith > 1420) &&
+                <div
+                    className={(isNavbarOpen || isFilterOpen) ? `${cls.LogoText} ${cls.openLogoText}` : `${cls.LogoText} ${cls.closeLogoText}`}>
+                    {getRouteMain() !== location.pathname &&
+                        <>
+                            {windowWith <= 1140 &&
+                                <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
+                            }
+                        </>}
+                    <img src={menu} onClick={handleToggleNavbar}
+                         className={!isNavbarOpen ? cls.Menu : `${cls.Menu} ${cls.closeMenu}`}/>
+                    {isNavbarOpen &&
+                        <img src={cross} className={!isNavbarOpen || !isFilterOpen ? cls.Cross : null}
+                             onClick={handleHiddenNavBar}/>
+                    }
+                    Лапки
+                    <img className={(isNavbarOpen || isFilterOpen) ? `${cls.PawLogo} ${cls.openPawlogo}`:`${cls.PawLogo} ${cls.closePawlogo}`} src={paw}/>
+                </div>
+                {windowWith < 1420 &&
                     <>
-                        {isNavbarOpen &&
-                            <div className={cls.LogoTextOpenNavBar}>
-                                Лапки
-                                <img className={cls.PawLogoOpenNavBar} src={paw}/>
-                            </div>
-                        }
+                        {/*{isNavbarOpen &&*/}
+                        {/*    <div className={cls.LogoTextOpenNavBar}>*/}
+                        {/*        Лапки*/}
+                        {/*        <img className={cls.PawLogoOpenNavBar} src={paw}/>*/}
+                        {/*    </div>*/}
+                        {/*}*/}
                         <hr className={cls.FirstHr}/>
                         {linkComponent}
-                        <hr className={cls.SecondHr}/>
+                        <hr className={isFilterOpen? `${cls.SecondHr} ${cls.openSecondHr}`:`${cls.SecondHr} ${cls.closeSecondHr}` }/>
                         <div className={cls.BottomContact}>
                             <div className={cls.ContactInfo}>
                                 <img className={cls.IconNumber} src={call}/>

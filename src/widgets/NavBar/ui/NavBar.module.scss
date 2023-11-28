@@ -7,8 +7,8 @@
 }
 
 .Hidden {
+    display: none;
 }
-
 
 
 .FilterHidden {
@@ -45,6 +45,7 @@
     animation: rotate 2s forwards;
     position: absolute;
     right: 40px;
+    top: 40px;
 }
 
 .Menu {
@@ -193,7 +194,7 @@ p {
 @media screen and (max-width: 1420px) {
     @keyframes slideDown {
         0% {
-            height: 0;
+            height: 90px;
         }
         100% {; /* Высота, до которой раскрывается навбар */
         }
@@ -202,25 +203,32 @@ p {
     @keyframes slideUp {
         0% {
             height: 89vh;
+            margin: 20px;
+        }
+        50%{
+            height: 80px;
+            margin: 20px 0 0 0;
         }
         100% {
-            height: 0;
+            height: 70px;
+            margin: 0;
         }
     }
     .Navbar {
         background: var(--app-accent);
         border-radius: 10px;
         width: auto;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        //box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         display: block;
 
         &.closeNav {
             animation-name: slideUp;
             animation-duration: 1s;
+            animation-delay: 0.4s;
             animation-timing-function: ease;
             animation-fill-mode: both;
-            margin: 0 0 0 0;
-            padding: 95px 0 0 0;
+
+            padding: 30px 0 0 0;
 
         }
 
@@ -247,6 +255,10 @@ p {
         right: 10px;
         width: 35px;
         cursor: pointer;
+
+        &.closeMenu {
+            display: none;
+        }
     }
     .Filter {
         display: initial;
@@ -257,13 +269,11 @@ p {
     }
     @keyframes slideUpWrapper {
         0% {
-            width: 96%;
-            margin-top: 20px;
+            height: 200px;
 
         }
         100% {
-            width: 100%;
-            margin-top: 0;
+            height: 100vh;
 
         }
     }
@@ -283,21 +293,21 @@ p {
             animation-timing-function: ease;
             animation-fill-mode: both;
             border-radius: 0;
-            height: 100vh;
+
 
         }
 
     }
 
-    .NavbarWrapperOpen {
-        width: 100%;
-        background: var(--app-background);
-        position: fixed;
-        overflow-y: hidden;
-        z-index: 100;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-
-    }
+    //.NavbarWrapperOpen {
+    //    width: 100%;
+    //    background: var(--app-background);
+    //    position: fixed;
+    //    overflow-y: hidden;
+    //    z-index: 100;
+    //    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    //
+    //}
     .NavbarWrapper:hover {
         overflow-y: initial;
         overflow-x: initial;
@@ -312,36 +322,55 @@ p {
     }
     .PawLogo {
         position: absolute;
-        top: -50px;
-        width: 77px;
         transform: rotate(2deg);
+
+        &.openPawlogo {
+            top: 45px;
+            width: 125px;
+        }
+
+        &.closePawlogo {
+            top: -50px;
+            width: 77px;
+
+        }
     }
     .LogoText {
-        margin-bottom: 90px;
+        margin: 0 0 5px 0;
         font: var(--font-small-logo);
         display: flex;
-        position: absolute;
         width: 100%;
         flex-direction: column;
         align-items: center;
         z-index: 10;
-        top: 30px;
+
+        &.openLogoText {
+            position: static;
+            margin: 60px auto 0;
+            font-size: 40px;
+            width: 200px;
+        }
+
+        &.closeLogoText {
+            margin: 0 0 5px 0;
+            width: 100%;
+        }
     }
-    .PawLogoOpenNavBar {
-        position: absolute;
-        top: 60px;
-        width: 125px;
-        transform: rotate(2deg);
-    }
-    .LogoTextOpenNavBar {
-        margin: 60px auto 0;
-        font: var(--font-small-logo);
-        font-size: 40px;
-        display: flex;
-        width: 200px;
-        flex-direction: column;
-        align-items: center;
-    }
+    //.PawLogoOpenNavBar {
+    //    position: absolute;
+    //    top: 60px;
+    //    width: 125px;
+    //    transform: rotate(2deg);
+    //}
+    //.LogoTextOpenNavBar {
+    //    margin: 60px auto 0;
+    //    font: var(--font-small-logo);
+    //    font-size: 40px;
+    //    display: flex;
+    //    width: 200px;
+    //    flex-direction: column;
+    //    align-items: center;
+    //}
 
     .ContactText {
         font-family: CeraPro-Regular, serif;
@@ -350,35 +379,55 @@ p {
     .ButtonLink {
         position: relative;
         flex: 1 1 auto;
-        width: 100%;
         white-space: nowrap;
         text-align: center;
+        width: 130px;
+        margin: 15px 0 0 0 ;
 
     }
     @keyframes openButtonAnimation {
         from {
             height: 0;
             margin: 0 auto;
-            overflow: hidden;
 
         }
         to {
-            height: 186px;
+            height: 200px;
             margin: 25px auto;
+        }
+    }
+    @keyframes closeButtonAnimation {
+        from {
+            height: 200px;
+            margin: 25px auto;
+        }
+        to {
+            height: 0;
+            margin: 0 auto;
         }
     }
 
     .ContainerButton {
         display: flex;
-        gap: 2rem;
+        //gap: 2rem;
         flex-direction: column;
-        width: 130px;
+        width: 160px;
+        overflow: hidden;
+        align-items: center;
 
         &.openButton {
             animation-name: openButtonAnimation;
             animation-duration: 0.9s;
             animation-timing-function: ease;
-            animation-delay: 1s;
+            //animation-delay: 1s;
+            animation-fill-mode: both;
+        }
+
+        &.closeButton {
+            animation-name: closeButtonAnimation;
+            animation-duration: 0.9s;
+            animation-timing-function: ease;
+            //animation-delay: 1s;
             animation-fill-mode: both;
         }
 
@@ -386,7 +435,7 @@ p {
     .FirstHr {
         margin: 40px 15% 0 15%;
     }
-    @keyframes OpenSecondHr {
+    @keyframes openSecondHr {
         from {
             margin: -2px 15% 0 15%;
         }
@@ -394,12 +443,30 @@ p {
             margin: 25px 15% 0 15%;
         }
     }
+    @keyframes closeSecondHr {
+        from {
+            margin: 25px 15% 0 15%;
+        }
+        to {
+            margin: -2px 15% 0 15%;
+        }
+    }
     .SecondHr {
-        animation-name: OpenSecondHr;
-        animation-duration: 0.9s;
-        animation-timing-function: ease;
-        animation-delay: 1s;
-        animation-fill-mode: both;
+        &.openSecondHr {
+            animation-name: openSecondHr;
+            animation-duration: 0.9s;
+            animation-timing-function: ease;
+            animation-delay: 1s;
+            animation-fill-mode: both;
+        }
+
+        &.closeSecondHr {
+            animation-name: closeSecondHr;
+            animation-duration: 0.9s;
+            animation-timing-function: ease;
+            animation-delay: 1s;
+            animation-fill-mode: both;
+        }
 
     }
     p {
