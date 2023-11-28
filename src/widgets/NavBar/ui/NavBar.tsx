@@ -10,11 +10,11 @@ import call from "shared/assets/icons/call.svg"
 import local from "shared/assets/icons/location.svg"
 import pawButton from "shared/assets/icons/PawButton.svg"
 import menu from "shared/assets/icons/Menu.svg"
-import  filter from  "shared/assets/icons/Filter.svg"
+import filter from "shared/assets/icons/Filter.svg"
 import cross from "shared/assets/icons/cross.svg"
-import { FilterNews } from 'features/FilterNews/FilterNews';
+import {FilterNews} from 'features/FilterNews/FilterNews';
 import {useWindowWidth} from "shared/lib/hook/useWindowWidth/useWindowWidth";
-import { Filter } from 'features/Filter/Filter';
+import {Filter} from 'features/Filter/Filter';
 
 
 interface NavBarProps {
@@ -25,7 +25,7 @@ interface NavBarProps {
 
 
 export const NavBar = memo((props: NavBarProps) => {
-        const {
+    const {
         open = false,
         className,
         children,
@@ -38,42 +38,44 @@ export const NavBar = memo((props: NavBarProps) => {
     const pathNews = getRouteNews
 
     const handleToggleFilter = () => {
-    setIsFilterOpen(!isFilterOpen);
-  };
+        setIsFilterOpen(!isFilterOpen);
+    };
 
     const handleToggleNavbar = () => {
-    setIsNavbarOpen(!isNavbarOpen);
-  };
+        setIsNavbarOpen(!isNavbarOpen);
+    };
     const handleHiddenNavBar = () => {
-    setIsNavbarOpen(false);
-  };
+        setIsNavbarOpen(false);
+    };
     const location = useLocation();
     useEffect(() => {
-    handleHiddenNavBar();
-    console.log(getRouteMain())
+        handleHiddenNavBar();
+        console.log(getRouteMain())
         console.log(location.pathname)
-  }, [location]);
+    }, [location]);
+    useEffect(() => {
+        windowWith > 1420 && setIsNavbarOpen(false);
+    }, [windowWith]);
 
-    const mods: Mods = {
-    };
+    const mods: Mods = {};
 
     // const combinedClassName = classNames("", mods, [className]);
     const linkComponent =
-        <div className={isNavbarOpen?`${cls.ContainerButton} ${cls.openButton}`:`${cls.ContainerButton}`}>
+        <div className={isNavbarOpen ? `${cls.ContainerButton} ${cls.openButton}` : `${cls.ContainerButton}`}>
             {Object.entries(routeConfig)
                 .filter(([route, props]) => !props.authOnly)
                 .map(([rout, props]) => (
 
-                <div key={rout}>
+                    <div key={rout}>
                         <Link to={props.path || '/'}>
                             <Button className={cls.ButtonLink} outline={location.pathname === props.path}>
-                                {location.pathname === props.path&& <img className={cls.PawButton} src={pawButton}/>}
+                                {location.pathname === props.path && <img className={cls.PawButton} src={pawButton}/>}
                                 {routeNames[rout as AppRoutes]}
                             </Button>
                         </Link>
-                </div>
+                    </div>
 
-            ))
+                ))
             }
 
         </div>
@@ -81,69 +83,71 @@ export const NavBar = memo((props: NavBarProps) => {
 
     return (
 
-        <div className={(isNavbarOpen||isFilterOpen)?`${cls.NavbarWrapper} ${cls.openWrapper}`:`${cls.NavbarWrapper}`}>
-            <nav className={(isNavbarOpen||isFilterOpen)?`${cls.Open} ${cls.openNav}`: `${cls.Navbar} ${cls.closeNav}`}>
+        <div
+            className={(isNavbarOpen || isFilterOpen) ? `${cls.NavbarWrapper} ${cls.openWrapper}` : `${cls.NavbarWrapper}`}>
+            <nav
+                className={(isNavbarOpen || isFilterOpen) ? `${cls.Navbar} ${cls.openNav}` : `${cls.Navbar} ${cls.closeNav}`}>
                 {!isNavbarOpen && !isFilterOpen &&
-                        <div className={cls.LogoText}>
-                            {getRouteMain()!==location.pathname &&
-                                <>
-                                    {windowWith <= 1140   &&
-                                        <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
-                                    }
-                                </>}
-                            <img src={menu} onClick={handleToggleNavbar} className={cls.Menu}/>
-                            Лапки
-                            <img className={cls.PawLogo} src={paw}/>
-                        </div>
+                    <div className={cls.LogoText}>
+                        {getRouteMain() !== location.pathname &&
+                            <>
+                                {windowWith <= 1140 &&
+                                    <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
+                                }
+                            </>}
+                        <img src={menu} onClick={handleToggleNavbar} className={cls.Menu}/>
+                        Лапки
+                        <img className={cls.PawLogo} src={paw}/>
+                    </div>
                 }
                 {isNavbarOpen &&
                     <img src={cross} className={cls.Cross} onClick={handleHiddenNavBar}/>
                 }
-                    {(isNavbarOpen||windowWith > 1420) &&
-                        <>
-                            {isNavbarOpen &&
-                                <div className={cls.LogoTextOpenNavBar}>
-                                    Лапки
-                                    <img className={cls.PawLogoOpenNavBar} src={paw}/>
-                                </div>
-                            }
-                            <hr className={cls.FirstHr}/>
-                            {linkComponent}
-                            <hr className={cls.SecondHr}/>
-                            <div className={cls.BottomContact}>
-                                <div className={cls.ContactInfo}>
-                                    <img className={cls.IconNumber} src={call}/>
-                                    8-931-351-88-84
-                                </div>
-                                <div className={cls.ContactInfo}>
-                                    <img className={cls.IconAddress} src={local}/>
-                                    Санкт-Петербург, ул. Ленина, 49
-                                </div>
-
-                                <div className={cls.ContactInfo}>Пн - Вс
-                                    <span className={cls.GreenTimeContact}>10:00 - 19:00</span>
-                                </div>
-                                <div className={cls.EveryDay}>Ждем Вас каждый день!</div>
+                {(isNavbarOpen || windowWith > 1420) &&
+                    <>
+                        {isNavbarOpen &&
+                            <div className={cls.LogoTextOpenNavBar}>
+                                Лапки
+                                <img className={cls.PawLogoOpenNavBar} src={paw}/>
+                            </div>
+                        }
+                        <hr className={cls.FirstHr}/>
+                        {linkComponent}
+                        <hr className={cls.SecondHr}/>
+                        <div className={cls.BottomContact}>
+                            <div className={cls.ContactInfo}>
+                                <img className={cls.IconNumber} src={call}/>
+                                8-931-351-88-84
+                            </div>
+                            <div className={cls.ContactInfo}>
+                                <img className={cls.IconAddress} src={local}/>
+                                Санкт-Петербург, ул. Ленина, 49
                             </div>
 
-                        </>
-                    }
+                            <div className={cls.ContactInfo}>Пн - Вс
+                                <span className={cls.GreenTimeContact}>10:00 - 19:00</span>
+                            </div>
+                            <div className={cls.EveryDay}>Ждем Вас каждый день!</div>
+                        </div>
+
+                    </>
+                }
                 {isFilterOpen &&
                     <img src={cross} className={cls.Cross} onClick={handleToggleFilter}/>
                 }
 
                 {isFilterOpen &&
                     <>
-                        {getRouteNews()===location.pathname &&
+                        {getRouteNews() === location.pathname &&
                             <FilterNews className={cls.FilterNewsOpenNavbar}/>
                         }
-                        {getRoutePet()===location.pathname &&
+                        {getRoutePet() === location.pathname &&
                             <Filter className={cls.FilterOpenNavbar}/>
                         }
                     </>
 
 
-                    }
+                }
 
             </nav>
         </div>
