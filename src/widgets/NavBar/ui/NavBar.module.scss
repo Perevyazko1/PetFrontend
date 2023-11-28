@@ -327,9 +327,11 @@ p {
     @keyframes openPawLogoAnimation {
         from {
             width: 77px;
+            top: -20px;
         }
         to {
             width: 125px;
+            top: 45px;
         }
     }
     @keyframes closePawLogoAnimation {
@@ -344,15 +346,15 @@ p {
         position: absolute;
         transform: rotate(2deg);
 
-        &.openPawlogo {
-            top: 45px;
+        &.openPawLogo {
+
             animation-name: openPawLogoAnimation;
             animation-duration: 1s;
             animation-timing-function: ease;
             animation-fill-mode: both;
         }
 
-        &.closePawlogo {
+        &.closePawLogo {
             top: -50px;
             animation-name: closePawLogoAnimation;
             animation-duration: 1s;
@@ -363,7 +365,7 @@ p {
     }
     @keyframes openLogoTextAnimation {
         from {
-            margin: 0;
+            margin: 7px 0 0 0 ;
         }
         to {
             margin: 60px auto 0;

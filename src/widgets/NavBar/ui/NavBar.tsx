@@ -100,7 +100,7 @@ export const NavBar = memo((props: NavBarProps) => {
                              onClick={handleHiddenNavBar}/>
                     }
                     Лапки
-                    <img className={(isNavbarOpen || isFilterOpen) ? `${cls.PawLogo} ${cls.openPawlogo}`:`${cls.PawLogo} ${cls.closePawlogo}`} src={paw}/>
+                    <img className={(isNavbarOpen || isFilterOpen) ? `${cls.PawLogo} ${cls.openPawLogo}`:`${cls.PawLogo} ${cls.closePawLogo}`} src={paw}/>
                 </div>
                 {windowWith < 1420 &&
                     <>
