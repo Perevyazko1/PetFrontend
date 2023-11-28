@@ -195,8 +195,13 @@ p {
     @keyframes slideDown {
         0% {
             height: 90px;
+            margin: 0;
         }
-        100% {; /* Высота, до которой раскрывается навбар */
+        50%{
+            margin: 20px 0 0 0;
+        }
+        100% {
+            margin: 20px;
         }
     }
 
@@ -237,7 +242,6 @@ p {
             animation-duration: 1s;
             animation-timing-function: ease;
             animation-fill-mode: both;
-            margin: 20px;
             padding: 20px;
             height: 89dvh;
         }
