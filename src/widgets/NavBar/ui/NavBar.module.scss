@@ -197,7 +197,7 @@ p {
             height: 90px;
             margin: 0;
         }
-        50%{
+        50% {
             margin: 20px 0 0 0;
         }
         100% {
@@ -210,7 +210,7 @@ p {
             height: 89vh;
             margin: 20px;
         }
-        50%{
+        50% {
             height: 80px;
             margin: 20px 0 0 0;
         }
@@ -325,18 +325,18 @@ p {
         height: 10px;
     }
     @keyframes openPawLogoAnimation {
-        from{
+        from {
             width: 77px;
         }
-        to{
+        to {
             width: 125px;
         }
     }
     @keyframes closePawLogoAnimation {
-        from{
+        from {
             width: 125px;
         }
-        to{
+        to {
             width: 77px;
         }
     }
@@ -354,11 +354,29 @@ p {
 
         &.closePawlogo {
             top: -50px;
-                        animation-name: closePawLogoAnimation;
+            animation-name: closePawLogoAnimation;
             animation-duration: 1s;
             animation-timing-function: ease;
             animation-fill-mode: both;
 
+        }
+    }
+    @keyframes openLogoTextAnimation {
+        from {
+            margin: 0;
+        }
+        to {
+            margin: 60px auto 0;
+            font-size: 40px;
+        }
+    }
+    @keyframes closeLogoTextAnimation {
+        from {
+            margin: 60px auto 0;
+            font-size: 40px;
+        }
+        to {
+            margin: 0;
         }
     }
     .LogoText {
@@ -372,14 +390,19 @@ p {
 
         &.openLogoText {
             position: static;
-            margin: 60px auto 0;
-            font-size: 40px;
-            width: 200px;
+            animation-name: openLogoTextAnimation;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
         }
 
         &.closeLogoText {
-            margin: 0 0 5px 0;
             width: 100%;
+            animation-name: closeLogoTextAnimation;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
+
         }
     }
     //.PawLogoOpenNavBar {
@@ -408,7 +431,7 @@ p {
         white-space: nowrap;
         text-align: center;
         width: 130px;
-        margin: 15px 0 0 0 ;
+        margin: 15px 0 0 0;
 
     }
     @keyframes openButtonAnimation {
