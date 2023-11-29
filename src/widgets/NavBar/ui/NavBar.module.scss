@@ -245,24 +245,96 @@ p {
             padding: 20px;
             height: 89dvh;
         }
-
-
     }
     .FilterHidden {
         display: none;
     }
+    @keyframes closeMenuAnimation {
+        from {
+            margin: -5px 0 0 0;
+        }
+        to {
+            margin: 3px 0 0 0;
+        }
+    }
+    @keyframes openMenuAnimation {
+        from {
+            margin: 3px 0 0 0;
+        }
+        to {
+            margin: -5px 0 0 0;
+        }
+    }
+    @keyframes rotateDetailsMenuOpen {
+        from {
+            rotate: 0;
+        }
+        to {
+            margin: -2px;
+            rotate: 90deg;
+        }
+    }
+    @keyframes rotateDetailsMenuClose {
+        0% {
+            rotate: 90deg;
+            margin: -5px 0 0 0;
+        }
+        25% {
+            margin: -5px 0 0 0;
+            rotate: 0deg;
+        }
+        50% {
+            margin: 3px 0 0 0;
+        }
+        100% {
+            margin: 3px 0 0 0;
+        }
+    }
 
 
+    .DetailMenu {
+        width: 35px;
+
+        &.closeMenu {
+            animation-name: closeMenuAnimation;
+            animation-duration: 0.5s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
+            animation-delay: 1s;
+        }
+
+        &.rotateRight {
+            animation-name: rotateDetailsMenuClose;
+            animation-duration: 1s;
+            animation-delay: 0.7s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
+        }
+
+        &.openMenu {
+            animation-name: openMenuAnimation;
+            animation-duration: 0.5s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
+        }
+
+        &.rotateLeft {
+            animation-name: rotateDetailsMenuOpen;
+            animation-duration: 0.5s;
+            animation-delay: 0.5s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
+        }
+    }
     .Menu {
-        display: initial;
+        display: flex;
+        flex-direction: column;
         position: absolute;
         right: 10px;
         width: 35px;
         cursor: pointer;
-
-        &.closeMenu {
-            display: none;
-        }
+        justify-content: center;
+        align-items: center;
     }
     .Filter {
         display: initial;
