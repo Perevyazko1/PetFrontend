@@ -43,6 +43,7 @@ export const NavBar = memo((props: NavBarProps) => {
 
     const handleToggleNavbar = () => {
         setIsNavbarOpen(!isNavbarOpen);
+
     };
     const handleHiddenNavBar = () => {
         setIsNavbarOpen(false);
@@ -86,71 +87,65 @@ export const NavBar = memo((props: NavBarProps) => {
             className={(isNavbarOpen || isFilterOpen) ? `${cls.NavbarWrapper} ${cls.openWrapper}` : `${cls.NavbarWrapper}`}>
             <nav
                 className={(isNavbarOpen || isFilterOpen) ? `${cls.Navbar} ${cls.openNav}` : `${cls.Navbar} ${cls.closeNav}`}>
+                {getRouteMain() !== location.pathname &&
+                    <>
+                        {windowWith <= 1140 &&
+                            <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
+                        }
+                    </>
+                }
+                <div
+                    className={isNavbarOpen || isFilterOpen ? `${cls.Menu} ${cls.openMenu}` : `${cls.Menu} ${cls.closeMenu}`}
+                    onClick={handleToggleNavbar}
+                >
+                    <img src={detail_menu}
+                         className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu} ${cls.rotateLeft}` : `${cls.DetailMenu} ${cls.rotateRight}`}
+                    />
+                    <img src={detail_menu}
+                         className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu} ${cls.rotateLeft}` : `${cls.DetailMenu}  ${cls.rotateRight}`}
+                    />
+                    <img src={detail_menu}
+                         className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu}` : `${cls.DetailMenu} ${cls.closeMenu}`}
+                    />
+                    <img src={detail_menu}
+                         className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu}` : `${cls.DetailMenu} ${cls.closeMenu}`}
+                    />
+
+                </div>
+
                 <div
                     className={(isNavbarOpen || isFilterOpen) ? `${cls.LogoText} ${cls.openLogoText}` : `${cls.LogoText} ${cls.closeLogoText}`}>
-                    {getRouteMain() !== location.pathname &&
-                        <>
-                            {windowWith <= 1140 &&
-                                <img src={filter} onClick={handleToggleFilter} className={cls.Filter}/>
-                            }
-                        </>}
-                    <div className={cls.Menu}
-                         onClick={handleToggleNavbar}
-                    >
-                        <img src={detail_menu}
-                             className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu} ${cls.rotateLeft}` : `${cls.DetailMenu} ${cls.rotateRight}`}
-                        />
-                        <img src={detail_menu}
-                             className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu} ${cls.rotateLeft}` : `${cls.DetailMenu}  ${cls.rotateRight}`}
-                        />
-                        <img src={detail_menu}
-                             className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu}` : `${cls.DetailMenu} ${cls.closeMenu}`}
-                        />
-                        <img src={detail_menu}
-                             className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu}` : `${cls.DetailMenu} ${cls.closeMenu}`}
-                        />
-
-                    </div>
-                    {isNavbarOpen &&
-                        <img src={cross} className={!isNavbarOpen || !isFilterOpen ? cls.Cross : null}
-                             onClick={handleHiddenNavBar}/>
-                    }
+                    {/*{isNavbarOpen &&*/}
+                    {/*    <img src={cross} className={!isNavbarOpen || !isFilterOpen ? cls.Cross : null}*/}
+                    {/*         onClick={handleHiddenNavBar}/>*/}
+                    {/*}*/}
                     Лапки
                     <img
                         className={(isNavbarOpen || isFilterOpen) ? `${cls.PawLogo} ${cls.openPawLogo}` : `${cls.PawLogo} ${cls.closePawLogo}`}
                         src={paw}/>
                 </div>
-                <>
-                    {/*{isNavbarOpen &&*/}
-                    {/*    <div className={cls.LogoTextOpenNavBar}>*/}
-                    {/*        Лапки*/}
-                    {/*        <img className={cls.PawLogoOpenNavBar} src={paw}/>*/}
-                    {/*    </div>*/}
-                    {/*}*/}
-                    <hr className={cls.FirstHr}/>
-                    {linkComponent}
-                    <hr className={isFilterOpen ? `${cls.SecondHr} ${cls.openSecondHr}` : `${cls.SecondHr} ${cls.closeSecondHr}`}/>
-                    <div className={cls.BottomContact}>
-                        <div className={cls.ContactInfo}>
-                            <img className={cls.IconNumber} src={call}/>
-                            8-931-351-88-84
-                        </div>
-                        <div className={cls.ContactInfo}>
-                            <img className={cls.IconAddress} src={local}/>
-                            Санкт-Петербург, ул. Ленина, 49
+                {!isFilterOpen &&
+                    <>
+                        <hr className={cls.FirstHr}/>
+                        {linkComponent}
+                        <hr className={isNavbarOpen ? `${cls.SecondHr} ${cls.openSecondHr}` : `${cls.SecondHr} ${cls.closeSecondHr}`}/>
+                        <div className={cls.BottomContact}>
+                            <div className={cls.ContactInfo}>
+                                <img className={cls.IconNumber} src={call}/>
+                                8-931-351-88-84
+                            </div>
+                            <div className={cls.ContactInfo}>
+                                <img className={cls.IconAddress} src={local}/>
+                                Санкт-Петербург, ул. Ленина, 49
+                            </div>
+
+                            <div className={cls.ContactInfo}>Пн - Вс
+                                <span className={cls.GreenTimeContact}>10:00 - 19:00</span>
+                            </div>
+                            <div className={cls.EveryDay}>Ждем Вас каждый день!</div>
                         </div>
 
-                        <div className={cls.ContactInfo}>Пн - Вс
-                            <span className={cls.GreenTimeContact}>10:00 - 19:00</span>
-                        </div>
-                        <div className={cls.EveryDay}>Ждем Вас каждый день!</div>
-                    </div>
-
-                </>
-                {isFilterOpen &&
-                    <img src={cross} className={cls.Cross} onClick={handleToggleFilter}/>
-                }
-
+                    </>}
                 {isFilterOpen &&
                     <>
                         {getRouteNews() === location.pathname &&
