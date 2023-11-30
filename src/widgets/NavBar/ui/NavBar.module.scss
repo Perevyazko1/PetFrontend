@@ -22,10 +22,54 @@
     background: var(--app-accent);
 }
 
+@keyframes closeFilter {
+    from {
+        background: var(--app-accent);
+
+    }
+    to {
+        background: var(--app-accent);
+
+    }
+}
+
 .FilterOpenNavbar {
+
     position: sticky !important;
     margin: 30px auto !important;
 
+    &.closeFilter {
+        animation-name: closeFilter;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+    }
+
+}
+@keyframes hiddenContent {
+    from{
+        display: none;
+    }
+    to{
+        display: none;
+    }
+}
+.HiddenContentNav{
+    animation-name: hiddenContent;
+    animation-duration: 1s;
+}
+@keyframes hiddenFilter {
+    from{
+
+    }
+    to{
+        display: none;
+    }
+}
+.HiddenFilter{
+    animation-name: hiddenFilter;
+    animation-duration: 2s;
+    animation-fill-mode: both;
 }
 
 .FilterNewsOpenNavbar {
@@ -328,24 +372,24 @@ p {
         }
     }
     @keyframes OpenMenuAnimation {
-        from{
+        from {
             rotate: 0;
             top: 25px;
         }
-        to{
+        to {
             rotate: 45deg;
             top: 25px;
         }
     }
     @keyframes CloseMenuAnimation {
-        0%{
+        0% {
             top: 25px;
             rotate: 45deg;
         }
-        90%{
+        90% {
             top: 25px;
         }
-        100%{
+        100% {
             rotate: 0;
         }
     }
@@ -358,7 +402,8 @@ p {
         cursor: pointer;
         justify-content: center;
         align-items: center;
-        &.openMenu{
+
+        &.openMenu {
             animation-name: OpenMenuAnimation;
             animation-duration: 1s;
             animation-delay: 0.5s;
@@ -366,7 +411,8 @@ p {
             animation-fill-mode: both;
             //top: 25px;
         }
-        &.closeMenu{
+
+        &.closeMenu {
             animation-name: CloseMenuAnimation;
             animation-duration: 1s;
             animation-timing-function: ease;

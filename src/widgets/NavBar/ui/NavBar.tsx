@@ -42,7 +42,8 @@ export const NavBar = memo((props: NavBarProps) => {
     };
 
     const handleToggleNavbar = () => {
-        setIsNavbarOpen(!isNavbarOpen);
+        isFilterOpen ? setIsFilterOpen(false) :
+            setIsNavbarOpen(!isNavbarOpen);
 
     };
     const handleHiddenNavBar = () => {
@@ -125,7 +126,7 @@ export const NavBar = memo((props: NavBarProps) => {
                         src={paw}/>
                 </div>
                 {!isFilterOpen &&
-                    <>
+                    <div className={!isFilterOpen && cls.HiddenContentNav}>
                         <hr className={cls.FirstHr}/>
                         {linkComponent}
                         <hr className={isNavbarOpen ? `${cls.SecondHr} ${cls.openSecondHr}` : `${cls.SecondHr} ${cls.closeSecondHr}`}/>
@@ -144,20 +145,17 @@ export const NavBar = memo((props: NavBarProps) => {
                             </div>
                             <div className={cls.EveryDay}>Ждем Вас каждый день!</div>
                         </div>
-
-                    </>}
-                {isFilterOpen &&
-                    <>
+                    </div>
+                }
+                    <div className={!isFilterOpen && cls.HiddenFilter}>
                         {getRouteNews() === location.pathname &&
                             <FilterNews className={cls.FilterNewsOpenNavbar}/>
                         }
                         {getRoutePet() === location.pathname &&
                             <Filter className={cls.FilterOpenNavbar}/>
                         }
-                    </>
+                    </div>
 
-
-                }
 
             </nav>
         </div>
