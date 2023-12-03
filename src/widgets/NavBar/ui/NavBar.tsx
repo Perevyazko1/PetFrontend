@@ -100,7 +100,7 @@ export const NavBar = memo((props: NavBarProps) => {
                     onClick={handleToggleNavbar}
                 >
                     <img src={detail_menu}
-                         className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu} ${cls.rotateLeft}` : `${cls.DetailMenu} ${cls.rotateRight}`}
+                         className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu} ${cls.rotateLeft}` : `${cls.DetailMenu} ${cls.rotateRight} `}
                     />
                     <img src={detail_menu}
                          className={isNavbarOpen || isFilterOpen ? `${cls.DetailMenu} ${cls.openMenu} ${cls.rotateLeft}` : `${cls.DetailMenu}  ${cls.rotateRight}`}

@@ -46,27 +46,31 @@
     }
 
 }
+
 @keyframes hiddenContent {
-    from{
+    from {
         display: none;
     }
-    to{
+    to {
         display: none;
     }
 }
-.HiddenContentNav{
+
+.HiddenContentNav {
     animation-name: hiddenContent;
     animation-duration: 1s;
 }
+
 @keyframes hiddenFilter {
-    from{
+    from {
 
     }
-    to{
+    to {
         display: none;
     }
 }
-.HiddenFilter{
+
+.HiddenFilter {
     animation-name: hiddenFilter;
     animation-duration: 2s;
     animation-fill-mode: both;
@@ -236,57 +240,25 @@ p {
 }
 
 @media screen and (max-width: 1420px) {
-    @keyframes slideDown {
-        0% {
-            height: 90px;
-            margin: 0;
-        }
-        50% {
-            margin: 20px 0 0 0;
-        }
-        100% {
-            margin: 20px;
-        }
-    }
-
-    @keyframes slideUp {
-        0% {
-            height: 89dvh;
-            margin: 20px;
-        }
-        50% {
-            height: 80px;
-            margin: 20px 0 0 0;
-        }
-        100% {
-            height: 70px;
-            margin: 0;
-        }
-    }
     .Navbar {
         background: var(--app-accent);
         border-radius: 10px;
         width: auto;
         overflow: hidden;
-        //box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         display: block;
         position: relative;
 
         &.closeNav {
-            animation-name: slideUp;
-            animation-duration: 1s;
-            animation-delay: 0.4s;
-            animation-timing-function: ease;
-            animation-fill-mode: both;
+            transition: height 1s, margin 1s, padding 1s;
+            height: 70px;
+            margin: 0;
             padding: 30px 0 0 0;
 
         }
 
         &.openNav {
-            animation-name: slideDown;
-            animation-duration: 1s;
-            animation-timing-function: ease;
-            animation-fill-mode: both;
+            transition: margin 1s, padding 1s, height 1s;
+            margin: 20px;
             padding: 20px;
             height: 89dvh;
         }
@@ -294,103 +266,32 @@ p {
     .FilterHidden {
         display: none;
     }
-    @keyframes closeMenuAnimation {
-        from {
-            margin: -5px 0 0 0;
-        }
-        to {
-            margin: 3px 0 0 0;
-        }
-    }
-    @keyframes openMenuAnimation {
-        from {
-            margin: 3px 0 0 0;
-        }
-        to {
-            margin: -5px 0 0 0;
-        }
-    }
-    @keyframes rotateDetailsMenuOpen {
-        from {
-            rotate: 0;
-        }
-        to {
-            margin: -2px;
-            rotate: 90deg;
-        }
-    }
-    @keyframes rotateDetailsMenuClose {
-        0% {
-            rotate: 90deg;
-            margin: -5px 0 0 0;
-        }
-        25% {
-            margin: -5px 0 0 0;
-            rotate: 0deg;
-        }
-        50% {
-            margin: 3px 0 0 0;
-        }
-        100% {
-            margin: 3px 0 0 0;
-        }
-    }
 
 
     .DetailMenu {
         width: 35px;
 
         &.closeMenu {
-            animation-name: closeMenuAnimation;
-            animation-duration: 0.5s;
-            animation-timing-function: ease;
-            animation-fill-mode: both;
-            animation-delay: 1s;
+            transition: margin 1s ease 2s;
+            margin: 3px 0 0 0;
         }
 
         &.rotateRight {
-            animation-name: rotateDetailsMenuClose;
-            animation-duration: 1s;
-            animation-delay: 0.7s;
-            animation-timing-function: ease;
-            animation-fill-mode: both;
+            transition: margin 1s ease 2s,  rotate 1s ease 1s;
+            margin: 3px 0 0 0;
+            rotate: 0deg;
         }
 
         &.openMenu {
-            animation-name: openMenuAnimation;
-            animation-duration: 0.5s;
-            animation-timing-function: ease;
-            animation-fill-mode: both;
+            transition: margin 1s;
+            margin: -5px 0 0 0;
         }
 
         &.rotateLeft {
-            animation-name: rotateDetailsMenuOpen;
-            animation-duration: 0.5s;
-            animation-delay: 0.5s;
-            animation-timing-function: ease;
-            animation-fill-mode: both;
-        }
-    }
-    @keyframes OpenMenuAnimation {
-        from {
-            rotate: 0;
-            top: 25px;
-        }
-        to {
-            rotate: 45deg;
-            top: 25px;
-        }
-    }
-    @keyframes CloseMenuAnimation {
-        0% {
-            top: 25px;
-            rotate: 45deg;
-        }
-        90% {
-            top: 25px;
-        }
-        100% {
-            rotate: 0;
+            transition: margin 1s, rotate 1s ease 1s;
+            margin: -2px;
+            rotate: 90deg;
+
         }
     }
     .Menu {
@@ -404,19 +305,14 @@ p {
         align-items: center;
 
         &.openMenu {
-            animation-name: OpenMenuAnimation;
-            animation-duration: 1s;
-            animation-delay: 0.5s;
-            animation-timing-function: ease;
-            animation-fill-mode: both;
-            //top: 25px;
+            transition: top 1s, rotate 1s ease 2s;
+            rotate: 45deg;
+            top: 25px;
         }
 
         &.closeMenu {
-            animation-name: CloseMenuAnimation;
-            animation-duration: 1s;
-            animation-timing-function: ease;
-            animation-fill-mode: both;
+            transition: rotate 1s;
+            rotate: 0deg;
         }
     }
     .Filter {
@@ -458,15 +354,6 @@ p {
 
     }
 
-    //.NavbarWrapperOpen {
-    //    width: 100%;
-    //    background: var(--app-background);
-    //    position: fixed;
-    //    overflow-y: hidden;
-    //    z-index: 100;
-    //    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    //
-    //}
     .NavbarWrapper:hover {
         overflow-y: initial;
         overflow-x: initial;
@@ -561,21 +448,6 @@ p {
 
         }
     }
-    //.PawLogoOpenNavBar {
-    //    position: absolute;
-    //    top: 60px;
-    //    width: 125px;
-    //    transform: rotate(2deg);
-    //}
-    //.LogoTextOpenNavBar {
-    //    margin: 60px auto 0;
-    //    font: var(--font-small-logo);
-    //    font-size: 40px;
-    //    display: flex;
-    //    width: 200px;
-    //    flex-direction: column;
-    //    align-items: center;
-    //}
 
     .ContactText {
         font-family: CeraPro-Regular, serif;
@@ -614,7 +486,6 @@ p {
 
     .ContainerButton {
         display: flex;
-        //gap: 2rem;
         flex-direction: column;
         width: 160px;
         overflow: hidden;
@@ -624,7 +495,6 @@ p {
             animation-name: openButtonAnimation;
             animation-duration: 0.9s;
             animation-timing-function: ease;
-            //animation-delay: 1s;
             animation-fill-mode: both;
         }
 
@@ -632,7 +502,6 @@ p {
             animation-name: closeButtonAnimation;
             animation-duration: 0.9s;
             animation-timing-function: ease;
-            //animation-delay: 1s;
             animation-fill-mode: both;
         }
 
