@@ -277,7 +277,7 @@ p {
         }
 
         &.rotateRight {
-            transition: margin 1s ease 2s,  rotate 1s ease 1s;
+            transition: margin 1s ease 2s, rotate 1s ease 1s;
             margin: 3px 0 0 0;
             rotate: 0deg;
         }
@@ -348,10 +348,7 @@ p {
             animation-timing-function: ease;
             animation-fill-mode: both;
             border-radius: 0;
-
-
         }
-
     }
 
     .NavbarWrapper:hover {
