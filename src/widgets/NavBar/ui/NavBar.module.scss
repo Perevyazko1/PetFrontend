@@ -1,7 +1,7 @@
 .Navbar {
     background: var(--app-accent);
     border-radius: 0.44rem;
-    padding: 50px 20px 30px;
+    padding: 60px 20px 30px;
     width: 200px;
     margin: 20px 0 0 0;
 }
@@ -130,14 +130,14 @@
 
 .PawLogo {
     position: absolute;
-    top: -50px;
-    width: 140.8px;
-    height: 140.8px;
+    top: -30px;
+    width: 90px;
+    height: 90px;
     transform: rotate(2deg);
 }
 
 .LogoText {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
     font: var(--font-small-logo);
     display: flex;
     position: relative;
