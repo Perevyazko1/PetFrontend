@@ -1,11 +1,16 @@
-import React, {memo, ReactNode, useEffect, useState} from 'react';
+import React, {memo, ReactNode, useCallback, useEffect, useState} from 'react';
 import cls from "./NavBar.module.scss"
 import {Link, useLocation} from "react-router-dom";
 import {routeConfig} from "app/providers/router/config/routeConfig";
 import {Button} from "shared/ui/Button/Button";
 import {AppRoutes, getRouteMain, getRouteNews, getRoutePet, routeNames} from "shared/consts/routes/routes";
 import {Mods} from "shared/lib/classNames/classNames";
-import {paw,call, local, pawButton,detail_menu, filter} from "shared/assets/icons/PawLogo.svg";
+import paw from "shared/assets/icons/PawLogo.svg";
+import call from "shared/assets/icons/call.svg"
+import local from "shared/assets/icons/location.svg"
+import pawButton from "shared/assets/icons/PawButton.svg"
+import detail_menu from "shared/assets/icons/detail_menu.svg"
+import filter from "shared/assets/icons/Filter.svg"
 import {FilterNews} from 'features/FilterNews/FilterNews';
 import {useWindowWidth} from "shared/lib/hook/useWindowWidth/useWindowWidth";
 import {Filter} from 'features/Filter/Filter';
@@ -30,6 +35,19 @@ export const NavBar = memo((props: NavBarProps) => {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const windowWith = useWindowWidth()
     const pathNews = getRouteNews
+
+    const handleKeyDown = useCallback((event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      setIsNavbarOpen(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleKeyDown]);
 
     const handleToggleFilter = () => {
         setIsFilterOpen(!isFilterOpen);
