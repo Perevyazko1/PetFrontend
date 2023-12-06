@@ -1,8 +1,9 @@
 .NewsPage{
-    margin-left: 260px;
+    margin: 0 0 0 auto;
     overflow-y: auto;
     overflow-x: hidden;
     display: flex;
+    width: 79.7%;
 
 }
 .None{
@@ -10,7 +11,8 @@
 }
 .CardNews{
     width: 767px;
-    margin: 20px;
+    height: 480px;
+    margin: 30px 20px 20px 20px;
     background: var(--app-accent);
     border-radius: 5px;
     padding: 5px;
@@ -24,23 +26,25 @@
 }
 .PhotoNews{
     width: 100%;
+    height: auto;
     border-radius: 5px;
 }
 .ContainerPhoto{
-    width: 95%;
-    height: auto;
-    max-height: 467px;
-    min-height: 300px;
+    width: 97%;
+    height: 330px;
     border-radius: 5px;
-    margin: 20px auto;
+    margin: 10px auto;
     overflow: hidden;
-    display: flex;
+    position: relative;
 }
 .HeaderPhoto{
     font: var(--font-medium-main);
     color: var(--app-background);
     text-decoration: underline;
-    margin: -50px 20px;
+    //margin: -50px 20px;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
 }
 .Views{
     display: flex;
