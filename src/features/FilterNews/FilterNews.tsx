@@ -53,47 +53,49 @@ export const FilterNews = memo((props: FilterNewsProps) => {
     };
     
     return (
-        <div
-            className={classNames(cls.FilterNews, mods, [className])}
-            {...otherProps}
-        >
-            <p className={cls.HeaderFilters}>Искать в содержимом статьи:</p>
-            <Input onChange={event => {
-                setQueryParam("name", event.target.value)
-                // setValueInput(event.target.value)
-            }} value={queryParameters.name} className={cls.Input}
-            />
-            <div className={cls.TypeFilter}>Сортировать по:</div>
-            <HideBlockFilter nameBlock={"Дата"}>
-                <GroupRadio decrease={"dateNewsDecrease"} increase={"dateNewsIncrease"}/>
-            </HideBlockFilter>
-            <HideBlockFilter nameBlock={"Количество просмотров"}>
-                <GroupRadio decrease={"SummViewNewsDecrease"} increase={"SummViewNewsIncrease"}/>
-            </HideBlockFilter>
+        <div className={cls.FilterWrapper}>
+            <div
+                className={classNames(cls.FilterNews, mods, [className])}
+                {...otherProps}
+            >
+                <p className={cls.HeaderFilters}>Искать в содержимом статьи:</p>
+                <Input onChange={event => {
+                    setQueryParam("name", event.target.value)
+                    // setValueInput(event.target.value)
+                }} value={queryParameters.name} className={cls.Input}
+                />
+                <div className={cls.TypeFilter}>Сортировать по:</div>
+                <HideBlockFilter nameBlock={"Дата"}>
+                    <GroupRadio decrease={"dateNewsDecrease"} increase={"dateNewsIncrease"}/>
+                </HideBlockFilter>
+                <HideBlockFilter nameBlock={"Количество просмотров"}>
+                    <GroupRadio decrease={"SummViewNewsDecrease"} increase={"SummViewNewsIncrease"}/>
+                </HideBlockFilter>
 
-            <div className={cls.TypeFilter}>Отфлиртовать по:</div>
-            <HideBlockFilter nameBlock={"Дата"}>
-                <div className={cls.BlockInput}>
-                    <p>От</p>
-                    <Input className={cls.UnitInput} placeholder={"   — —"} type={"date"}/>
-                    <p>До</p>
-                    <Input className={cls.UnitInput} placeholder={"   — —"} type={"date"}/>
-                </div>
-            </HideBlockFilter>
-            <HideBlockFilter nameBlock={"Категория"}>
-                {category.map((item, index) => {
-        // console.log(` айтем ${!!queryParameters[item]}`);
-        return           <div key={item} className={cls.CheckHeader}>
-                            <InputCheckbox  checked={!!queryParameters[item]} nameCheck={item}/>
+                <div className={cls.TypeFilter}>Отфлиртовать по:</div>
+                <HideBlockFilter nameBlock={"Дата"}>
+                    <div className={cls.BlockInput}>
+                        <p>От</p>
+                        <Input className={cls.UnitInput} placeholder={"   — —"} type={"date"}/>
+                        <p>До</p>
+                        <Input className={cls.UnitInput} placeholder={"   — —"} type={"date"}/>
+                    </div>
+                </HideBlockFilter>
+                <HideBlockFilter nameBlock={"Категория"}>
+                    {category.map((item, index) => {
+                        // console.log(` айтем ${!!queryParameters[item]}`);
+                        return <div key={item} className={cls.CheckHeader}>
+                            <InputCheckbox checked={!!queryParameters[item]} nameCheck={item}/>
                             <p>{item}</p>
                         </div>
-;
-      })}
+                            ;
+                    })}
                     {/*{category.map((item) =>  {*/}
                     {/*    return*/}
                     {/*})}*/}
-            </HideBlockFilter>
-            <Button onClick={handleClearFilter}>Очистить фильтры</Button>
+                </HideBlockFilter>
+                <Button onClick={handleClearFilter}>Очистить фильтры</Button>
+            </div>
         </div>
     );
 });

@@ -42,6 +42,19 @@ const NewsPage = memo((props: NewsPageProps) => {
                     photo: "https://www.science.org/do/10.1126/science.abq3966/full/_20220405_on_dogtalk-1675062809387.jpg",
                     date: "15.06.23",
                     views: 105
+                },
+                {
+                    id: 1,
+                    header: "Чудесный, молодой Космо ждет свою семью в приюте.\n" +
+                        "22 МАЯ в приюте для бездомных животных «ЛАПКА» состоится ДЕНЬ ОТКРЫТЫХ ДВЕРЕЙ!С 11 до 17 часов\n" +
+                        "ждём в гости всех старых друзей приюта и будем очень рады новым знакомствам! Если вы мечтаете\n" +
+                        "погулять с собакой по весеннему лесу и сделать доброе дело — приезжайте к нам ...",
+                    headerPhoto: "#День открытых дверей",
+                    text: "",
+                    category: "",
+                    photo: "https://www.science.org/do/10.1126/science.abq3966/full/_20220405_on_dogtalk-1675062809387.jpg",
+                    date: "15.06.23",
+                    views: 105
                 }
             ]))
         }, 1000)
@@ -56,38 +69,40 @@ const NewsPage = memo((props: NewsPageProps) => {
             className={classNames(cls.NewsPage)}
             {...otherProps}
         >
-            {
-                newsList?.map((news) => (
-                    <div className={cls.CardNews} key={news.id}>
-                        {!isLoadingImg && <Skeleton className={cls.ContainerPhoto}/>}
-                        <div className={isLoadingImg ? cls.ContainerPhoto : cls.None}>
-                            <img className={cls.PhotoNews}
-                                 src={news.photo}
-                                 onLoad={() => setIsLoadingImg(true)}
-                            />
-                            <p className={cls.HeaderPhoto}>{news.headerPhoto}</p>
-                        </div>
-
-                        {!isLoadingImg ? <Skeleton count={4} className={cls.HeaderNews}/> :
-                            <div
-                                className={cls.HeaderNews}>{windowWith < 1420 ? `${news.header.slice(0, 100)}...` : `${news.header.slice(0, 250)}...`}</div>
-                        }
-                        {!isLoadingImg ? <Skeleton className={cls.BottomNews}/> :
-                            <div className={cls.BottomNews}>
-                                <Button className={cls.Button}>Читать далее...</Button>
-                                <div className={cls.Views}>
-                                    <img src={calendar}/>
-                                    <p className={cls.Calendar}>{news.date}</p>
-                                    <img src={eye}/>
-                                    <p>{news.views}</p>
-                                </div>
+            <div>
+                {
+                    newsList?.map((news) => (
+                        <div className={cls.CardNews} key={news.id}>
+                            {!isLoadingImg && <Skeleton className={cls.ContainerPhoto}/>}
+                            <div className={isLoadingImg ? cls.ContainerPhoto : cls.None}>
+                                <img className={cls.PhotoNews}
+                                     src={news.photo}
+                                     onLoad={() => setIsLoadingImg(true)}
+                                />
+                                <p className={cls.HeaderPhoto}>{news.headerPhoto}</p>
                             </div>
-                        }
+
+                            {!isLoadingImg ? <Skeleton count={1} className={cls.HeaderNews}/> :
+                                <div
+                                    className={cls.HeaderNews}>{windowWith < 1420 ? `${news.header.slice(0, 100)}...` : `${news.header.slice(0, 250)}...`}</div>
+                            }
+                            {!isLoadingImg ? <Skeleton className={cls.BottomNews}/> :
+                                <div className={cls.BottomNews}>
+                                    <Button className={cls.Button}>Читать далее...</Button>
+                                    <div className={cls.Views}>
+                                        <img src={calendar}/>
+                                        <p className={cls.Calendar}>{news.date}</p>
+                                        <img src={eye}/>
+                                        <p>{news.views}</p>
+                                    </div>
+                                </div>
+                            }
 
 
-                    </div>
-                ))
-            }
+                        </div>
+                    ))
+                }
+            </div>
             {!isLoading && windowWith > 1050 &&
                 <FilterNews/>
             }

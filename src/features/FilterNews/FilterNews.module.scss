@@ -1,53 +1,87 @@
-.FilterNews{
+.FilterNews {
     background: var(--app-accent);
     border-radius: 0.44rem;
-    padding: 80px 20px 30px;
+    padding: 20px 20px 30px;
     width: 200px;
-    min-width: 200px ;
-    max-width: 250px ;
-    margin: 30px 0 0 auto;
+
 }
-.HeaderFilters{
+
+.FilterWrapper {
+    margin: 30px 0 0 auto;
+    position: fixed;
+    overflow-y: hidden;
+    max-height: calc(100% - 20px);
+    border-radius: 0.84rem;
+    right: 30px;
+
+}
+
+.FilterWrapper:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.FilterWrapper::-webkit-scrollbar {
+    position: fixed;
+    right: 10px;
+    width: 4px;
+}
+
+.FilterWrapper::-webkit-scrollbar-thumb {
+    background-color: #d1d0d9;
+    border-radius: 2px;
+    height: 10px;
+}
+
+
+.HeaderFilters {
     font: var(--font-small-main-mobile);
     color: rgba(18, 18, 18, 0.7);
 }
-.CheckHeader{
+
+.CheckHeader {
     display: flex;
 }
-p{
+
+p {
     font: var(--font-small-main);
-    color: rgba(18, 18, 18, 0.52);
-;
+    color: rgba(18, 18, 18, 0.52);;
 }
-.TypeFilter{
+
+.TypeFilter {
     font: var(--font-small-main-filter);
     margin: 10px;
 }
-.Input{
+
+.Input {
     width: 100%;
     background-image: url("../../shared/assets/icons/glass.svg");
     background-repeat: no-repeat;
-    background-position:  right 20px center;
+    background-position: right 20px center;
 }
-.UnitInput{
+
+.UnitInput {
     width: 80px;
     font: var(--font-small-main-mobile);
 
 }
-.UnitInputChecked{
+
+.UnitInputChecked {
 
 }
-.BlockInput{
+
+.BlockInput {
     display: flex;
 }
+
 @media screen and (max-width: 1420px) {
-    .FilterNews{
-    background: var(--app-accent);
-    border-radius: 0.44rem;
-    padding: 80px 20px 30px;
-    width: auto;
-    min-width: 250px;
-    margin: 20px 20px auto 20px;
+    .FilterNews {
+        background: var(--app-accent);
+        border-radius: 0.44rem;
+        padding: 80px 20px 30px;
+        width: auto;
+        min-width: 250px;
+        margin: 20px 20px auto 20px;
     }
 
 }
