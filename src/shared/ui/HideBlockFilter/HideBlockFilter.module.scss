@@ -9,3 +9,14 @@
     cursor: pointer;
     display: flex;
 }
+.openBlock{
+    max-height: 300px;
+    transition: max-height 1s;
+    overflow: hidden;
+}
+
+.hideBlock{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+}

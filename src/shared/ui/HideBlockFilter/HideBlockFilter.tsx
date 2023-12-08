@@ -50,11 +50,9 @@ export const HideBlockFilter = memo((props: HideBlockFilterProps) => {
                 <p className={cls.HeaderFilters}>{nameBlock}</p>
                 <img  src={icon}/>
             </div>
-            {hideBlock &&
-                <>
+                <div className={hideBlock ? cls.openBlock : cls.hideBlock}>
                     {children}
-                </>
-            }
+                </div>
         </div>
     );
 });
